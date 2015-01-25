@@ -1,5 +1,5 @@
 ---
-title: TP 1
+title: Première séance
 layout: page
 excerpt: Prise en main du langage et de l'IDE Eclipse.
 ---

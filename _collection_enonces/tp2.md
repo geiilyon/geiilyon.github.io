@@ -1,7 +1,7 @@
 ---
-title: TP 2
+title: Deuxième séance
 layout: page
-excerpt: Prise en main du langage et de l'IDE Eclipse.
+excerpt: Manipulation de chaînes de caractères.
 ---
 
 # Deuxième TP

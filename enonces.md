@@ -10,19 +10,18 @@ image:
 permalink: /enonces/
 ---
 
-# Test de page
-
 <div class="home">
 
-  <ul class="post-list">
 {% for tp in site.collection_enonces %}
-      <li>
-        <h2>
-          <a class="post-link" href="{{ tp.url | prepend: site.baseurl }}">{{ tp.title }}</a>
-        </h2>
-      </li>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{ tp.title }}</h3>
+  </div>
+  <div class="panel-body">
+    <a class="post-link" href="{{ tp.url | prepend: site.baseurl }}">{{ tp.excerpt }}</a>
+  </div>
+</div>
     {% endfor %}
-</ul>
 
 
 </div>
