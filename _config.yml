@@ -11,5 +11,10 @@ relative_permalinks: true
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
 
+collections:
+  collection_enonces:
+    output: true
+    permalink: /enonces/:name/
+
 redcarpet:
   extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]

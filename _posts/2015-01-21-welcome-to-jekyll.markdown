@@ -4,7 +4,7 @@ title:  "En construction..."
 date:   2015-01-23
 categories:
 ---
-En chantier
+Blabla
 
 {% highlight ruby %}
 def print_hi(name)

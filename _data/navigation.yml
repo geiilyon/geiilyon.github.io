@@ -1,0 +1,15 @@
+- title: Enoncés
+  url: /enonces/
+  excerpt: "Les sujets de travaux pratiques"
+
+- title: Cours
+  url: /cours/
+  excerpt: "Liens vers les diaporamas des cours."
+  
+- title: Glossaire
+  url: /glossaire/
+  excerpt: "Définition des principaux termes et mots clés."
+
+- title: Ressources
+  url: /ressources/
+  excerpt: "Quelques liens vers des ressources en ligne."
