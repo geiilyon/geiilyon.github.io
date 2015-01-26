@@ -31,8 +31,9 @@ permalink: /ressources/
 
 # Outils
 
-* Les principaux [IDE](http://fr.wikipedia.org/wiki/Environnement_de_développement) pour développer en Java sont [Eclipse](https://eclipse.org/downloads/), [Netbeans](https://netbeans.org) et [IntelliJ Idea](https://www.jetbrains.com/idea/)
+* Le compilateur Java ainsi que l'ensemble des outils de développement sur lesquels s'appuient les [IDE](http://fr.wikipedia.org/wiki/Environnement_de_développement) est appelé JDK et peut être téléchargé sur [le site d'Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
-    Il faut télécharger la version pour Java SE (Standard Edition)
+* Les principaux IDE pour développer en Java sont [Eclipse](https://eclipse.org/downloads/), [Netbeans](https://netbeans.org) et [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
-* Le compilateur Java ainsi que l'ensemble des outils de développement sur lesquels s'appuient les IDE est appelé JDK et peut être téléchargé sur [le site d'Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+    Il faut télécharger la version pour Java SE (Standard Edition). Pour ce module, nous utiliserons Eclipse.
+
