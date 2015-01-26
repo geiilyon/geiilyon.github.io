@@ -6,9 +6,9 @@
   url: /cours/
   excerpt: "Liens vers les diaporamas des cours."
   
-- title: Glossaire
-  url: /glossaire/
-  excerpt: "Définition des principaux termes et mots clés."
+- title: Eclipse
+  url: /eclipse/
+  excerpt: "Raccourcis claviers et astuces."
 
 - title: Ressources
   url: /ressources/

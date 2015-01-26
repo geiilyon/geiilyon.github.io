@@ -1,10 +1,9 @@
 # Site settings
 title: Module POO ARIC
-email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Support des travaux pratiques du module de Programmation Orientée Objet en Java du département GEII de l'IUT Lyon 1.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://geiilyon.github.io" # the base hostname & protocol for your site
 relative_permalinks: true
 
 # Build settings

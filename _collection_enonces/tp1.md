@@ -75,14 +75,15 @@ String phraseFr = "Portez ce vieux whisky au juge blond qui fume";
 
 ### Exercice 2
 
-Créer une nouvelle classe `ExperimentationChaines2` qui devra afficher le même résultat mais en concaténant les 4 chaînes dans une seule chaîne qui contiendra le résultat et sera passée à une fenêtre de dialogue pour l’affichage.
-Le retour à la ligne est codé différemment selon les systèmes d’exploitation :
+* Créer une nouvelle classe `ExperimentationChaines2` qui devra afficher le même résultat mais en concaténant les 4 chaînes dans une seule chaîne qui contiendra le résultat et sera passée à une fenêtre de dialogue pour l’affichage.
 
-* 0x0A (Unix, Linux, Mac OS X, ...)
+    Le retour à la ligne est codé différemment selon les systèmes d’exploitation :
 
-* 0x0D (Commodore, ...)
+    * 0x0A (Unix, Linux, Mac OS X, ...)
 
-* 0x0D 0x0A (Windows, ...)
+    * 0x0D (Commodore, ...)
+
+    * 0x0D 0x0A (Windows, ...)
 
 Pour pallier ce problème, la classe System de java permet de récupérer la chaîne associée au retour à la ligne :
 
@@ -90,5 +91,33 @@ Pour pallier ce problème, la classe System de java permet de récupérer la cha
 String lineSep = System.getProperty("line.separator");
 ```
 
-Remplacer l’utilisation de `System.out.println` par `JOptionPane.showMessageDialog(null,message);` où message est une variable de type `String` contenant le message à afficher. Vous aurez besoin d’importer la classe `JOptionPane` (utiliser les suggestions de résolution d’erreur d’Eclipse en cliquant sur la petite croix rouge en début de ligne).
+* Tester votre programme avec un affichage sur la console (`System.out.println`)
 
+* Remplacer l’utilisation de `System.out.println` par `JOptionPane.showMessageDialog(null,message);` où message est une variable de type `String` contenant le message à afficher. Vous aurez besoin d’importer la classe `JOptionPane` (utiliser les suggestions de résolution d’erreur d’Eclipse en cliquant sur la petite croix rouge en début de ligne).
+
+### Exercice 3 - Anagrammes
+
+* Créer une nouvelle classe `Anagrams` qui contiendra une méthode : 
+
+    ```java 
+    public static boolean isAnagram(String firstWord, String secondWord)
+    ```
+
+    qui renvoie `true`si les deux mots sont des anagrammes.
+    
+* 
+
+
+## Passage par valeur / références
+
+
+## Une histoire de portes
+
+
+## Etudiants
+
+
+## Liste de courses
+
+
+## 
