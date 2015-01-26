@@ -5,6 +5,17 @@ excerpt: Raccourcis claviers et astuces.
 permalink: /eclipse/
 ---
 
+# Utilisation du debugger
+
+Exemple d'utilisation du debugger sur l'exemple vu en cours des références sur des objets de type Porte ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4025592&typeMedia=false)).
+
+<video width="60%" height="100%" controls>
+  <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025592" type="video/mp4">
+  <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025593" type="video/webm">
+Your browser does not support the video tag.
+</video>
+
+
 # Raccourcis clavier
 
 * <kbd>Ctrl</kbd>+<kbd>Espace</kbd> : complétion automatique
@@ -17,7 +28,15 @@ permalink: /eclipse/
 
 * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> : organise les imports (ajoute tous les imports de packages nécessaires)
 
+* <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> : ouvre rapide d'une classe ou une interface
+
 # Astuces
+
+* <kbd>Ctrl</kbd>+clic sur une variable ou une méthode permet de sauter à sa définition.
+
+* Utiliser les suggestions de corrections d'erreurs d'Eclipse pour générer le code manquant ou corriger des erreurs de programmation.
+
+* Eclipse compile les fichiers lors de leur sauvegarde.
 
 * Dans une boite de dialogue, taper les différents majuscules du nom de la classe (ou méthode)
 

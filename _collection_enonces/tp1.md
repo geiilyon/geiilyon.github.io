@@ -10,6 +10,8 @@ Lors du lancement, Eclipse demande de choisir/créer un *workspace*. Ce dossier 
 
 ![Dialogue Eclipse workspace](/img/EclipseWorkspaceDialogue.png)
 
+Toutes les classes seront pour l'instant créées dans le package par défaut (*default package*).
+
 ## L'incontournable Hello World !
 
 ```java
@@ -119,7 +121,8 @@ String lineSep = System.getProperty("line.separator");
     * Exécuter ce fichier. Il s'agit d'un fichier contenant des tests **JUnit** (framework de tests unitaires). Il est reconnu automatiquement par Eclipse comme tel et est exécuté par le moteur de tests unitaires qui affiche ensuite les résultats des tests dans une fenêtre dédiée.
     
     * Vidéo de la manipulation à effectuer ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4025470&typeMedia=false)).
-    
+
+
 <video width="60%" height="100%" controls>
     <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025470" type="video/mp4">
     <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025458" type="video/webm">
@@ -127,8 +130,75 @@ String lineSep = System.getProperty("line.separator");
 </video>
 
 
-
+* Si le résultat des tests montre un échec, corriger le code de votre méthode `isAnagram`.
+    
+    
 ## Passage par valeur / références
+
+* Créer une nouvelle classe `PassageParValeur` qui contiendra le code suivant :
+
+```java
+public class PassageParValeur {
+
+	public static void main(String[] args) {
+		int nbCookies = 5;
+		
+		mangerDesCookies(nbCookies);
+		
+		System.out.println("Il reste " + nbCookies + " cookies !");
+		
+	}
+
+	private static void mangerDesCookies(int nbCookies) {
+		nbCookies = nbCookies - 2;
+		System.out.println("Je viens de manger 2 cookies et il en reste : " + nbCookies);
+	}
+
+}
+
+```
+
+* Placer un point d'arrêt en face de la méthode mangerDesCookies (double cliquer dans la colonne située à gauche des numéros de lignes  et lancer le débugger en cliquant sur l'icône avec un insecte (*bug*) située à côté du bouton *Run* (voir [exemple d'utilisation du  debugger](/eclipse/)).
+
+* Vérifier et interpréter le comportement de ce programme.
+
+* Créer maintenant deux nouvelles classes `PassageParReference` et `PaquetCookies`
+
+```java
+
+
+public class PassageParReference {
+
+	public static void main(String[] args) {
+		PaquetCookies paquet = new PaquetCookies(5);
+
+		mangerDesCookies(paquet);
+		
+		System.out.println("Il reste " + paquet.nbCookies + " cookies !");
+	}
+
+	private static void mangerDesCookies(PaquetCookies paquet) {
+		paquet.nbCookies = paquet.nbCookies - 2;
+		System.out.println("Je viens de manger 2 cookies et il en reste : " + paquet.nbCookies);
+	}
+
+}
+
+```
+
+```java
+
+public class PaquetCookies {
+
+	int nbCookies;
+
+	public PaquetCookies(int nbCookies) {
+		this.nbCookies = nbCookies;
+	}
+	
+}
+
+```
 
 
 ## Une histoire de portes

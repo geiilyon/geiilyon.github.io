@@ -8,7 +8,7 @@ excerpt: Manipulation de chaînes de caractères.
 
 ## Premier exemple
 
-Blabla
+<!-- Gestion des exceptions (programme de saisie du résultat d'une mutiplication -->
 
 ```java
 public class Tutu{
