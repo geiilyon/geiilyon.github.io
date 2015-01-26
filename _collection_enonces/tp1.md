@@ -1,5 +1,5 @@
 ---
-title: Introduction.
+title: Introduction
 layout: page
 excerpt: Prise en main d'Eclipse. Création de projets, classes, expérimentations sur les objets
 ---
@@ -88,5 +88,5 @@ Pour pallier ce problème, la classe System de java permet de récupérer la cha
 String lineSep = System.getProperty("line.separator");
 ```
 
-Remplacer l’utilisation de System.out.println par `JOptionPane.showMessageDialog(null,message);` où message est une variable de type `String` contenant le message à afficher. Vous aurez besoin d’importer la classe `JOptionPane` (utiliser les suggestions de résolution d’erreur d’Eclipse en cliquant sur la petite croix rouge en début de ligne).
+Remplacer l’utilisation de `System.out.println` par `JOptionPane.showMessageDialog(null,message);` où message est une variable de type `String` contenant le message à afficher. Vous aurez besoin d’importer la classe `JOptionPane` (utiliser les suggestions de résolution d’erreur d’Eclipse en cliquant sur la petite croix rouge en début de ligne).
 
