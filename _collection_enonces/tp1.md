@@ -24,8 +24,10 @@ Suivez les instructions présentes dans la vidéo suivante (vous devez avoir une
 
 <video width="60%" height="100%" controls>
   <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4024274" type="video/mp4">
+  <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025132" type="video/webm">
 Your browser does not support the video tag.
 </video>
+
 
 La complétion automatique de code sous Eclipse est activée par le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Espace</kbd>.
 
