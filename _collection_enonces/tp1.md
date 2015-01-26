@@ -118,7 +118,14 @@ String lineSep = System.getProperty("line.separator");
     
     * Exécuter ce fichier. Il s'agit d'un fichier contenant des tests **JUnit** (framework de tests unitaires). Il est reconnu automatiquement par Eclipse comme tel et est exécuté par le moteur de tests unitaires qui affiche ensuite les résultats des tests dans une fenêtre dédiée.
     
-    * Vidéo de la manipulation à effectuer.
+    * Vidéo de la manipulation à effectuer ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4025470&typeMedia=false)).
+    
+<video width="60%" height="100%" controls>
+    <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025470" type="video/mp4">
+    <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025458" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+
 
 
 ## Passage par valeur / références
