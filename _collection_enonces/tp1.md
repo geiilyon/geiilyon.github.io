@@ -20,7 +20,7 @@ public class HelloWorld{
 }
 ```
 
-Suivez les instructions présentes dans la video suivante (disponible également sur [SPIRAL]("http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4024274&typeMedia=false")) pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse.
+Suivez les instructions présentes dans la vidéo suivante (vous devez avoir une session SPIRAL active pour accéder à la vidéo. Suivre le [lien pour voir la video sur SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4024274&typeMedia=false)) pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse.
 
 <video width="60%" height="100%" controls>
   <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4024274" type="video/mp4">
