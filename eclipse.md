@@ -12,9 +12,11 @@ Exemple d'utilisation du debugger sur l'exemple vu en cours des références sur
 <video width="60%" height="100%" controls>
   <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025592" type="video/mp4">
   <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025593" type="video/webm">
-Your browser does not support the video tag.
+  Your browser does not support the video tag.
 </video>
 
+
+Eclipse utilise le concept de *perspective* : dans la vidéo ci-dessus, le lancement du debugger provoque le passage dans la perspective debug et à la fin de la session de debuggage on revient à la perspective *Java*. Une perspective correspond à un ensemble de vues adaptées à une activité : développement, debuggage, gestion de versions, recherche de bugs par analyse statique du code...
 
 # Raccourcis clavier
 
@@ -40,11 +42,11 @@ Your browser does not support the video tag.
 
 * Dans une boite de dialogue, taper les différents majuscules du nom de la classe (ou méthode)
 
-![completion partielle](/img/majCompletion.png)
+    ![completion partielle](/img/majCompletion.png)
 
 * Lors de l'exécution si une boîte de dialogue demande les ressources à sauvegarder, cocher la case "*Always save resources before launching*"
 
-![Always save resources dialog](/img/AlwaysSaveResources.png)
+    ![Always save resources dialog](/img/AlwaysSaveResources.png)
 
 * Pour ajouter des fichiers sources à un projet Java existant, les faire glisser depuis l'explorateur de fichiers directement sur la fenêtre package explorer d'Eclipse et sélectionner l'option permettant de les copier dans le répertoire du projet.
 

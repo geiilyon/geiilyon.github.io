@@ -22,7 +22,7 @@ public class HelloWorld{
 }
 ```
 
-Suivez les instructions présentes dans la vidéo suivante (vous devez avoir une session SPIRAL active pour accéder à la vidéo. Suivre le [lien pour voir la video sur SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4024274&typeMedia=false)) pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse.
+Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (vous devez avoir une session SPIRAL active pour accéder à la vidéo et utiliser firefox, chrome ou safari. Suivre le [lien pour voir la video sur SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4024274&typeMedia=false)).
 
 <video width="60%" height="100%" controls>
   <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4024274" type="video/mp4">
@@ -200,8 +200,68 @@ public class PaquetCookies {
 
 ```
 
+* A l'aide du debugger, analyser le comportement de ce programme et interpréter le résultat.
+
 
 ## Une histoire de portes
+
+* Créer une nouvelle classe `Porte` correspondant au diagramme de classe suivant :
+
+    ![Diagramme UML Porte](/img/Porte_UML.png)
+
+    ```java
+
+    public class Porte {
+
+        public boolean estOuverte = false;
+        public String couleur;
+
+        public void ouvrir(){
+            ...
+        }
+
+        public void fermer(){
+            ...
+        }
+
+        public void franchir(){
+            ...
+        }	
+
+    }
+
+    ```
+
+* Compléter le code source des méthodes de la classe `Porte` et créer une classe de tests `PorteTests`permettant de produire l'affichage suivant sur la console :
+
+    ```
+    Tentative de franchissement : Aïe !
+    Tentative de fermeture : Fermer une porte déjà fermée hmmm...faut-il que je cloue des planches ?
+    Tentative d'ouverture : Ouverture réussie
+    Tentative d'ouverture : Ouvrir une porte déjà ouverte est un concept qui me dépasse...mais après tout je ne suis qu'une porte
+    Tentative de franchissement : Quelqu'un franchit la porte.
+    Tentative de fermeture : Fermeture réussie
+    Tentative de franchissement : Aïe !
+    ```
+
+## Le mot clé static
+
+* Modifier la classe `Porte` pour lui ajouter une variable `static` (variable de classe) :
+
+    ```java
+    public static double hauteur;
+    ```
+    
+* Ajouter du code à votre classe `PorteTests` permettant de mettre en évidence que chaque instance de porte possède une couleur mais que lorsque l'on modifie la hauteur d'une porte, toutes les autres changent également.
+
+* Le mot clé `static` est très utilisé pour les méthodes qui ont un comportement de fonctions (au sens mathématique) :
+
+    * les mêmes entrées produisent les mêmes sorties
+    * pas de dépendance à un état de l'objet ou du programme
+    * pas de modification de l'état de l'objet ou du programme
+    * c'est le cas des fonctions mathématiques de la classe `Math` (abs, cos, floor, cf. [javadoc de la classe Math](http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html))
+
+
 
 
 ## Etudiants
@@ -210,4 +270,3 @@ public class PaquetCookies {
 ## Liste de courses
 
 
-## 
