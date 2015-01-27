@@ -24,11 +24,9 @@ public class HelloWorld{
 
 Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (vous devez avoir une session SPIRAL active pour accéder à la vidéo et utiliser firefox, chrome ou safari. Suivre le [lien pour voir la video sur SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4024274&typeMedia=false)).
 
-<video width="60%" height="100%" controls>
-  <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4024274" type="video/mp4">
-  <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025132" type="video/webm">
-Your browser does not support the video tag.
-</video>
+{% assign mp4_id = 4024274 %}
+{% assign webm_id = 4025132 %}
+{% include video.html %}
 
 
 La complétion automatique de code sous Eclipse est activée par le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Espace</kbd>.
@@ -122,12 +120,9 @@ String lineSep = System.getProperty("line.separator");
     
     * Vidéo de la manipulation à effectuer ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4025470&typeMedia=false)).
 
-
-<video width="60%" height="100%" controls>
-    <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025470" type="video/mp4">
-    <source src="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025458" type="video/webm">
-    Your browser does not support the video tag.
-</video>
+{% assign mp4_id = 4025470 %}
+{% assign webm_id = 4025458 %}
+{% include video.html %}
 
 
 * Si le résultat des tests montre un échec, corriger le code de votre méthode `isAnagram`.
@@ -261,8 +256,18 @@ public class PaquetCookies {
     * pas de modification de l'état de l'objet ou du programme
     * c'est le cas des fonctions mathématiques de la classe `Math` (abs, cos, floor, cf. [javadoc de la classe Math](http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html))
 
+---
+    
+* Créer une classe `Conversion` qui contiendra des méthodes statiques :
 
-
+    ```java
+    double toRpm(double radPerSec)
+    double toRadPerSec(double rpm)
+    double toFahrenheitDegrees(double celsiusDegrees)
+    double toCelsiusDegrees(double fahrenheitDegrees)
+    ```
+    
+Rappel : la formule reliant la température en degrés Fahrenheit à la température en degrés Celsius est Tf = ( Tc x 1.8 ) + 32
 
 ## Etudiants
 
