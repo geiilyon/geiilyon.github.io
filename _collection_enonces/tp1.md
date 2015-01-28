@@ -271,9 +271,22 @@ public class PaquetCookies {
 {% assign webm_id = 4032707 %}
 {% include video.html %}
 
+Le principe de JUnit est le suivant :
 
-<iframe src="//player.vimeo.com/video/117965721" width="500" height="313" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+* Les méthodes qui portent l'annotation `@Test` seront exécutées automatiquement par JUnit
 
+* Ces méthodes doivent contenir des assertions (*En programmation informatique, une assertion est une expression qui doit être évaluée à vrai*)
+
+* Les assertions classiques sont :
+
+    * `assertEquals(expected, actual)` : permet de comparer le résultat d'un calcul avec la valeur attendue
+    
+    * `assertEquals(expected, actual, delta)` : idem mais pour les nombres codés en flottant (`float`et `double`) pour lesquels on ne peut pas faire de tests d'égalité stricte. On vérifie ici que (expected - delta) < actual < (expected + delta)
+    
+    * `assertTrue(condition)` et `assertFalse(condition)` : vérifie qu'une condition est vraie ou fausse
+    
+* Il existe une variante
+    
 ## Liste de courses
 
 
