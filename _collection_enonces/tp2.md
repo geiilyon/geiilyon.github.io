@@ -1,21 +1,19 @@
 ---
 title: Deuxième séance
 layout: page
-excerpt: Manipulation de chaînes de caractères.
+excerpt: Exceptions, héritage et polymorphisme.
 ---
 
 # Deuxième TP
 
-## Premier exemple
+## En chantier
 
 <!-- Gestion des exceptions (programme de saisie du résultat d'une mutiplication -->
 
 ```java
-public class Tutu{
+public class EnChantier{
     public static void main(String[] args){
-        System.out.println("Tutu");
+        System.out.println("En chantier !");
     }
 }
 ```
-
-Et voila !

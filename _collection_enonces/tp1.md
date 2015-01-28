@@ -247,7 +247,7 @@ public class PaquetCookies {
     public static double hauteur;
     ```
     
-* Ajouter du code à votre classe `PorteTests` permettant de mettre en évidence que chaque instance de porte possède une couleur mais que lorsque l'on modifie la hauteur d'une porte, toutes les autres changent également.
+* Ajouter du code à votre classe `PorteTests` permettant de mettre en évidence que chaque instance de `Porte` possède une couleur mais que lorsque l'on modifie la hauteur d'une porte, toutes les autres changent également.
 
 * Le mot clé `static` est très utilisé pour les méthodes qui ont un comportement de fonctions (au sens mathématique) :
 
@@ -261,17 +261,19 @@ public class PaquetCookies {
 * Créer une classe `Conversion` qui contiendra des méthodes statiques :
 
     ```java
-    double toRpm(double radPerSec)
-    double toRadPerSec(double rpm)
-    double toFahrenheitDegrees(double celsiusDegrees)
-    double toCelsiusDegrees(double fahrenheitDegrees)
+    public static double toRpm(double radPerSec)
+    public static double toRadPerSec(double rpm)
     ```
     
-Rappel : la formule reliant la température en degrés Fahrenheit à la température en degrés Celsius est Tf = ( Tc x 1.8 ) + 32
+* Créer une classe de test unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4032708&typeMedia=false)).
 
-## Etudiants
+{% assign mp4_id = 4032708 %}
+{% assign webm_id = 4032707 %}
+{% include video.html %}
 
 
 ## Liste de courses
 
+
+## Etudiants
 
