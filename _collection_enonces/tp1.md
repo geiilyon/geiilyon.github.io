@@ -1,7 +1,7 @@
 ---
 title: Introduction
 layout: page
-excerpt: Prise en main d'Eclipse. Création de projets, classes, expérimentations sur les objets
+excerpt: Prise en main d'Eclipse. Création de projets, classes, expérimentations sur les objets.
 ---
 
 # Prise en main d'Eclipse
@@ -106,7 +106,11 @@ String lineSep = System.getProperty("line.separator");
     qui renvoie `true`si les deux mots sont des anagrammes.
     
     Utiliser les méthodes de la classe `String` ([javadoc de la classe String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html)) pour tenir compte de la présence de majuscules (qui doivent être ignorées) et pour convertir une chaîne en un tableau de caractères (`char`).
-    Pour la comparaison des lettres des deux mots, elle peut se faire en 3 lignes de code en utilisant 2 méthodes de la classe `Arrays` ([javadoc de la classe Arrays](http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)).
+    Pour la comparaison des lettres des deux mots, elle peut se faire en 3 lignes de code en utilisant 2 méthodes de la classe `Arrays` ([javadoc de la classe Arrays](http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)). La classe `Arrays` contient des méthodes statiques destinées à manipuler les tableaux (tri, comparaison, remplissage, ...). Ces méthodes s'appellent directement sur la classe. Exemple de remplissage d'un tableau avec des 0 :
+    
+    ```java
+    Arrays.fill(tableau,0);
+    ```
     
 * Créer une nouvelle classe `AnagramsTests` qui contiendra une méthode `main` permettant de valider le bon fonctionnement de la méthode `isAnagram`.
 
@@ -265,7 +269,7 @@ public class PaquetCookies {
     public static double toRadPerSec(double rpm)
     ```
     
-* Créer une classe de test unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4032708&typeMedia=false)).
+* Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4032708&typeMedia=false)).
 
 {% assign mp4_id = 4032708 %}
 {% assign webm_id = 4032707 %}
@@ -285,10 +289,215 @@ Le principe de JUnit est le suivant :
     
     * `assertTrue(condition)` et `assertFalse(condition)` : vérifie qu'une condition est vraie ou fausse
     
-* Il existe une variante
+    * Il existe une variante qui utilise la syntaxe `assertThat` qui donne des tests plus lisibles mais qui est plus délicate à mettre en oeuvre.
+    
     
 ## Liste de courses
 
+### Première partie
 
-## Etudiants
+Dans cette partie, nous allons mettre en oeuvre la liste de courses qui a été vue en [TD](/cours/) en ajoutant quelques méthodes et une classe pour en faire une petite application.
+
+* Créer les classes `ShoppingList`et `ShoppingListItem` s'appuyant sur la classe `ArrayList` 
+
+    * Rendre les variables d'instances privées
+    * Ajouter des accesseurs (*getter* et *setter*), ces méthodes peuvent être créées automatiquement dans Eclipse (menu *Source* puis *Generate Getters and Setters...*)
+  
+    ![](/img/CDC_ShoppingList.png)
+
+
+    ![](/img/EclipseUmlLegend.png)
+
+* Ecrire une classe `ShoppingListTest`contenant une méthode `main`dans laquelle vous validerez la possibilité de créer plusieurs listes et d'y ajouter/enlever des items, de les cocher/décocher. Vous pourrez utiliser le debugger pour valider le bon fonctionnement du programme.
+
+
+### Deuxième partie : application en mode console
+
+* Créer une classe `ShoppingListApp` qui permettra de gérer une liste de courses en ligne de commande. L'extrait suivant donne un exemple de déroulement du programme.
+
+Le programme affiche le contenu de la liste et un menu.
+
+```
+--------------------------------------------------------------------------------------------
+La liste ne contient aucun élément
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+```
+L'utilisateur tape + puis Entrée. Le système affiche alors :
+
+```
+Que voulez-vous ajouter à la liste de courses ?
+````
+
+L'utilisateur saisit Lait puis Entrée. Le système affiche alors :
+
+```
+--------------------------------------------------------------------------------------------
+1 Lait [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+```
+
+Un nouvel appui sur + provoque l'affichage suivant suivi d'une alternance de messages et de saisies :
+
+```
+Que voulez-vous ajouter à la liste de courses ?
+Beurre
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
++
+Que voulez-vous ajouter à la liste de courses ?
+Eau
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x3
+Entrée invalide
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
+3
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [X]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
+3
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
+2
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [X]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+-
+Saisir le numéro de l'item que vous voulez supprimer (0 si aucun) ?
+2
+--------------------------------------------------------------------------------------------
+1 Lait [ ]
+2 Eau  [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+q
+Fermeture de l'application
+```
+
+* On pourra utiliser indifféremment des minuscules et majuscules (x ou X, q ou Q)
+* Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in` mais les méthodes disponibles ne sont pas commodes. On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
+    * On crée un scanner sur l'entrée standard de la façon suivante :
+    
+    ```java
+    Scanner sc = new Scanner(System.in);
+    ```
+    
+    * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en entier cela provoque une exception.
+    
+    * `sc.nextLine()` renvoie une objet de type String contenant le reste de la ligne saisie jusqu'au caractère de fin de ligne (qui n'est pas retourné par la méthode). Utilisé pour :
+    
+        * lire une chaîne de caractère
+        
+        * purger le reste de la ligne après avoir lu un int ou un long par exemple
+          
+    
+* Pour formatter les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formattage semblable au printf ([description des formatteurs](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
+
+* La comparaison de chaînes de caractères doit se faire avec la méthode `equals` plutôt qu'avec l'opérateur `==`. En effet ce dernier compare les références (en quelques sorte les adresses en mémoire) alors que la méthode `equals` compare le contenu des chaînes de caractères
+
+* Le squelette de la classe est le suivant, remplacer les `...` pour obtenir le comportement décrit.
+
+```java
+
+import java.util.Scanner;
+
+public class ShoppingListApp {
+
+	private static final Scanner sc = new Scanner(System.in);
+	private static final ShoppingList list...;
+
+	public static void main(String[] args) {
+		// Boucle d'interaction
+		while (true) {
+			displayListContent();
+			displayMenu();
+			String input = sc.nextLine();
+			input = input.toLowerCase();
+			if (input.equals(...)) {
+				System.out.println("Fermeture de l'application");
+				...
+			} else {
+				processInput(input);
+			}
+		}
+	}
+
+	private static void displayListContent() {
+		...
+	}
+
+	private static String listContentString(ShoppingList list) {
+		String listContent = "";
+		...
+		return listContent;
+	}
+
+	private static void displayMenu() {
+		System.out.println("+ : Ajouter un item \t - : enlever un item \t x : (Dé)cocher un item \t q : quitter");
+	}
+
+	private static void processInput(String input) {
+		switch (input) {
+		case "+":
+			newItemDialog();
+			break;
+
+		case "-":
+			removeItemDialog();
+			break;
+
+		case "x":
+			toggleCheckMarkDialog();
+			break;
+
+		default:
+			System.out.println("Entrée invalide");
+			break;
+		}
+	}
+
+	private static void newItemDialog() {
+		...
+	}
+
+	private static void removeItemDialog() {
+		...
+	}
+
+	private static void toggleCheckMarkDialog() {
+		...
+	}
+
+}
+```
+Remarque : en Java on peut faire un `switch` sur une chaîne de caractères.
 
