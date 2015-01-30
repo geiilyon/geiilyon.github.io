@@ -433,7 +433,7 @@ Fermeture de l'application
     
     * `sc.nextLine()` renvoie une objet de type String contenant le reste de la ligne saisie jusqu'au caractère de fin de ligne (qui n'est pas retourné par la méthode). Utilisé pour :
     
-        * lire une chaîne de caractère.
+        * lire une chaîne de caractères.
         
         * purger le reste de la ligne après avoir lu un int ou un long par exemple. En effet `sc.nextInt()`ne consomme que l'entier et pas le caractère fin de ligne.
         
