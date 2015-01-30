@@ -28,6 +28,12 @@ Suivez les instructions présentes dans la vidéo suivante pour agencer les fen�
 {% assign webm_id = 4025132 %}
 {% include video.html %}
 
+Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante [lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4058934&typeMedia=false).
+
+{% assign mp4_id = 4058934 %}
+{% assign webm_id = 4058935 %}
+{% include video.html %}
+
 
 La complétion automatique de code sous Eclipse est activée par le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Espace</kbd>.
 
@@ -39,9 +45,9 @@ Il existe de nombreux *templates* pour compléter automatiquement des blocs de c
 
 * `new`
 
-* `foreach`
+* `foreach`, `for`
 
-* `ifelse`
+* `if`, `ifelse`
 
 * `switch`
 
@@ -75,7 +81,7 @@ String phraseFr = "Portez ce vieux whisky au juge blond qui fume";
 
 ### Exercice 2
 
-* Créer une nouvelle classe `ExperimentationChaines2` qui devra afficher le même résultat mais en concaténant les 4 chaînes dans une seule chaîne qui contiendra le résultat et sera passée à une fenêtre de dialogue pour l’affichage.
+* Créer une nouvelle classe `ExperimentationChaines2` qui devra afficher le même résultat mais en concaténant les 4 chaînes dans **une seule chaîne** qui contiendra le résultat et sera passée à une fonction pour affichage (console ou fenêtre de dialogue).
 
     Le retour à la ligne est codé différemment selon les systèmes d’exploitation :
 
@@ -130,7 +136,22 @@ String lineSep = System.getProperty("line.separator");
 
 
 * Si le résultat des tests montre un échec, corriger le code de votre méthode `isAnagram`.
+
+Le principe de JUnit est le suivant :
+
+* Les méthodes qui portent l'annotation `@Test` seront exécutées automatiquement par JUnit
+
+* Ces méthodes doivent contenir des assertions (*En programmation informatique, une assertion est une expression qui doit être évaluée à vrai*)
+
+* Les assertions classiques sont :
+
+    * `assertEquals(expected, actual)` : permet de comparer le résultat d'un calcul avec la valeur attendue
     
+    * `assertEquals(expected, actual, delta)` : idem mais pour les nombres codés en flottant (`float`et `double`) pour lesquels on ne peut pas faire de tests d'égalité stricte. On vérifie ici que (expected - delta) < actual < (expected + delta)
+    
+    * `assertTrue(condition)` et `assertFalse(condition)` : vérifie qu'une condition est vraie ou fausse
+    
+    * Il existe une variante qui utilise la syntaxe `assertThat` qui donne des tests plus lisibles mais qui est plus délicate à mettre en oeuvre.
     
 ## Passage par valeur / références
 
@@ -274,23 +295,6 @@ public class PaquetCookies {
 {% assign mp4_id = 4032708 %}
 {% assign webm_id = 4032707 %}
 {% include video.html %}
-
-Le principe de JUnit est le suivant :
-
-* Les méthodes qui portent l'annotation `@Test` seront exécutées automatiquement par JUnit
-
-* Ces méthodes doivent contenir des assertions (*En programmation informatique, une assertion est une expression qui doit être évaluée à vrai*)
-
-* Les assertions classiques sont :
-
-    * `assertEquals(expected, actual)` : permet de comparer le résultat d'un calcul avec la valeur attendue
-    
-    * `assertEquals(expected, actual, delta)` : idem mais pour les nombres codés en flottant (`float`et `double`) pour lesquels on ne peut pas faire de tests d'égalité stricte. On vérifie ici que (expected - delta) < actual < (expected + delta)
-    
-    * `assertTrue(condition)` et `assertFalse(condition)` : vérifie qu'une condition est vraie ou fausse
-    
-    * Il existe une variante qui utilise la syntaxe `assertThat` qui donne des tests plus lisibles mais qui est plus délicate à mettre en oeuvre.
-    
     
 ## Liste de courses
 
@@ -298,15 +302,29 @@ Le principe de JUnit est le suivant :
 
 Dans cette partie, nous allons mettre en oeuvre la liste de courses qui a été vue en [TD](/cours/) en ajoutant quelques méthodes et une classe pour en faire une petite application.
 
-* Créer les classes `ShoppingList`et `ShoppingListItem` s'appuyant sur la classe `ArrayList` 
+Afin de structurer un peu les choses, nous allons regrouper les classes de cette petite application dans un package. Les packages servent à constituer des groupes de classes (qui se traduisent par des répertoires différents). Lorsque l'on veut utiliser des classes situées dans un autre package on utilise la directive `import`. Exemple :
 
-    * Rendre les variables d'instances privées
-    * Ajouter des accesseurs (*getter* et *setter*), ces méthodes peuvent être créées automatiquement dans Eclipse (menu *Source* puis *Generate Getters and Setters...*)
+```java
+import javax.swing.JOptionPane;
+```
+
+La ligne précédente nous indique que l'on importe la classe `JOptionPane` située dans le package `javax.swing`.
+
+Pour créer un package, il faut cliquer sur l'icône ![Icone package](/img/package_obj.png). Nous allons créer ici un package **shopping** (les noms de packages doivent être en minuscules, pour éviter que plusieurs utilisateurs utilisent le même nom de package la recommandation est d'utiliser l'inverse du nom de domaine de l'entreprise. Ex : `fr.univ.lyon1.shopping`). Si le package est sélectionné lors de la création d'une classe, celle-ci sera automatiquement ajoutée dans ce package. Sinon il est possible de choisir le package dans la boîte de dialogue de création de la classe. Quand une classe fait partie d'un package, son fichier source commence par une déclaration de package :
+
+```java
+package shopping;
+```
+
+Il est toujours possible a posteriori de faire glisser une classe vers un package dans eclipse. Les déclarations de package et les imports sont alors automatiquement mis à jour.
+
+* Créer les classes `ShoppingList`et `ShoppingListItem` s'appuyant sur la classe `ArrayList` respectant le diagramme de classe ce-dessous
   
     ![](/img/CDC_ShoppingList.png)
 
-
     ![](/img/EclipseUmlLegend.png)
+
+    * On utilise des variables d'instances privées ainsi que des accesseurs (*getters* et *setters*) pour y accéder (**encapsulation**). Les accesseurs peuvent être créées automatiquement dans Eclipse (menu *Source* puis *Generate Getters and Setters...*)
 
 * Ecrire une classe `ShoppingListTest`contenant une méthode `main`dans laquelle vous validerez la possibilité de créer plusieurs listes et d'y ajouter/enlever des items, de les cocher/décocher. Vous pourrez utiliser le debugger pour valider le bon fonctionnement du programme.
 
@@ -322,13 +340,13 @@ Le programme affiche le contenu de la liste et un menu.
 La liste ne contient aucun élément
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 ```
-L'utilisateur tape + puis Entrée. Le système affiche alors :
+L'utilisateur tape <kbd>+</kbd> puis <kbd>Entrée</kbd>. Le système affiche alors :
 
 ```
 Que voulez-vous ajouter à la liste de courses ?
 ````
 
-L'utilisateur saisit Lait puis Entrée. Le système affiche alors :
+L'utilisateur saisit "Lait" puis appuie sur <kbd>Entrée</kbd>. Le système affiche :
 
 ```
 --------------------------------------------------------------------------------------------
@@ -337,7 +355,7 @@ L'utilisateur saisit Lait puis Entrée. Le système affiche alors :
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 ```
 
-Un nouvel appui sur + provoque l'affichage suivant suivi d'une alternance de messages et de saisies :
+Un nouvel appui sur <kbd>+</kbd> provoque l'affichage ci-dessous, suivi d'une alternance de saisies et de messages :
 
 ```
 Que voulez-vous ajouter à la liste de courses ?
@@ -404,25 +422,31 @@ Fermeture de l'application
 ```
 
 * On pourra utiliser indifféremment des minuscules et majuscules (x ou X, q ou Q)
-* Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in` mais les méthodes disponibles ne sont pas commodes. On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
+* Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in`. Cet objet est de type `InputStream` et les méthodes disponibles ne sont pas très commodes (lecture brute d'octets). On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
     * On crée un scanner sur l'entrée standard de la façon suivante :
     
     ```java
     Scanner sc = new Scanner(System.in);
     ```
     
-    * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en entier cela provoque une exception.
+    * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en entier cela provoque une exception. On peut tester si le prochain élément saisi est un int avant d'appeler cette méthode en utilisant `sc.hasNextInt()`.
     
     * `sc.nextLine()` renvoie une objet de type String contenant le reste de la ligne saisie jusqu'au caractère de fin de ligne (qui n'est pas retourné par la méthode). Utilisé pour :
     
-        * lire une chaîne de caractère
+        * lire une chaîne de caractère.
         
-        * purger le reste de la ligne après avoir lu un int ou un long par exemple
+        * purger le reste de la ligne après avoir lu un int ou un long par exemple. En effet `sc.nextInt()`ne consomme que l'entier et pas le caractère fin de ligne.
+        
+        ![](/img/scanner.png)
           
     
 * Pour formatter les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formattage semblable au printf ([description des formatteurs](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
 
 * La comparaison de chaînes de caractères doit se faire avec la méthode `equals` plutôt qu'avec l'opérateur `==`. En effet ce dernier compare les références (en quelques sorte les adresses en mémoire) alors que la méthode `equals` compare le contenu des chaînes de caractères
+
+* A la fin de l'exécution de l'exemple précédent, on a le diagramme d'objets suivant (qui représente les objets créés en mémoire, leurs associations, ainsi que la valeur de leurs champs principaux). Sur cette représentation chaque objet est identifié de la manière suivante : `nomObjet:ClasseObjet`. On peut noter sur l'association le nom de la variable d'instance par laquelle se fait le lien entre les objets.
+
+![](/img/ShoppingListObjectDiagram.png)
 
 * Le squelette de la classe est le suivant, remplacer les `...` pour obtenir le comportement décrit.
 
@@ -432,16 +456,21 @@ import java.util.Scanner;
 
 public class ShoppingListApp {
 
-	private static final Scanner sc = new Scanner(System.in);
-	private static final ShoppingList list...;
+	private Scanner sc = new Scanner(System.in);
+	private ShoppingList list...;
+    
+    public static void main(String[] args) {
+		ShoppingListApp app = new ShoppingListApp();
+		app.launch();
+	}
 
-	public static void main(String[] args) {
+	private void launch() {
 		// Boucle d'interaction
 		while (true) {
 			displayListContent();
 			displayMenu();
 			String input = sc.nextLine();
-			input = input.toLowerCase();
+			...
 			if (input.equals(...)) {
 				System.out.println("Fermeture de l'application");
 				...
@@ -451,21 +480,22 @@ public class ShoppingListApp {
 		}
 	}
 
-	private static void displayListContent() {
+
+	private void displayListContent() {
 		...
 	}
 
-	private static String listContentString(ShoppingList list) {
+	private String listContentString(ShoppingList list) {
 		String listContent = "";
 		...
 		return listContent;
 	}
 
-	private static void displayMenu() {
+	private void displayMenu() {
 		System.out.println("+ : Ajouter un item \t - : enlever un item \t x : (Dé)cocher un item \t q : quitter");
 	}
 
-	private static void processInput(String input) {
+	private void processInput(String input) {
 		switch (input) {
 		case "+":
 			newItemDialog();
@@ -485,15 +515,15 @@ public class ShoppingListApp {
 		}
 	}
 
-	private static void newItemDialog() {
+	private void newItemDialog() {
 		...
 	}
 
-	private static void removeItemDialog() {
+	private void removeItemDialog() {
 		...
 	}
 
-	private static void toggleCheckMarkDialog() {
+	private void toggleCheckMarkDialog() {
 		...
 	}
 
