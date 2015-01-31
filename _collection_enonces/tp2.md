@@ -1,10 +1,10 @@
 ---
-title: Deuxième séance
+title: En chantier
 layout: page
 excerpt: Exceptions, héritage et polymorphisme.
 ---
 
-# Deuxième TP
+# Suite
 
 ## En chantier
 
