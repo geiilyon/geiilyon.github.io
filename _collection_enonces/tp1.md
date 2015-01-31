@@ -254,7 +254,7 @@ public class PaquetCookies {
 
     ```
 
-* Compléter le code source des méthodes de la classe `Porte` et créer une classe de tests `PorteTests`permettant de produire l'affichage suivant sur la console :
+* Compléter le code source des méthodes de la classe `Porte` et créer une classe de tests `PorteTests`permettant de produire l'affichage suivant sur la console en ne créant qu'une seule porte et sans accéder directement à la variable d'instance estOuverte :
 
     ```
     Tentative de franchissement : Aïe !
