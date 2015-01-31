@@ -228,6 +228,8 @@ public class PaquetCookies {
 * Créer une nouvelle classe `Porte` correspondant au diagramme de classe suivant :
 
     ![Diagramme UML Porte](/img/Porte_UML.png)
+    
+    Ce diagramme correspond au squelette de code source suivant. On peut noter que le constructeur sans argument est généré automatiquement par le compilateur java lorsqu'il ne trouve aucun constructeur.
 
     ```java
 
