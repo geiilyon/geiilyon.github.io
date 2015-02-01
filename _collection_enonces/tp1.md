@@ -487,12 +487,6 @@ public class ShoppingListApp {
 		...
 	}
 
-	private String listContentString(ShoppingList list) {
-		String listContent = "";
-		...
-		return listContent;
-	}
-
 	private void displayMenu() {
 		System.out.println("+ : Ajouter un item \t - : enlever un item \t x : (Dé)cocher un item \t q : quitter");
 	}
