@@ -357,7 +357,7 @@ L'utilisateur saisit "Lait" puis appuie sur <kbd>Entrée</kbd>. Le système affi
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 ```
 
-Un nouvel appui sur <kbd>+</kbd> provoque l'affichage ci-dessous, suivi d'une alternance de saisies et de messages :
+Une nouvelle séquence de saisies (<kbd>+</kbd>, <kbd>Entrée</kbd>, "Beurre", <kbd>Entrée</kbd>, <kbd>+</kbd>, <kbd>Entrée</kbd>, "Eau", <kbd>Entrée</kbd>, <kbd>x3</kbd>, <kbd>Entrée</kbd>, ...) provoquerait l'affichage ci-dessous :
 
 ```
 Que voulez-vous ajouter à la liste de courses ?
