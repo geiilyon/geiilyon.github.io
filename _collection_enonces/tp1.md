@@ -525,5 +525,5 @@ public class ShoppingListApp {
 
 }
 ```
-Remarque : en Java on peut faire un `switch` sur une chaîne de caractères.
+Remarque : en Java, à partir de la version 7, on peut faire un `switch` sur une chaîne de caractères.
 
