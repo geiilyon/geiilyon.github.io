@@ -385,7 +385,7 @@ Entrée invalide
 
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 x
-Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun)
 3
 --------------------------------------------------------------------------------------------
 1 Lait   [ ]
@@ -394,7 +394,7 @@ Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
 
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 x
-Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun)
 3
 --------------------------------------------------------------------------------------------
 1 Lait   [ ]
@@ -403,7 +403,7 @@ Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
 
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 x
-Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun)
 2
 --------------------------------------------------------------------------------------------
 1 Lait   [ ]
@@ -412,7 +412,7 @@ Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun) ?
 
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 -
-Saisir le numéro de l'item que vous voulez supprimer (0 si aucun) ?
+Saisir le numéro de l'item que vous voulez supprimer (0 si aucun)
 2
 --------------------------------------------------------------------------------------------
 1 Lait [ ]
@@ -450,7 +450,7 @@ Fermeture de l'application
 
 ![](/img/ShoppingListObjectDiagram.png)
 
-* Le squelette de la classe est le suivant, remplacer les `...` pour obtenir le comportement décrit.
+* Le squelette de la classe est le suivant, remplacer les `...` pour obtenir le comportement décrit. Pour chaque méthode faire un organigramme et le faire valider par l'enseignant.
 
 ```java
 
