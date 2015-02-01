@@ -312,7 +312,7 @@ import javax.swing.JOptionPane;
 
 La ligne précédente nous indique que l'on importe la classe `JOptionPane` située dans le package `javax.swing`.
 
-Pour créer un package, il faut cliquer sur l'icône ![Icone package](/img/package_obj.png). Nous allons créer ici un package **shopping**. Les noms de packages doivent être en minuscules. Pour éviter que plusieurs utilisateurs utilisent le même nom de package, la recommandation est de débuter le nom du package par l'inverse du nom de domaine de l'entreprise (Ex : `fr.univ_lyon1.iut.geii.shopping`). Si le package est sélectionné lors de la création d'une classe, celle-ci sera automatiquement ajoutée dans ce package. Sinon il est possible de choisir le package dans la boîte de dialogue de création de la classe. Quand une classe fait partie d'un package, son fichier source commence par une déclaration de package :
+Pour créer un package, il faut cliquer sur l'icône ![Icone package](/img/package_obj.png). Nous allons créer ici un package **shopping**. Les noms de packages doivent être en minuscules. Pour éviter que plusieurs utilisateurs utilisent le même nom de package, la recommandation est de débuter le nom du package par l'inverse du nom de domaine de l'entreprise (Exemple : `fr.univ_lyon1.iut.geii.shopping`). Si le package est sélectionné lors de la création d'une classe, celle-ci sera automatiquement ajoutée dans ce package. Sinon il est possible de choisir le package dans la boîte de dialogue de création de la classe. Quand une classe fait partie d'un package, son fichier source commence par une déclaration de package :
 
 ```java
 package shopping;
@@ -431,7 +431,7 @@ Fermeture de l'application
     Scanner sc = new Scanner(System.in);
     ```
     
-    * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en entier cela provoque une exception. On peut tester si le prochain élément saisi est un int avant d'appeler cette méthode en utilisant `sc.hasNextInt()`.
+    * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en un entier cela provoque une exception. On peut tester si le prochain élément saisi est un int avant d'appeler cette méthode en utilisant `sc.hasNextInt()`.
     
     * `sc.nextLine()` renvoie une objet de type String contenant le reste de la ligne saisie jusqu'au caractère de fin de ligne (qui n'est pas retourné par la méthode). Utilisé pour :
     
