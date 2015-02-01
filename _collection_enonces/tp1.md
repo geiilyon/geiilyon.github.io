@@ -446,7 +446,7 @@ Fermeture de l'application
 
 * La comparaison de chaînes de caractères doit se faire avec la méthode `equals` plutôt qu'avec l'opérateur `==`. En effet ce dernier compare les références (en quelques sorte les adresses en mémoire) alors que la méthode `equals` compare le contenu des chaînes de caractères
 
-* A la fin de l'exécution de l'exemple précédent, on a le diagramme d'objets suivant (qui représente les objets créés en mémoire, leurs associations, ainsi que la valeur de leurs champs principaux). Sur cette représentation chaque objet est identifié de la manière suivante : `nomObjet:ClasseObjet`. On peut noter sur l'association le nom de la variable d'instance par laquelle se fait le lien entre les objets.
+* A la fin de l'exécution de l'exemple précédent, on a le diagramme d'objets suivant (qui représente les objets créés en mémoire, leurs associations, ainsi que la valeur de leurs champs principaux). Sur cette représentation chaque objet est identifié de la manière suivante : `nomObjet:ClasseObjet`. On peut noter sur l'association le nom de la variable d'instance par laquelle se fait le lien entre les objets. Quand les objets sont stockés dans une liste on ne dispose pas de variable ayant un nom pour accéder à un élément (on note alors `:ClasseObjet`et on fait apparaître plusieurs fois le nom de la variable référençant la collection à côté des associations).
 
 ![](/img/ShoppingListObjectDiagram.png)
 
