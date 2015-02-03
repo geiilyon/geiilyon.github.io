@@ -12,6 +12,8 @@ Lors du lancement, Eclipse demande de choisir/créer un *workspace*. Ce dossier 
 
 Toutes les classes seront pour l'instant créées dans le package par défaut (*default package*).
 
+---
+
 ## L'incontournable Hello World !
 
 ```java
@@ -51,6 +53,7 @@ Il existe de nombreux *templates* pour compléter automatiquement des blocs de c
 
 * `switch`
 
+---
 
 ## Expérimentations sur les chaînes de caractères
 
@@ -152,7 +155,9 @@ Le principe de JUnit est le suivant :
     * `assertTrue(condition)` et `assertFalse(condition)` : vérifie qu'une condition est vraie ou fausse
     
     * Il existe une variante qui utilise la syntaxe `assertThat` qui donne des tests plus lisibles mais qui est plus délicate à mettre en oeuvre.
-    
+  
+---  
+  
 ## Passage par valeur / références
 
 * Créer une nouvelle classe `PassageParValeur` qui contiendra le code suivant :
@@ -222,6 +227,7 @@ public class PaquetCookies {
 
 * A l'aide du debugger, analyser le comportement de ce programme et interpréter le résultat.
 
+---
 
 ## Une histoire de portes
 
@@ -266,6 +272,8 @@ public class PaquetCookies {
     Tentative de franchissement : Aïe !
     ```
 
+---
+
 ## Le mot clé static
 
 * Modifier la classe `Porte` pour lui ajouter une variable `static` (variable de classe) :
@@ -297,6 +305,8 @@ public class PaquetCookies {
 {% assign mp4_id = 4032708 %}
 {% assign webm_id = 4032707 %}
 {% include video.html %}
+
+---
     
 ## Liste de courses
 
