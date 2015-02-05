@@ -29,7 +29,7 @@ Suivez les instructions présentes dans la vidéo suivante pour agencer les fen�
 {% assign youtube_id = 'E4fJLz6QNLs' %}
 {% include video.html %}
 
-Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante :
+Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante (Remarque : penser à choisir une qualité HD 1080p dans les paramètres ![Paramètres](/img/engrenage.png)).
 
 {% assign youtube_id = '9D9ZXfThZE8' %}
 {% include video.html %}
