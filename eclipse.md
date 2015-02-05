@@ -7,12 +7,10 @@ permalink: /eclipse/
 
 # Utilisation du debugger
 
-Exemple d'utilisation du debugger sur l'exemple vu en cours des références sur des objets de type Porte ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4025592&typeMedia=false)).
+Exemple d'utilisation du debugger sur l'exemple vu en cours des références sur des objets de type Porte.
 
-{% assign mp4_id = 4025592 %}
-{% assign webm_id = 4025593 %}
+{% assign youtube_id = 'oU6aRTBzKeY' %}
 {% include video.html %}
-
 
 Eclipse utilise le concept de *perspective* : dans la vidéo ci-dessus, le lancement du debugger provoque le passage dans la perspective debug et à la fin de la session de debuggage on revient à la perspective *Java*. Une perspective correspond à un ensemble de vues adaptées à une activité : développement, debuggage, gestion de versions, recherche de bugs par analyse statique du code...
 

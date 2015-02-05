@@ -203,3 +203,24 @@ pre {
         }
     }
 }
+
+/**
+* Video embed
+*/
+.responsive-video {
+position: relative;
+padding-bottom: 56.25%;
+padding-top: 60px; 
+overflow: hidden;
+}
+
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+position: absolute;
+top: 0;
+left: 0;
+width: 80%;
+height: 80%;
+}

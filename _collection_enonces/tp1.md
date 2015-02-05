@@ -24,18 +24,15 @@ public class HelloWorld{
 }
 ```
 
-Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (vous devez avoir une session SPIRAL active pour accéder à la vidéo et utiliser firefox, chrome ou safari. Suivre le [lien pour voir la video sur SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4024274&typeMedia=false)).
+Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse.
 
-{% assign mp4_id = 4024274 %}
-{% assign webm_id = 4025132 %}
+{% assign youtube_id = 'E4fJLz6QNLs' %}
 {% include video.html %}
 
-Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante [lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4058934&typeMedia=false).
+Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante :
 
-{% assign mp4_id = 4058934 %}
-{% assign webm_id = 4058935 %}
+{% assign youtube_id = '9D9ZXfThZE8' %}
 {% include video.html %}
-
 
 La complétion automatique de code sous Eclipse est activée par le raccourci clavier <kbd>Ctrl</kbd>+<kbd>Espace</kbd>.
 
@@ -131,11 +128,11 @@ String lineSep = System.getProperty("line.separator");
     
     * Exécuter ce fichier. Il s'agit d'un fichier contenant des tests **JUnit** (framework de tests unitaires). Il est reconnu automatiquement par Eclipse comme tel et est exécuté par le moteur de tests unitaires qui affiche ensuite les résultats des tests dans une fenêtre dédiée.
     
-    * Vidéo de la manipulation à effectuer ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4025470&typeMedia=false)).
+    * Vidéo de la manipulation à effectuer :
 
-{% assign mp4_id = 4025470 %}
-{% assign webm_id = 4025458 %}
-{% include video.html %}
+        {% assign youtube_id = 'Esf6rkbPocA' %}
+        {% include video.html %}
+
 
 
 * Si le résultat des tests montre un échec, corriger le code de votre méthode `isAnagram`.
@@ -300,11 +297,10 @@ public class PaquetCookies {
     public static double toRadPerSec(double rpm)
     ```
     
-* Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante ([lien SPIRAL](http://spiralconnect.univ-lyon1.fr/webapp/player/HtmlVideoPlayer.html?idMedia=4032708&typeMedia=false)).
+* Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante :
 
-{% assign mp4_id = 4032708 %}
-{% assign webm_id = 4032707 %}
-{% include video.html %}
+    {% assign youtube_id = 'ToMNhUUrumc' %}
+    {% include video.html %}
 
 ---
     
