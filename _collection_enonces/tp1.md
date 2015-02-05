@@ -24,12 +24,12 @@ public class HelloWorld{
 }
 ```
 
-Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse.
+Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (Remarque : pensez à choisir une qualité HD 1080p dans les paramètres ![Paramètres](/img/engrenage.png)).
 
 {% assign youtube_id = 'E4fJLz6QNLs' %}
 {% include video.html %}
 
-Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante (Remarque : penser à choisir une qualité HD 1080p dans les paramètres ![Paramètres](/img/engrenage.png)).
+Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante.
 
 {% assign youtube_id = '9D9ZXfThZE8' %}
 {% include video.html %}
