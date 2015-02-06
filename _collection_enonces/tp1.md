@@ -52,9 +52,9 @@ Il existe de nombreux *templates* pour compléter automatiquement des blocs de c
 
 ---
 
-## Expérimentations sur les chaînes de caractères
+# Expérimentations sur les chaînes de caractères
 
-### Exercice 1
+## Exercice 1
 
 On désire créer un programme affichant sur la console le texte suivant :
 
@@ -79,7 +79,7 @@ String phraseFr = "Portez ce vieux whisky au juge blond qui fume";
 
 * Construire l’affichage souhaité en appelant `System.out.println` pour chacune des 4 lignes à afficher.
 
-### Exercice 2
+## Exercice 2
 
 * Créer une nouvelle classe `ExperimentationChaines2` qui devra afficher le même résultat mais en concaténant les 4 chaînes dans **une seule chaîne** qui contiendra le résultat et sera passée à une fonction pour affichage (console ou fenêtre de dialogue).
 
@@ -101,7 +101,7 @@ String lineSep = System.getProperty("line.separator");
 
 * Remplacer l’utilisation de `System.out.println` par `JOptionPane.showMessageDialog(null,message);` où message est une variable de type `String` contenant le message à afficher. Vous aurez besoin d’importer la classe `JOptionPane` (utiliser les suggestions de résolution d’erreur d’Eclipse en cliquant sur la petite croix rouge en début de ligne).
 
-### Exercice 3 - Anagrammes
+## Exercice 3 - Anagrammes
 
 * Créer une nouvelle classe `Anagrams` qui contiendra une méthode : 
 
@@ -155,7 +155,7 @@ Le principe de JUnit est le suivant :
   
 ---  
   
-## Passage par valeur / références
+# Passage par valeur / références
 
 * Créer une nouvelle classe `PassageParValeur` qui contiendra le code suivant :
 
@@ -226,7 +226,7 @@ public class PaquetCookies {
 
 ---
 
-## Une histoire de portes
+# Une histoire de portes
 
 * Créer une nouvelle classe `Porte` correspondant au diagramme de classe suivant :
 
@@ -271,7 +271,7 @@ public class PaquetCookies {
 
 ---
 
-## Le mot clé static
+# Le mot clé static
 
 * Modifier la classe `Porte` pour lui ajouter une variable `static` (variable de classe) :
 
@@ -304,9 +304,9 @@ public class PaquetCookies {
 
 ---
     
-## Liste de courses
+# Liste de courses
 
-### Première partie
+## Première partie
 
 Dans cette partie, nous allons mettre en oeuvre la liste de courses qui a été vue en [TD](/cours/) en ajoutant quelques méthodes et une classe pour en faire une petite application.
 
@@ -337,7 +337,7 @@ Il est toujours possible a posteriori de faire glisser une classe vers un packag
 * Ecrire une classe `ShoppingListTest`contenant une méthode `main`dans laquelle vous validerez la possibilité de créer plusieurs listes et d'y ajouter/enlever des items, de les cocher/décocher. Vous pourrez utiliser le debugger pour valider le bon fonctionnement du programme.
 
 
-### Deuxième partie : application en mode console
+## Deuxième partie : application en mode console
 
 * Créer une classe `ShoppingListApp` qui permettra de gérer une liste de courses en ligne de commande. L'extrait suivant donne un exemple de déroulement du programme.
 
