@@ -205,11 +205,10 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
 ---
 
-# 
+# Exercice : étudiants
 
-### Tous les objets héritent d'Object
-`toString()` `equals`
+* Créer une classe `Etudiant` et deux sous-classes `BonEtudiant`et `MauvaisEtudiant`conformément au diagramme ci-dessous
 
-### Les interfaces
-`abstract` `interface` `implements`
-`Comparable`
+
+* Remarque importante : la classe Etudiant n'a pas de constructeur par défaut (sans argument), hors lors de leur instanciation, les sous-classes doivent appeler le constructeur de leur super-classe. Le compilateur Java ne rajoute ces appels que pour les constructeurs sans argument, dans le cas contraire il faut créer ces constructeurs explicitement et faire en sorte qu'ils délèguent le travail au super-constructeur approprié.
+
