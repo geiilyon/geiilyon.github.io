@@ -214,7 +214,7 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
     
 * Remarque importante : la classe Etudiant n'a pas de constructeur par défaut (sans argument). Or, lors de leur instanciation, les sous-classes doivent appeler le constructeur de leur super-classe. Le compilateur Java ne rajoute ces appels que pour les constructeurs sans argument. Dans le cas contraire, il faut créer des constructeurs explicitement et faire en sorte qu'ils délèguent le travail au super-constructeur approprié.
 
-* La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes. Le code qui décrit la logique de l'algorithme n'est pas dupliqué certaines étapes peuvent être spécialisée par les sous-classes.
+* La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes (les versions à redéfinir se contenteront de retourner 0). Le code qui décrit la logique de l'algorithme n'est pas dupliqué certaines étapes peuvent être spécialisée par les sous-classes.
 
     ```java
         public void reagirAUneNote(double note) {
@@ -255,6 +255,28 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
 * Compléter les classes et tester.
 
-* 
-        
-    
+---
+
+# Classes abstraites et interfaces
+
+Dans l'exemple précédent les méthodes `getSeuilCool()`, `getSeuilLoose()` et `getSeuilPasPire()` avaient besoin d'être définies dans la classe Etudiant seulement dans le but d'être redéfinies dans les sous-classes. Dans ce cas là, pour ne pas être obligé de fournir une implémentation, on peut déclarer ces méthodes comme étant abstraites (`abstract`) :
+
+```java
+    abstract protected double getSeuilLoose();
+```
+
+Lorsque l'on déclare une méthode abstraite, on ne fournit pas de corps à la méthode (les sous-classes se chargeront de l'implémenter).
+
+Dès lors qu'elle contient une méthode abstraite une classe doit elle aussi être déclarée abstraite :
+
+```java
+    public abstract class Etudiant
+```
+En effet, son implémentation étant incomplète, elle ne peut pas être instanciée. On ne peut instancier que des classes concrètes. Les classes abstraites servent à factoriser du code commun ou à définir des types très généraux qui permettront de manipuler des classes concrètes par polymorphisme.
+
+* Modifier les classes précédentes comme indiqué et vérifier qu'il n'est maintenant plus possible de créer d'instance de la classe Etudiant.
+
+## Les interfaces
+
+Les interfaces en Java sont des classes 100% abstraites. Elles définissent un jeu de méthodes qui pourront être appelées sur un objet qui implémente cette interface. Elles permettent de contourner une *limitation de Java* : l'absence d'héritage multiple. En effet une classe Java ne peut étendre qu'une seule classe. Par contre elle peut implémenter autant d'interface qu'elle le souhaite.
+
