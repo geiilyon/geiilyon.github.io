@@ -74,7 +74,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
             public void setVitesse(double vitesse) {
                 if (vitesse >= 60) {
                     System.out.println("Doucement fada ! Je suis en vélo !");
-                    vitesse = 120;
+                    vitesse = 60;
                 } else if (vitesse < 0) {
                     System.out.println("De la marche arrière sur un vélo ?");
                     vitesse = 0;
