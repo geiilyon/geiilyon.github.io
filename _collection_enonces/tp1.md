@@ -326,7 +326,7 @@ package shopping;
 
 Il est toujours possible a posteriori de faire glisser une classe vers un package dans eclipse. Les déclarations de package et les imports sont alors automatiquement mis à jour.
 
-* Créer les classes `ShoppingList`et `ShoppingListItem` s'appuyant sur la classe `ArrayList` respectant le diagramme de classe ce-dessous
+* Créer les classes `ShoppingList`et `ShoppingListItem` s'appuyant sur la classe `ArrayList` respectant le diagramme de classe ci-dessous
   
     ![](/img/CDC_ShoppingList.png)
 
