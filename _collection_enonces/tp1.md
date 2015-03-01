@@ -533,3 +533,14 @@ public class ShoppingListApp {
 ```
 Remarque : en Java, à partir de la version 7, on peut faire un `switch` sur une chaîne de caractères.
 
+Penser à valider les points suivants :
+
+* Lors de la saisie d'un numéro d'item pour le supprimer ou pour le cocher, il faut vérifier que le programme ne génère pas d'exception dans les cas suivants :
+    * Saisie d'un chaîne qui ne représente pas un nombre
+    * Saisie d'un indice au delà de la fin de la liste
+    * Saisie d'un 0 (on doit retourner au menu sans modifier le contenu de la liste)
+    * Saisie d'un nombre négatif
+
+* Vérifier qu'après la saisie d'un numéro d'item il n'y a pas d'affichage du texte "entrée invalide" avant l'affichage du menu (si c'est le cas relire le paragraphe sur l'utilisation du scanner).
+
+**FAIRE VALIDER PAR UN ENSEIGNANT**

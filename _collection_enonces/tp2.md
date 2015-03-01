@@ -214,7 +214,7 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
     
 * Remarque importante : la classe Etudiant n'a pas de constructeur par défaut (sans argument). Or, lors de leur instanciation, les sous-classes doivent appeler le constructeur de leur super-classe. Le compilateur Java ne rajoute ces appels que pour les constructeurs sans argument. Dans le cas contraire, il faut créer des constructeurs explicitement et faire en sorte qu'ils délèguent le travail au super-constructeur approprié.
 
-* La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes (les versions à redéfinir se contenteront de retourner 0). Le code qui décrit la logique de l'algorithme n'est pas dupliqué certaines étapes peuvent être spécialisée par les sous-classes.
+* La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes (les versions de la super-classe se contenteront pour l'instant de retourner 0). Le code qui décrit la logique de l'algorithme n'est pas dupliqué certaines étapes peuvent être spécialisée par les sous-classes.
 
     ```java
         public void reagirAUneNote(double note) {
