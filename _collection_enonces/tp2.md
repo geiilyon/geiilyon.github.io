@@ -38,8 +38,8 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
                 return vitesse;
             }
 
-            public void setVitesse(double speed) {
-                this.vitesse = speed;
+            public void setVitesse(double vitesse) {
+                this.vitesse = vitesse;
             }
 
             public void faireDuBruit() {
