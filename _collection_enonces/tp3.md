@@ -195,7 +195,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
         4	Rillettes                     	[X]
         5	Trombonnes                     	[X]
         --------------------------------------------
-        5 items à acheter.
+        Taille de la liste : 5.
         Progression : 60 %
         ```
 
@@ -215,7 +215,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
         <tr><td>5</td><td>Trombonnes</td><td>X</td></tr>
         </table>
         <hr/>
-        <p>5 items à acheter.<br/>Progression : 60 %<p></body>
+        <p>Taille de la liste : 5.<br/>Progression : 60 %<p></body>
         </html>        
         ```
 * Dans la classe gérant l'application, ouvrir une fenêtre de sélection de l'emplacement et du nom du fichier à enregistrer en utilisant la classe `JFileChooser`. Valider le bon fonctionnement du programme.
