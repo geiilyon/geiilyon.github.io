@@ -474,7 +474,8 @@ public class ShoppingListApp {
 
 	private void launch() {
 		// Boucle d'interaction
-		while (true) {
+        boolean keepGoing = true;
+		while (keepGoing) {
 			displayListContent();
 			displayMenu();
 			String input = sc.nextLine();

@@ -21,6 +21,7 @@ Dès lors qu'elle contient une méthode abstraite une classe doit elle aussi êt
 ```java
     public abstract class Etudiant
 ```
+
 En effet, son implémentation étant incomplète, elle ne peut pas être instanciée. On ne peut instancier que des classes concrètes. Les classes abstraites servent à factoriser du code commun ou à définir des types très généraux qui permettront de manipuler des classes concrètes par polymorphisme.
 
 * Modifier les classes précédentes comme indiqué et vérifier qu'il n'est maintenant plus possible de créer d'instance de la classe Etudiant. Vérifier par contre que votre code précédent fonctionne toujours.
@@ -75,13 +76,13 @@ La signature de cette méthode est un peu intimidante. Pour simplifier, on peut 
 public static void sort(List<T> list);
 ```
 
-Cette méthode permet de trier un objet de type `List<T>`. Ce qui soulève 2 questions :
+Cette méthode permet de trier un objet de type `List<T>`. Ceci soulève 2 questions :
 
 * on a une ArrayList et pas une List, comment fait-on ?
 
-* Comment la méthode `sort` peut-elle comparer deux étudiant ? La notion de supériorité/infériorité/égalité des étudiants ne peut pas être devinée automatiquement.
+* Comment la méthode `sort` peut-elle comparer deux étudiants ? La notion de supériorité/infériorité/égalité des étudiants ne peut pas être devinée automatiquement.
 
-Pour répondre à la première question, une `ArrayList<T>` est une `List<T>`. Pour le savoir il faut aller sur la [javadoc de la classe ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html). L'information est présente dans l'en-tête de la description de la classe (*All implemented interfaces*) et dans la déclaration de la classe (juste en dessous de la ligne horizontale) dont le contenu est :
+Pour répondre à la première question, une `ArrayList<T>` est une `List<T>`. Pour le savoir il faut aller sur la [javadoc de la classe ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html). L'information est présente dans l'en-tête de la description de la classe (*All implemented interfaces*) et dans la déclaration de la classe (juste en-dessous de la ligne horizontale) dont le contenu est :
 
 ```java
 public class ArrayList<E>
@@ -89,9 +90,9 @@ extends AbstractList<E>
 implements List<E>, RandomAccess, Cloneable, Serializable
 ```
 
-La classe `ArrayList<E>` (on peut utiliser la lettre de son choix E, T, ... cette lettre est une variable de type pour les classes génériques) hérite de `AbstractList<E>` (classe qui regroupe les algorithmes communs à différents types de listes) et implémente plusieurs interfaces dont `List<E>`. Une `ArrayList<E>` est donc un objet du type `List<E>`, et grâce au polymorphisme on peut passer une `ArrayList<E>` à toutes les méthodes qui attendent un objet de type `List<E>`.
+La classe `ArrayList<E>` hérite de `AbstractList<E>` (classe qui regroupe les algorithmes communs à différents types de listes) et implémente plusieurs interfaces dont `List<E>`. Une `ArrayList<E>` est donc un objet du type `List<E>`, et grâce au polymorphisme on peut passer une `ArrayList<E>` à toutes les méthodes qui attendent un objet de type `List<E>`. Remarque : on peut utiliser la lettre de son choix E, T lors de la définition d'une classe ou méthode générique. Cette lettre est une variable de type.
 
-La deuxième question concernait la possibilité de pouvoir comparer 2 objets de type `Etudiant`. C'est le sens de la partie obscure de la déclaration qui est là pour que le compilateur Java vérifie bien que les éléments de la liste implémentent l'interface Comparable. Il y a même une contrainte supplémentaire sur la possibilité de comparer des objets qui héritent de la classe `T` mais cela sort du cadre de ce cours). En résumé, pour que l'on puisse comparer deux étudiants, il faut que le classe `Etudiant` implémente l'interface `Comparable<Etudiant>`.
+La deuxième question concernait la possibilité de pouvoir comparer 2 objets de type `Etudiant`. C'est le sens de la partie obscure de la déclaration qui est là pour que le compilateur Java vérifie bien que les éléments de la liste implémentent l'interface Comparable. Il y a même une contrainte supplémentaire sur la possibilité de comparer des objets qui héritent de la classe `T` mais cela sort du cadre de ce cours. En résumé, pour que l'on puisse comparer deux étudiants, il faut que le classe `Etudiant` implémente l'interface `Comparable<Etudiant>`.
 
 L'interface `Comparable<T>` est définie de la manière suivante :
 
@@ -100,9 +101,9 @@ public interface Comparable<T> {
     public int compareTo(T o);
 ```
 
-La javadoc de la méthode nous indique qu'il faut retourner un entier négatif (respectivement positif) si l'objet sur lequel est appelé la méthode est inférieur (respectivement supérieur) à l'objet passé en paramètre. Si les objets sont égaux, la méthode compareTo doit retourner 0.
+La javadoc de la méthode nous indique qu'il faut retourner un entier négatif (respectivement positif) si l'objet sur lequel est appelée la méthode est inférieur (respectivement supérieur) à l'objet passé en paramètre. Si les objets sont égaux, la méthode compareTo doit retourner 0.
 
-* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>` en effectuant une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour se faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>`.
+* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>` en effectuant une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>`.
 
 * Créer une classe de tests unitaires (JUnit Test Case) `TestsTriEtudiants` pour valider le bon fonctionnement de l'interface `Comparable<Etudiant>`
 
@@ -117,13 +118,13 @@ List<Etudiant> etudiants = new ArrayList<Etudiant>();
 
 Ainsi le reste du code ne dépend **que** des méthodes définies dans l'interface `List<E>` et il est possible par la suite de remplacer la classe concrète `ArrayList` par une autre implémentation de l'interface `List<E>` (par exemple `LinkedList`).
 
-Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. La solution consiste à créer un nouvel objet permettant de compararer deux instances de la classe `Etudiant`, cet objet pourra être passé en paramètre de la deuxième méthode de tri de la classe `Collections` :
+Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. La solution consiste à créer un nouvel objet permettant de comparer deux instances de la classe `Etudiant`. Cet objet pourra être passé en paramètre de la deuxième méthode de tri de la classe `Collections` :
 
 ```java
 public static <T> void sort(List<T> list, Comparator<? super T> c)
 ```
 
-Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose capables des instances de la classe T ou de ses sous-classes). Si on veut trier notre liste d'étudiants par prénom d'abord, puis par nom, il va falloir créer ce comparateur/
+Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose capable de comparer des instances de la classe T ou de ses sous-classes). Si on veut trier notre liste d'étudiants par prénom d'abord, puis par nom, il va falloir créer ce comparateur.
 
 * Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation des ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
 
