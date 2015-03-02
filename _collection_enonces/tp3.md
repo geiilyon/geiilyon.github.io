@@ -48,6 +48,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
     L'idée est de définir une interface commune pour différentes classes qui permettront d'interagir avec l'utilisateur (en mode console et avec des boîtes de dialogue).
     
     ![GuessTheNumberClassDiagram](/img/GuessTheNumber.png)
+    ![Legende Eclispe UML](/img/EclipseUmlLegend.png)
 
 * Créer une classe `ConsoleUserInterface` qui implémente l'interface `UserInterface`. Les messages seront affichés sur la sortie standard et les entrées proviendront de l'entrée standard.
 
