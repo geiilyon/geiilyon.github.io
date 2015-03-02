@@ -44,6 +44,10 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
     }
 
     ```
+    
+    L'idée est de définir une interface commune pour différentes classes qui permettront d'interagir avec l'utilisateur (en mode console et avec des boîtes de dialogue).
+    
+    ![GuessTheNumberClassDiagram](/img/GuessTheNumber.png)
 
 * Créer une classe `ConsoleUserInterface` qui implémente l'interface `UserInterface`. Les messages seront affichés sur la sortie standard et les entrées proviendront de l'entrée standard.
 
@@ -124,9 +128,9 @@ Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre c
 public static <T> void sort(List<T> list, Comparator<? super T> c)
 ```
 
-Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose capable de comparer des instances de la classe T ou de ses sous-classes). Si on veut trier notre liste d'étudiants par prénom d'abord, puis par nom, il va falloir créer ce comparateur.
+Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose capable de comparer des instances de la classe T ou de ses sous-classes). Si on veut trier notre liste d'étudiants par *prénom* d'abord, puis par *nom*, il va falloir créer ce comparateur.
 
-* Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation des ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
+* Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation de ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
 
     ```java
     public class TestsTriEtudiants {
@@ -158,7 +162,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
 
 * Modifier l'application de liste de courses de manière à ce que les items soient triés par ordre alphabétique (sans tenir compte de la casse) et en faisant figurer en début de liste les items non cochés.
 
-* Ajouter un élément de menu permettant d'exporter la liste de course dans un fichier. Lors du choix de cette option, l'utilisateur aura alors le choix du format de fichier : texte ou html.
+* Ajouter un élément de menu permettant d'exporter la liste de courses dans un fichier. Lors du choix de cette option, l'utilisateur aura alors le choix du format de fichier : texte ou html.
 
 * Créer une classe abstraite ListPrinter qui définit les méthodes suivantes :
 
