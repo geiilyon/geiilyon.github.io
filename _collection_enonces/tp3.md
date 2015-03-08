@@ -248,7 +248,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
 
 ## Mise en oeuvre : Suppression de code dupliqué dans la liste de courses
 
-Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment identiques : la séquence et les vérifications sont les mêmes. Elles diffèrent seulement dans le texte affiché et dans l'action utilisée. L'idée est d'appliquer la même approche que celle utilisée pour les classes `ListPrinter` , `HtmlListPrinter` et `TextListPrinter` pour extraire tout le code commun dans une super-classe abstraite `AccessByNumberItemDialog`.
+Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment identiques : la séquence et les vérifications sont les mêmes. Elles diffèrent seulement dans le texte affiché et dans l'action réalisée. L'idée est d'appliquer la même approche que celle utilisée pour les classes `ListPrinter` , `HtmlListPrinter` et `TextListPrinter` pour extraire tout le code commun dans une super-classe abstraite `AccessByNumberItemDialog`.
 
 * Effectuer cette modification. Tester et valider le bon fonctionnement.
 
