@@ -56,7 +56,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
     public class ConsoleUserInterface implements UserInterface
     ```
 
-* Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possèdera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer alétoirement un nombre entre 0 et 100 et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi il faut au maximum 7 coups pour trouver le bon résultat).
+* Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possèdera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer alétoirement un nombre entre 0 et 100 et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum).
 
 * Tester `GuessTheNumber` avec la classe `ConsoleUserInterface` et faire valider par un enseignant.
 
@@ -123,7 +123,7 @@ List<Etudiant> etudiants = new ArrayList<Etudiant>();
 
 Ainsi le reste du code ne dépend **que** des méthodes définies dans l'interface `List<E>` et il est possible par la suite de remplacer la classe concrète `ArrayList` par une autre implémentation de l'interface `List<E>` (par exemple `LinkedList`).
 
-Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. La solution consiste à créer un nouvel objet permettant de comparer deux instances de la classe `Etudiant`. Cet objet pourra être passé en paramètre de la deuxième méthode de tri de la classe `Collections` :
+Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. En effet, celle-ci ne permet pas d'utiliser différentes critères de comparaison. La solution consiste à créer un nouvel objet permettant de comparer deux instances de la classe `Etudiant`. Cet objet pourra être passé en paramètre de la deuxième méthode de tri de la classe `Collections` :
 
 ```java
 public static <T> void sort(List<T> list, Comparator<? super T> c)
@@ -224,4 +224,32 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
         <p>Taille de la liste : 5.<br/>Progression : 60 %<p></body>
         </html>        
         ```
-* Dans la classe gérant l'application, ouvrir une fenêtre de sélection de l'emplacement et du nom du fichier à enregistrer en utilisant la classe `JFileChooser`. Valider le bon fonctionnement du programme.
+* Dans la classe gérant l'application, ouvrir une fenêtre de sélection de l'emplacement et du nom du fichier à enregistrer en utilisant la classe `JFileChooser`, puis effectuer l'enregistrement du fichier sur le disque au bon format (utiliser les clasees : `BufferedWriter` et `FileWriter`).
+
+    * L'enregistrement est une opération qui est source d'erreurs (sélection d'un dossier au lieu d'un fichier, espace insuffisant, problèmes de droits, erreurs d'entrées/sorties, répertoires en lecture seule,...)
+    * Les fonctions d'entrées/sorties sur fichiers ne peuvent donc pas être appelées sans avoir géré les **exceptions**. Une exception est un objet qui est lancé par une méthode lorsqu'elle détecte une condition d'erreur et qui peut/doit être intercepté par le code qui a appelé la méthode.
+    * La syntaxe des exceptions s'appuie sur les mots clés du langage Java suivants :
+    
+        * `throw` : pour lancer une exception
+        * `throws` : pour indiquer qu'une méthode est susceptible de lancer des exceptions (cette clause est suivie de la liste des classes d'exceptions qui peuvent être lancées)
+        
+        * `try` : pour démarrer un bloc de code qui s'exécutera intégralement si aucune exception n'est levée
+        * `catch` : pour intercepter un ou plusieurs types d'exceptions (les exceptions sont des instances de classes qui identifient la nature de l'exception. Il est possible d'avoir plusieurs blocs `catch` pour associer un traitement qui dépend de la nature de l'erreur)
+        * `finally` : pour avoir un bloc qui s'exécute quoiqu'il arrive (exception ou non). Ce bloc de code permet de libérer des ressources, fermer des fichiers/connexions réseau/...
+        
+    * Dans le cas présent, les méthodes à invoquer sont susceptibles de lancer l'exception `IOException`
+    
+    * Remarque : le compilateur Java impose la gestion des exceptions pour les exceptions qui héritent de la super-classe `Exception` sauf  la branche qui hérite de `RuntimeException`
+
+* Faire valider par un enseignant.
+
+
+---
+
+## Mise en oeuvre : Suppression de code dupliqué dans la liste de courses
+
+Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment identiques : la séquence et les vérifications sont les mêmes. Elles diffèrent seulement dans le texte affiché et dans l'action utilisée. L'idée est d'appliquer la même approche que celle utilisée pour les classes `ListPrinter` , `HtmlListPrinter` et `TextListPrinter` pour extraire tout le code commun dans une super-classe abstraite `AccessByNumberItemDialog`.
+
+* Effectuer cette modification. Tester et valider le bon fonctionnement.
+
+* Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_ShoppingList_v1.zip. Déposer cette archive sous SPIRAL dans la zone de dépôt ShoppingList v1 du module MC-POO.
