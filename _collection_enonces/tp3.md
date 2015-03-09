@@ -56,7 +56,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
     public class ConsoleUserInterface implements UserInterface
     ```
 
-* Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possédera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer aléatoirement un nombre entre 0 et 100 et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum).
+* Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possédera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer aléatoirement un nombre entre 0 et MAXIMUM (on prendra la valeur 100) et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum pour un tirage entre 0 et 100).
 
 * Tester `GuessTheNumber` avec la classe `ConsoleUserInterface` et faire valider par un enseignant.
 
