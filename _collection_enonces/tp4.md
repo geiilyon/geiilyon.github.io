@@ -6,7 +6,7 @@ excerpt: Sauvegarde des objets sur le disque. Interfaces graphiques avec Swing.
 
 # Sérialisation
 
-La sérialisation consiste à créer une représentation binaire d'un objet en vue de l'enregistrer dans un fichier ou de le transmettre en réseau. Cette représentation diffère d'un fichier texte ou d'un fichier binaire classique et est spécifique au langage utilisé. une fois le fichier créé et ouvert il est possible d'écrire ou de relire un objet en une ligne de code. la descritpion de la mise en oeuvre peut-être trouvée sur le site d'[openclassroom](http://openclassrooms.com/courses/apprenez-a-programmer-en-java/les-flux-d-entree-sortie).
+La sérialisation consiste à créer une représentation binaire d'un objet en vue de l'enregistrer dans un fichier ou de le transmettre en réseau. Cette représentation diffère d'un fichier texte ou d'un fichier binaire classique et est spécifique au langage utilisé. une fois le fichier créé et ouvert il est possible d'écrire ou de relire un objet en une ligne de code. la description de la mise en oeuvre peut-être trouvée sur le site d'[openclassroom](http://openclassrooms.com/courses/apprenez-a-programmer-en-java/les-flux-d-entree-sortie).
 
 * Modifier l'application ShoppingList pour ajouter la possibilité de sauvegarder et de recharger une liste de course. Il faudra utiliser la classe JFileChooser déjà utilisée précédemment pour spécifier le nom et l'emplacement du fichier de sauvegarde à utiliser.
 

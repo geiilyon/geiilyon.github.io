@@ -56,7 +56,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
     public class ConsoleUserInterface implements UserInterface
     ```
 
-* Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possèdera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer alétoirement un nombre entre 0 et 100 et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum).
+* Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possédera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer aléatoirement un nombre entre 0 et 100 et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum).
 
 * Tester `GuessTheNumber` avec la classe `ConsoleUserInterface` et faire valider par un enseignant.
 
@@ -115,7 +115,7 @@ La javadoc de la méthode nous indique qu'il faut retourner un entier négatif (
 * Dans la classe de tests unitaires ajouter une méthode dans laquelle on remplira une liste d'étudiants en prenant soin de prendre des prénoms et noms permettant de valider le bon fonctionnement du tri (homonymes, ...) qu'on triera ensuite et dont on vérifiera qu'elle donne bien le bon résultat (utiliser `assertEquals` entre la liste triée et une liste créée avec les mêmes éléments dans l'ordre attendu).
 
 
-**Remarque** : On vient de voir que le paramètre de la méthode `Collections.sort(List<T> list)` était du type List<T> (l'interface implémentée par toutes les listes Java : AbstractList, AbstractSequentialList, ArrayList, AttributeList, CopyOnWriteArrayList, LinkedList, RoleList, RoleUnresolvedList, Stack, Vector). C'est une bonne pratique en Java, qui consiste à manipuler les objets par leur interface plutôt que par leur classe contrète, on verra donc couramment le code suivant :
+**Remarque** : On vient de voir que le paramètre de la méthode `Collections.sort(List<T> list)` était du type List<T> (l'interface implémentée par toutes les listes Java : AbstractList, AbstractSequentialList, ArrayList, AttributeList, CopyOnWriteArrayList, LinkedList, RoleList, RoleUnresolvedList, Stack, Vector). C'est une bonne pratique en Java, qui consiste à manipuler les objets par leur interface plutôt que par leur classe concrète, on verra donc couramment le code suivant :
 
 ```java
 List<Etudiant> etudiants = new ArrayList<Etudiant>();
@@ -224,7 +224,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
         <p>Taille de la liste : 5.<br/>Progression : 60 %<p></body>
         </html>        
         ```
-* Dans la classe gérant l'application, ouvrir une fenêtre de sélection de l'emplacement et du nom du fichier à enregistrer en utilisant la classe `JFileChooser`, puis effectuer l'enregistrement du fichier sur le disque au bon format (utiliser les clasees : `BufferedWriter` et `FileWriter`).
+* Dans la classe gérant l'application, ouvrir une fenêtre de sélection de l'emplacement et du nom du fichier à enregistrer en utilisant la classe `JFileChooser`, puis effectuer l'enregistrement du fichier sur le disque au bon format (utiliser les classes : `BufferedWriter` et `FileWriter`).
 
     * L'enregistrement est une opération qui est source d'erreurs (sélection d'un dossier au lieu d'un fichier, espace insuffisant, problèmes de droits, erreurs d'entrées/sorties, répertoires en lecture seule,...)
     * Les fonctions d'entrées/sorties sur fichiers ne peuvent donc pas être appelées sans avoir géré les **exceptions**. Une exception est un objet qui est lancé par une méthode lorsqu'elle détecte une condition d'erreur et qui peut/doit être intercepté par le code qui a appelé la méthode.
@@ -253,3 +253,35 @@ Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment ident
 * Effectuer cette modification. Tester et valider le bon fonctionnement.
 
 * Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_ShoppingList_v1.zip. Déposer cette archive sous SPIRAL dans la zone de dépôt ShoppingList v1 du module MC-POO.
+
+---
+
+## Mise en oeuvre : *Design Pattern* Etat - la cafetière Sensespresso (le retour)
+
+L'approche orientée objet de la programmation d'un machine d'état consiste à définir une super-classe abstraite possédant une méthode pour chaque évènement auquel le système doit réagir. Cette classe abstraite (ici, `CoffeeMachineState`) peut définir une implémentation par défaut de ces méthodes qui généralement ne fait rien. Cela permet aux sous-classes de ne redéfinir que les méthodes correspondant aux évènements qu'elles souhaitent gérer. Chaque évènement est en effet traité en écrivant une sous-classe spécifique.
+
+La classe principale (ici, `CoffeeMachine`) possède une variable d'instance référençant l'état courant (cette variable est de type `CoffeeMachineState`). Grâce au polymorphisme l'objet référencé est l'une des sous-classe de la classe abstraite `CoffeeMachineState`. Les transitions sont gérées en remplaçant cette référence par une référence vers le nouvel état actif.
+
+* Créer un nouveau projet nommé Sensepresso. Télécharger le [code de la cafetière](/files/Sensespresso.zip), extraire l'archive, sélectionner les dossiers et les **glisser/déposer** sur le dossier *src* du projet Eclipse.
+
+* Télécharger les bibliothèques [SteelSeries.jar](/files/SteelSeries.jar) et [trident.jar](/files/trident.jar) et les copier dans votre projet (avec un glisser/deposer sur le projet). Faire ensuite un clic droit sur chacune d'elle et sélectionner *Build Path* puis *Add To Build Path*
+
+Le diagramme d'état décrivant le fonctionnement de la cafetière est le suivant :
+
+    ![Cafetière](/img/Sensespresso.png)
+
+
+Suggestion de nommage pour les classes de gestion des différents états :
+
+    * `CoffeeMachineHeatingState`
+    * `CoffeeMachineMissingWaterState`
+    * `CoffeeMachineOffState`
+    * `CoffeeMachinePrepareState`
+    * `CoffeeMachineReadyState`
+
+* Créer les sous-classes de `CoffeeMachineState` permettant d'assurer le bon fonctionnement de la cafetière selon le diagramme ci-dessous. En fonction du nombre de tasses, la transitione entre l'état `CoffeeMachinePrepareState` et l'état `CoffeeMachineHeatingState` se fera à l'aide d'une temporisation de 6 ou 12 secondes selon le nombre de tasses choisies. La temporisation sera gérée à l'aide de la classe `Timer` du package `javax.swing`.
+
+* Faire valider par un enseignant.
+
+* Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_Sensespresso.zip. Déposer cette archive sous SPIRAL dans la zone de dépôt Sensespresso v1 du module MC-POO.
+
