@@ -45,7 +45,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
 
     ```
     
-    L'idée est de définir une interface commune pour différentes classes qui permettront d'interagir avec l'utilisateur (en mode console et avec des boîtes de dialogue).
+    L'idée est de définir une interface commune pour différentes classes qui permettront d'interagir avec l'utilisateur (en mode console et avec des boîtes de dialogue). La classe `GuessTheNumber` implémentera la logique du jeu et possédera une référence vers un objet de type `UserInterface` pour afficher des messages et récupérer des saisies de l'utilisateur.
     
     ![GuessTheNumberClassDiagram](/img/GuessTheNumber.png)
     ![Legende Eclispe UML](/img/EclipseUmlLegend.png)
@@ -58,11 +58,15 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
 
 * Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possédera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer aléatoirement un nombre entre 0 et MAXIMUM (on prendra la valeur 100) et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum pour un tirage entre 0 et 100).
 
-* Tester `GuessTheNumber` avec la classe `ConsoleUserInterface` et faire valider par un enseignant.
+* Tester `GuessTheNumber` avec la classe `ConsoleUserInterface`.
+
+    **Faire valider par un enseignant.**
 
 * Créer maintenant une nouvelle classe `DialogUserInterface` qui implémente l'interface `UserInterface` en s'appuyant sur la classe `JOptionPane`
 
-* Tester `GuessTheNumber` avec cette nouvelle classe `DialogUserInterface` et faire valider par un enseignant.
+* Tester `GuessTheNumber` avec cette nouvelle classe `DialogUserInterface`.
+
+    **Faire valider par un enseignant.**
 
 ---
 
@@ -241,7 +245,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
     
     * Remarque : le compilateur Java impose la gestion des exceptions pour les exceptions qui héritent de la super-classe `Exception` sauf  la branche qui hérite de `RuntimeException`
 
-* Faire valider par un enseignant.
+    **Faire valider par un enseignant.**
 
 
 ---
@@ -286,7 +290,7 @@ Le diagramme d'état décrivant le fonctionnement de la cafetière est le suivan
 
 * Créer les sous-classes de `CoffeeMachineState` permettant d'assurer le bon fonctionnement de la cafetière selon le diagramme ci-dessous. En fonction du nombre de tasses, la transitione entre l'état `CoffeeMachinePrepareState` et l'état `CoffeeMachineHeatingState` se fera à l'aide d'une temporisation de 6 ou 12 secondes selon le nombre de tasses choisies. La temporisation sera gérée à l'aide de la classe `Timer` du package `javax.swing`.
 
-* Faire valider par un enseignant.
+    **Faire valider par un enseignant.**
 
 * Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_Sensespresso.zip. Déposer cette archive sous SPIRAL dans la zone de dépôt Sensespresso v1 du module MC-POO.
 
