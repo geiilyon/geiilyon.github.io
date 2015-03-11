@@ -158,6 +158,9 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
             etudiants.add(johnDoe);	
             etudiants.add(jamesBond);	
         }
+        
+        ...
+    }
 
     ```
 
