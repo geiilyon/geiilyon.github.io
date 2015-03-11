@@ -180,12 +180,12 @@ private static void triturerVehicule(Vehicule vehicule){
 
 Le type d'une variable définit les méthodes que l'on peut appeler ainsi que les champs accessibles. On ne peut donc pas accéder aux spécificités de la sous-classe mais on peut la traiter comme une instance de la super-classe.
 
-* Modifier le code de la classe `VehiculesTests`en créant un variable de type `Vehicule` qui référencera successivement un vélo, une voiture, une voiture automatique,...
+* Modifier le code de la classe `VehiculesTests` en créant un variable de type `Vehicule` qui référencera successivement un vélo, une voiture, une voiture automatique,...
 
     - Vérifier qu'il n'est possible d'appeler que les méthodes disponibles sur la classe `Vehicule` (impossible d'utiliser `getRapportVitesse()` même si l'objet effectivement référencé est de type `VoitureAutomatique`
     - Vérifier que l'appel de `faireDuBruit()` dépend bien du type concret de l'objet référencé et non pas du type de la variable
 
-* Créer une liste de véhicules de type `ArrayList<Vehicule>` et la passer à une fonction prenant en paramètre une liste de véhicules qui appellera une combinaison de `faireDuBruit()`, `setVitesse(...)` sur chacun des éléments de la liste.
+* Ajouter la méthode `triturerVehicule` à la classe `VehiculesTests`. Créer une liste de véhicules de type `ArrayList<Vehicule>` et la passer à une fonction prenant en paramètre une liste de véhicules qui appellera `triturerVehicule` sur chacun des éléments de la liste.
 
 ---
 
