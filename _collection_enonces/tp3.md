@@ -58,7 +58,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
 
 * Créer une classe `GuessTheNumber` dont le constructeur prendra en paramètre un objet de type `UserInterface`. Cette classe possédera une méthode `play()` pour lancer le jeu qui utilisera les méthodes définies dans l'interface pour interagir avec l'utilisateur. Cette classe implémentera le jeu classique qui consiste à tirer aléatoirement un nombre entre 0 et MAXIMUM (on prendra la valeur 100) et à demander à l'utilisateur de le deviner en lui indiquant seulement à chaque saisie si le nombre est trop petit ou trop grand (bonus : vérifier expérimentalement et expliquer pourquoi on pourrait parier qu'on est capable de trouver le bon résultat en 7 coups maximum pour un tirage entre 0 et 100).
 
-* Tester `GuessTheNumber` avec la classe `ConsoleUserInterface`.
+* Créer une classe `ConsoleGame` permettant de jouer au jeu `GuessTheNumber` avec une interface en mode console (en utilisant la classe `ConsoleUserInterface`).
 
     **Faire valider par un enseignant.**
 
@@ -103,16 +103,19 @@ La classe `ArrayList<E>` hérite de `AbstractList<E>` (classe qui regroupe les a
 
 La deuxième question concernait la possibilité de pouvoir comparer 2 objets de type `Etudiant`. C'est le sens de la partie obscure de la déclaration qui est là pour que le compilateur Java vérifie bien que les éléments de la liste implémentent l'interface Comparable. Il y a même une contrainte supplémentaire sur la possibilité de comparer des objets qui héritent de la classe `T` mais cela sort du cadre de ce cours. En résumé, pour que l'on puisse comparer deux étudiants, il faut que le classe `Etudiant` implémente l'interface `Comparable<Etudiant>`.
 
-L'interface `Comparable<T>` est définie de la manière suivante :
+L'interface `Comparable<T>` est **déjà définie dans la bibliothèque Java** de la manière suivante (elle fait partie du package java.lang qui est importé automatiquement) :
 
 ```java
 public interface Comparable<T> {
     public int compareTo(T o);
+}
 ```
 
-La javadoc de la méthode nous indique qu'il faut retourner un entier négatif (respectivement positif) si l'objet sur lequel est appelée la méthode est inférieur (respectivement supérieur) à l'objet passé en paramètre. Si les objets sont égaux, la méthode compareTo doit retourner 0.
+La javadoc de la méthode nous indique qu'il faut retourner **un entier négatif (respectivement positif) si l'objet sur lequel est appelée la méthode est inférieur (respectivement supérieur) à l'objet passé en paramètre. Si les objets sont égaux, la méthode compareTo doit retourner 0.**
 
-* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>` en effectuant une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>`.
+### Tri sur nom puis prénom
+
+* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>`. Cela consiste à éditer la déclaration de la classe et à écrire la méthode `compareTo` qui effectuera une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>`.
 
 * Créer une classe de tests unitaires (JUnit Test Case) `TestsTriEtudiants` pour valider le bon fonctionnement de l'interface `Comparable<Etudiant>`
 
@@ -127,7 +130,9 @@ List<Etudiant> etudiants = new ArrayList<Etudiant>();
 
 Ainsi le reste du code ne dépend **que** des méthodes définies dans l'interface `List<E>` et il est possible par la suite de remplacer la classe concrète `ArrayList` par une autre implémentation de l'interface `List<E>` (par exemple `LinkedList`).
 
-Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. En effet, celle-ci ne permet pas d'utiliser différentes critères de comparaison. La solution consiste à créer un nouvel objet permettant de comparer deux instances de la classe `Etudiant`. Cet objet pourra être passé en paramètre de la deuxième méthode de tri de la classe `Collections` :
+### Tri sur prénom puis nom
+
+Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. En effet, celle-ci ne permet pas d'utiliser différents critères de comparaison. La méthode `sort` de la classe `Collections` est surchargée. On peut lui passer un deuxième argument, en plus de la liste, qui est une référence vers un objet capable de comparer deux éléments de la liste :
 
 ```java
 public static <T> void sort(List<T> list, Comparator<? super T> c)
