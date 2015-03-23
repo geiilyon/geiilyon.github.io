@@ -103,7 +103,7 @@ La classe `ArrayList<E>` hérite de `AbstractList<E>` (classe qui regroupe les a
 
 La deuxième question concernait la possibilité de pouvoir comparer 2 objets de type `Etudiant`. C'est le sens de la partie obscure de la déclaration qui est là pour que le compilateur Java vérifie bien que les éléments de la liste implémentent l'interface Comparable. Il y a même une contrainte supplémentaire sur la possibilité de comparer des objets qui héritent de la classe `T` mais cela sort du cadre de ce cours. En résumé, pour que l'on puisse comparer deux étudiants, il faut que le classe `Etudiant` implémente l'interface `Comparable<Etudiant>`.
 
-L'interface `Comparable<T>` est **déjà définie dans la bibliothèque Java** de la manière suivante (elle fait partie du package java.lang qui est importé automatiquement) :
+L'interface `Comparable<T>` est **déjà définie dans la bibliothèque Java** de la manière suivante (elle fait partie du package java.lang qui est importé automatiquement, cf. [javadoc](http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html)) :
 
 ```java
 public interface Comparable<T> {
@@ -113,11 +113,12 @@ public interface Comparable<T> {
 
 La javadoc de la méthode nous indique qu'il faut retourner **un entier négatif (respectivement positif) si l'objet sur lequel est appelée la méthode est inférieur (respectivement supérieur) à l'objet passé en paramètre. Si les objets sont égaux, la méthode compareTo doit retourner 0.**
 
+
 ### Tri sur nom puis prénom
 
 * Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>`. Cela consiste à éditer la déclaration de la classe et à écrire la méthode `compareTo` qui effectuera une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>`.
 
-* Créer une classe de tests unitaires (JUnit Test Case) `TestsTriEtudiants` pour valider le bon fonctionnement de l'interface `Comparable<Etudiant>`
+* Créer une classe de tests unitaires (JUnit Test Case) `TestsTriEtudiants` pour valider le bon fonctionnement de l'interface `Comparable<Etudiant>`. Utiliser la méthode `assertTrue` pour tester que les valeurs retournées par l'appel de `compareTo` sont bien positives ou négatives.
 
 * Dans la classe de tests unitaires ajouter une méthode dans laquelle on remplira une liste d'étudiants en prenant soin de prendre des prénoms et noms permettant de valider le bon fonctionnement du tri (homonymes, ...) qu'on triera ensuite et dont on vérifiera qu'elle donne bien le bon résultat (utiliser `assertEquals` entre la liste triée et une liste créée avec les mêmes éléments dans l'ordre attendu).
 
@@ -130,6 +131,7 @@ List<Etudiant> etudiants = new ArrayList<Etudiant>();
 
 Ainsi le reste du code ne dépend **que** des méthodes définies dans l'interface `List<E>` et il est possible par la suite de remplacer la classe concrète `ArrayList` par une autre implémentation de l'interface `List<E>` (par exemple `LinkedList`).
 
+
 ### Tri sur prénom puis nom
 
 Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. En effet, celle-ci ne permet pas d'utiliser différents critères de comparaison. La méthode `sort` de la classe `Collections` est surchargée. On peut lui passer un deuxième argument, en plus de la liste, qui est une référence vers un objet capable de comparer deux éléments de la liste :
@@ -140,7 +142,7 @@ public static <T> void sort(List<T> list, Comparator<? super T> c)
 
 Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose capable de comparer des instances de la classe T ou de ses sous-classes). Si on veut trier notre liste d'étudiants par *prénom* d'abord, puis par *nom*, il va falloir créer ce comparateur.
 
-* Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation de ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
+* Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html)) et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation de ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
 
     ```java
     public class TestsTriEtudiants {
