@@ -272,7 +272,7 @@ Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment ident
 
 ## Mise en oeuvre : *Design Pattern* Etat - la cafetière Sensespresso (le retour)
 
-L'approche orientée objet de la programmation d'un machine d'état consiste à définir une super-classe abstraite possédant une méthode pour chaque évènement auquel le système doit réagir. Cette classe abstraite (ici, `CoffeeMachineState`) peut définir une implémentation par défaut de ces méthodes qui généralement ne fait rien. Cela permet aux sous-classes de ne redéfinir que les méthodes correspondant aux évènements qu'elles souhaitent gérer. Chaque évènement est en effet traité en écrivant une sous-classe spécifique.
+L'approche orientée objet de la programmation d'une machine d'état consiste à définir une super-classe abstraite possédant une méthode pour chaque évènement auquel le système doit réagir. Cette classe abstraite (ici, `CoffeeMachineState`) peut définir une implémentation par défaut de ces méthodes qui généralement ne fait rien. Cela permet aux sous-classes de ne redéfinir que les méthodes correspondant aux évènements qu'elles souhaitent gérer. Chaque évènement est en effet traité en écrivant une sous-classe spécifique.
 
 La classe principale (ici, `CoffeeMachine`) possède une variable d'instance référençant l'état courant (cette variable est de type `CoffeeMachineState`). Grâce au polymorphisme l'objet référencé est l'une des sous-classe de la classe abstraite `CoffeeMachineState`. Les transitions sont gérées en remplaçant cette référence par une référence vers le nouvel état actif.
 
