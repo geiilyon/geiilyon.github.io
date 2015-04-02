@@ -298,7 +298,7 @@ Le diagramme d'état décrivant le fonctionnement de la cafetière est le suivan
     * `CoffeeMachineReadyState`
 
 
-* Créer les sous-classes de `CoffeeMachineState` permettant d'assurer le bon fonctionnement de la cafetière selon le diagramme ci-dessous. En fonction du nombre de tasses, la transitione entre l'état `CoffeeMachinePrepareState` et l'état `CoffeeMachineHeatingState` se fera à l'aide d'une temporisation de 6 ou 12 secondes selon le nombre de tasses choisies. La temporisation sera gérée à l'aide de la classe `Timer` du package `javax.swing`.
+* Créer les sous-classes de `CoffeeMachineState` permettant d'assurer le bon fonctionnement de la cafetière selon le diagramme ci-dessous. En fonction du nombre de tasses, la transition entre l'état `CoffeeMachinePrepareState` et l'état `CoffeeMachineHeatingState` se fera à l'aide d'une temporisation de 6 ou 12 secondes selon le nombre de tasses choisies. La temporisation sera gérée à l'aide de la classe `Timer` du package `javax.swing`.
 
     **Faire valider par un enseignant.**
 
