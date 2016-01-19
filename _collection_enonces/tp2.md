@@ -1,256 +1,246 @@
 ---
-title: Héritage et polymorphisme
+title: Première application en mode console
 layout: page
-excerpt: Concepts et utilisation.
+excerpt: Gestion d'une liste de course (affichage et saisie utilisateur en mode console).
 ---
+# Liste de courses
 
-# Héritage - introduction
+## Première partie
 
-Une rapide introduction à ces 2 notions se trouve dans la deuxième partie du cours ([fichier PDF](http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=3999567)).
+Dans cette partie, nous allons mettre en oeuvre la liste de courses qui a été vue en [TD](/cours/) en ajoutant quelques méthodes et une classe pour en faire une petite application.
 
-Dans la programmation orientée objet, on constitue des hiérarchies d'héritage dans lesquelles les sous-classes héritent des champs et des méthodes de leur super-classe (classe mère).
-
-Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage nous allons nous appuyer sur la hiérarchie suivante :
-
-![Diagramme de classes Vehicules](/img/Vehicules.png)
-
-
-* La super-classe de toutes les classes est ici la classe `Vehicule`, elle possède :
-
-    - une variable d'instance privée `double vitesse` qui stocke la vitesse du véhicule.
-    
-    - un getter `double getVitesse()`et un setter `void setVitesse(double vitesse)` pour permettre l'accès à la variable *encapsulée*
-    
-    - une méthode `void faireDuBruit()`
-    
-    - un constructeur par défaut (ajouté automatiquement par le compilateur Java)
-    
-    - Le code correspondant est :
-    
-        ```java
-        package heritage;
-
-        public class Vehicule {
-
-            private double vitesse = 0.0;
-
-            public double getVitesse() {
-                return vitesse;
-            }
-
-            public void setVitesse(double vitesse) {
-                this.vitesse = vitesse;
-            }
-
-            public void faireDuBruit() {
-                System.out.println("Je roule à " + vitesse + " km/h");
-            }
-
-        }
-        ```
-
-    
-* La sous-classe `Velo` hérite de `Vehicule`. On dit qu'elle *étend* la classe `Vehicule` et on utilise le mot clé Java `extends`. Un Velo **EST UN** Vehicule. La sous-classe spécialise sa super-classe. On la déclare de la manière suivante :
-
-    ```java
-    public class Velo extends Vehicule
-    ```
-
-    - la méthode `setVitesse` est un peu trop permissive pour le vélo, on peut donc la redéfinir (*override*). Pour reféfinir une méthode on réécrit une définition portant exactement la même signature que la méthode de la super-classe (même nom, même nombre d'arguments et mêmes types d'argument).
-    
-        ```java
-        @Override
-        public void setVitesse(double vitesse) {
-            ...
-        }    
-        ```
-    
-    - L'annotation `@Override` n'est pas obligatoire mais elle permet de dire au compilateur que l'on souhaite redéfinir une méthode. Il va alors vérifier qu'il existe bien dans la hiérarchie (super-classe, super-super-classe, ...) une méthode ayant exactement la même signature. Si on a fait une faute de frappe, le compilateur pourra donc la détecter. Il est même possible d'utiliser Eclipse pour générer la déclaration des méthodes redéfinies (Menu *Source* puis *Override/Implement Methods...*)
-    
-    - Dans le corps de la méthode redéfinie on peut également faire un appel à la version de la super-classe, en utilisant le mot clé `super`.
-    
-        ```java
-            @Override
-            public void setVitesse(double vitesse) {
-                if (vitesse >= 60) {
-                    System.out.println("Doucement fada ! Je suis en vélo !");
-                    vitesse = 60;
-                } else if (vitesse < 0) {
-                    System.out.println("De la marche arrière sur un vélo ?");
-                    vitesse = 0;
-                }
-                super.setVitesse(vitesse);
-            }
-            
-            @Override
-	       public void faireDuBruit() {
-		      super.faireDuBruit();
-		      System.out.println("Dring dring !");
-	}
-        ```
-    
-    
-* Créer ces 2 classes (`Vehicule` et `Velo`) puis une troisième classe pour faire des tests (`VehiculesTests`). Dans cette classe il faudra ajouter une méthode `main` pour créer un Vehicule et un Velo. Vérifier le comportement du programme lorsqu'on appelle chacune des méthodes.
-
-* Vérifier qu'il est bien possible d'appeler la méthode `getVitesse` sur l'instance de la sous-classe `Velo`, bien qu'elle n'ait pas fait l'objet d'une redéfinition. Ceci vise à mettre en évidence le fait que les sous-classes héritent des méthodes définies dans leur super-classe.
-
-* Vérifier en créant deux objets de type `Velo` distincts qu'ils peuvent bien avoir chacun une vitesse différente afin de mettre en évidence le fait que les sous-classes héritent des variables d'instance de leur super-classe.
-
-* Compléter la hiérarchie d'héritage avec les classes suivantes en remplaçant les `...` par le code approprié
-
-    ```java
-    package heritage;
-    
-    public class Voiture extends Vehicule {
-
-        @Override
-        public void setVitesse(double vitesse) {
-
-            if (vitesse > 130) {
-                ...
-            }
-
-            ...
-        }
-
-        @Override
-        public void faireDuBruit() {
-            super.faireDuBruit();
-            System.out.println("Vroom vroom");
-        }
-
-    }
-    ```
-    
-    ```java
-    package heritage;
-
-    public class Train extends Vehicule {
-
-        @Override
-        public void faireDuBruit() {
-            super.faireDuBruit();
-            System.out.println("Tchou tchou");
-        }
-
-    }
-    ```
-    
-    ```java
-    package heritage;
-
-    public class VoitureAutomatique extends Voiture {
-        private int rapportDeVitesse = 1;
-
-        public int getRapportDeVitesse() {
-            return rapportDeVitesse;
-        }
-
-        @Override
-        public void setVitesse(double vitesse) {
-            rapportDeVitesse = Math.min(5, (int)(vitesse / 20) + 1);
-            super.setVitesse(vitesse);
-        }
-
-        @Override
-        public void faireDuBruit() {
-            super.faireDuBruit();
-            System.out.println("Et en plus je roule en vitesse : " + rapportDeVitesse);
-        }
-    }
-    ```
-
-* Cette dernière classe ajoute une variable d'instance `rapportDeVitesse` et le getter qui va avec.
-
-* Dans la classe `VehiculesTests` créer des instances de chacune de ces classes et vérifier que vous pouvez invoquer les différentes méthodes et que le comportement correspond bien au type de la variable.
-
----
-
-# Polymorphisme
-
-Le polymorphisme consiste à écrire du code qui ne dépend pas du type concret des objets. Cela revient à utiliser des variables ou des paramètres de méthodes de type `Vehicule` qui recevront indifféremment des instances de n'importe laquelle des classes de la hiérarchie. Exemple :
+Afin de structurer un peu les choses, nous allons regrouper les classes de cette petite application dans un package. Les packages servent à constituer des groupes de classes (qui se traduisent par des répertoires différents). Lorsque l'on veut utiliser des classes situées dans un autre package on utilise la directive `import`. Exemple :
 
 ```java
-private static void triturerVehicule(Vehicule vehicule){
-    vehicule.faireDuBruit();
-    vehicule.setVitesse(vehicule.getVitesse() + 30);
-    vehicule.faireDuBruit();
-}
+import javax.swing.JOptionPane;
 ```
 
-Le type d'une variable définit les méthodes que l'on peut appeler ainsi que les champs accessibles. On ne peut donc pas accéder aux spécificités de la sous-classe mais on peut la traiter comme une instance de la super-classe.
+La ligne précédente nous indique que l'on importe la classe `JOptionPane` située dans le package `javax.swing`.
 
-* Modifier le code de la classe `VehiculesTests` en créant un variable de type `Vehicule` qui référencera successivement un vélo, une voiture, une voiture automatique,...
+Pour créer un package, il faut cliquer sur l'icône ![Icone package](/img/package_obj.png). Nous allons créer ici un package **shopping**. Les noms de packages doivent être en minuscules. Pour éviter que plusieurs utilisateurs utilisent le même nom de package, la recommandation est de débuter le nom du package par l'inverse du nom de domaine de l'entreprise (Exemple : `fr.univ_lyon1.iut.geii.shopping`). Si le package est sélectionné lors de la création d'une classe, celle-ci sera automatiquement ajoutée dans ce package. Sinon il est possible de choisir le package dans la boîte de dialogue de création de la classe. Quand une classe fait partie d'un package, son fichier source commence par une déclaration de package :
 
-    - Vérifier qu'il n'est possible d'appeler que les méthodes disponibles sur la classe `Vehicule` (impossible d'utiliser `getRapportVitesse()` même si l'objet effectivement référencé est de type `VoitureAutomatique`
-    - Vérifier que l'appel de `faireDuBruit()` dépend bien du type concret de l'objet référencé et non pas du type de la variable
+```java
+package shopping;
+```
 
-* Ajouter la méthode `triturerVehicule` à la classe `VehiculesTests`. Créer une liste de véhicules de type `ArrayList<Vehicule>` et la passer à une fonction prenant en paramètre une liste de véhicules qui appellera `triturerVehicule` sur chacun des éléments de la liste.
+Il est toujours possible a posteriori de faire glisser une classe vers un package dans eclipse. Les déclarations de package et les imports sont alors automatiquement mis à jour.
 
----
+* Créer les classes `ShoppingList`et `ShoppingListItem` s'appuyant sur la classe `ArrayList` respectant le diagramme de classe ci-dessous
 
-# Héritage et visibilité
+    ![](/img/CDC_ShoppingList.png)
 
-Bien que présents dans les instances, les champs privés d'une super-classe ne sont pas accessibles directement depuis le code source des sous-classes. Dans la classe `Voiture` de l'exemple précédent, on ne peut pas utiliser directement la variable `vitesse`, il est par contre possible d'utiliser les *setters* et *getters* qui sont *public*. Il existe un mot clé supplémentaire si on veut rendre le champ visible aux sous-classes, il s'agit de `protected`.
+    ![](/img/EclipseUmlLegend.png)
 
-En résumé, les modificateurs de visibilité sont (du plus sévère au plus laxiste) :
+    * On utilise des variables d'instances privées ainsi que des accesseurs (*getters* et *setters*) pour y accéder (**encapsulation**). Les accesseurs peuvent être créées automatiquement dans Eclipse (menu *Source* puis *Generate Getters and Setters...*)
 
-* `private` : accessible seulement depuis la classe dans laquelle la définition est écrite
+* Ecrire une classe `ShoppingListTest`contenant une méthode `main`dans laquelle vous validerez la possibilité de créer plusieurs listes et d'y ajouter/enlever des items, de les cocher/décocher. Vous pourrez utiliser le debugger pour valider le bon fonctionnement du programme.
 
-* '*default*' : l'absence de mot clé donne une visibilité à toutes les classes appartenant au même package
 
-* `protected` : accessible depuis les classes du même package et depuis toutes les sous-classes
+## Deuxième partie : application en mode console
 
-* `public`: accessible depuis n'importe quelle classe
+* Créer une classe `ShoppingListApp` qui permettra de gérer une liste de courses en ligne de commande. L'extrait suivant donne un exemple de déroulement du programme.
 
----
+Le programme affiche le contenu de la liste et un menu.
 
-# Exercice : étudiants
+```
+--------------------------------------------------------------------------------------------
+La liste ne contient aucun élément
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+```
+L'utilisateur tape <kbd>+</kbd> puis <kbd>Entrée</kbd>. Le système affiche alors :
 
-* Créer une classe `Etudiant` et deux sous-classes `BonEtudiant`et `MauvaisEtudiant`conformément au diagramme ci-dessous
+```
+Que voulez-vous ajouter à la liste de courses ?
+````
 
-    ![Etudiants](/img/Etudiants.png)
-    ![Legende Eclispe UML](/img/EclipseUmlLegend.png)
-    
-* Remarque importante : la classe Etudiant n'a pas de constructeur par défaut (sans argument). Or, lors de leur instanciation, les sous-classes doivent appeler le constructeur de leur super-classe. Le compilateur Java ne rajoute ces appels que pour les constructeurs sans argument. Dans le cas contraire, il faut créer des constructeurs explicitement et faire en sorte qu'ils délèguent le travail au super-constructeur approprié.
+L'utilisateur saisit "Lait" puis appuie sur <kbd>Entrée</kbd>. Le système affiche :
 
-* La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes (les versions de la super-classe se contenteront pour l'instant de retourner 0). Le code qui décrit la logique de l'algorithme n'est pas dupliqué, mais certaines étapes peuvent être spécialisée par les sous-classes.
+```
+--------------------------------------------------------------------------------------------
+1 Lait [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+```
+
+Une nouvelle séquence de saisies (<kbd>+</kbd>, <kbd>Entrée</kbd>, "Beurre", <kbd>Entrée</kbd>, <kbd>+</kbd>, <kbd>Entrée</kbd>, "Eau", <kbd>Entrée</kbd>, <kbd>x3</kbd>, <kbd>Entrée</kbd>, ...) provoquerait l'affichage ci-dessous :
+
+```
+Que voulez-vous ajouter à la liste de courses ?
+Beurre
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
++
+Que voulez-vous ajouter à la liste de courses ?
+Eau
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x3
+Entrée invalide
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun)
+3
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [X]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun)
+3
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [ ]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+x
+Saisir le numéro de l'item que vous voulez cocher/décocher (0 si aucun)
+2
+--------------------------------------------------------------------------------------------
+1 Lait   [ ]
+2 Beurre [X]
+3 Eau    [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+-
+Saisir le numéro de l'item que vous voulez supprimer (0 si aucun)
+2
+--------------------------------------------------------------------------------------------
+1 Lait [ ]
+2 Eau  [ ]
+
++ : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
+q
+Fermeture de l'application
+```
+
+* On pourra utiliser indifféremment des minuscules et majuscules (x ou X, q ou Q)
+* Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in`. Cet objet est de type `InputStream` et les méthodes disponibles ne sont pas très commodes (lecture brute d'octets). On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
+    * On crée un scanner sur l'entrée standard de la façon suivante :
 
     ```java
-        public void reagirAUneNote(double note) {
-            System.out.print(prenom + " " + nom + " : J'ai eu " + note +"/20. ");
-            if (note >= getSeuilCool()) {
-                System.out.println("trop cool !");
-            } else if (note >= getSeuilPasPire()) {
-                System.out.println("pas pire.");
-            } else if (note >= getSeuilLoose()) {
-                System.out.println("la loose !");
-            } else {
-                System.out.println("la cata !");
-            }
-        }
+    Scanner sc = new Scanner(System.in);
     ```
 
-    Pour un bon étudiant, on pourra régler les seuils 12, 14 et 16. Pour un mauvais étudiant on prendra 8, 10 et 12.
-    
-* Créer une classe `EtudiantsTests` pour valider le bon fonctionnement de vos classes et tester les réactions de vos étudiants à différentes notes (il est possible de faire une boucle for).
+    * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en un entier cela provoque une exception. On peut tester si le prochain élément saisi est un int avant d'appeler cette méthode en utilisant `sc.hasNextInt()`.
 
-* On s'intéresse maintenant à la méthode `passerUnPartiel`.
+    * `sc.nextLine()` renvoie une objet de type String contenant le reste de la ligne saisie jusqu'au caractère de fin de ligne (qui n'est pas retourné par la méthode). Utilisé pour :
 
-    - Pour un bon étudiant la méthode se contentera d'afficher le message suivant sur la console :
-    
-        ```
-            Tilalilalou : je sors mes fiches de synthèse
-            Tiens j'ai déjà fini et je n'ai pas eu besoin de les regarder !
-        ```
-        
-    - Pour un mauvais étudiant, la méthode commencera par prendre 2 feuilles doubles au bon étudiant référencé par la variable d'instance `etudiantATaxer` puis affichera le message suivant : 
-    
-        ```
-            Est-ce qu'on a droit aux documents ?
-            Si j'écris tout petit, il arrivera pas à me relire et me mettra les points dans le doute.
-            Je vais gratter 5 minutes de plus avant de rendre ma copie.
-            La loi d'Ohm c'est le carré de l'hypothénuse ? Ah non, je suis bête ça c'est Thales !
-        ```
+        * lire une chaîne de caractères.
 
-* Compléter les classes et tester.
+        * purger le reste de la ligne après avoir lu un int ou un long par exemple. En effet `sc.nextInt()`ne consomme que l'entier et pas le caractère fin de ligne.
+
+        ![](/img/scanner.png)
+
+
+* Pour formatter les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formattage semblable au printf ([description des formatteurs](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
+
+* La comparaison de chaînes de caractères doit se faire avec la méthode `equals` plutôt qu'avec l'opérateur `==`. En effet ce dernier compare les références (en quelques sorte les adresses en mémoire) alors que la méthode `equals` compare le contenu des chaînes de caractères
+
+* A la fin de l'exécution de l'exemple précédent, on a le diagramme d'objets suivant (qui représente les objets créés en mémoire, leurs associations, ainsi que la valeur de leurs champs principaux). Sur cette représentation chaque objet est identifié de la manière suivante : `nomObjet:ClasseObjet`. Quand les objets sont stockés dans une liste on ne dispose pas de variable ayant un nom pour accéder à un élément (on note alors `:ClasseObjet`).
+
+![](/img/ShoppingListObjectDiagram.png)
+
+* Le squelette de la classe est le suivant, remplacer les `...` pour obtenir le comportement décrit. Pour chaque méthode faire un organigramme et le faire valider par l'enseignant.
+
+```java
+
+import java.util.Scanner;
+
+public class ShoppingListApp {
+
+	private Scanner sc = new Scanner(System.in);
+	private ShoppingList list...;
+
+    public static void main(String[] args) {
+		ShoppingListApp app = new ShoppingListApp();
+		app.launch();
+	}
+
+	private void launch() {
+		// Boucle d'interaction
+        boolean keepGoing = true;
+		while (keepGoing) {
+			displayListContent();
+			displayMenu();
+			String input = sc.nextLine();
+			...
+			if (input.equals(...)) {
+				System.out.println("Fermeture de l'application");
+				...
+			} else {
+				processInput(input);
+			}
+		}
+	}
+
+
+	private void displayListContent() {
+		...
+	}
+
+	private void displayMenu() {
+		System.out.println("+ : Ajouter un item \t - : enlever un item \t x : (Dé)cocher un item \t q : quitter");
+	}
+
+	private void processInput(String input) {
+		switch (input) {
+		case "+":
+			newItemDialog();
+			break;
+
+		case "-":
+			removeItemDialog();
+			break;
+
+		case "x":
+			toggleCheckMarkDialog();
+			break;
+
+		default:
+			System.out.println("Entrée invalide");
+			break;
+		}
+	}
+
+	private void newItemDialog() {
+		...
+	}
+
+	private void removeItemDialog() {
+		...
+	}
+
+	private void toggleCheckMarkDialog() {
+		...
+	}
+
+}
+```
+Remarque : en Java, à partir de la version 7, on peut faire un `switch` sur une chaîne de caractères.
+
+Penser à valider les points suivants :
+
+* Lors de la saisie d'un numéro d'item pour le supprimer ou pour le cocher, il faut vérifier que le programme ne génère pas d'exception dans les cas suivants :
+    * Saisie d'un chaîne qui ne représente pas un nombre
+    * Saisie d'un indice au delà de la fin de la liste
+    * Saisie d'un 0 (on doit retourner au menu sans modifier le contenu de la liste)
+    * Saisie d'un nombre négatif
+
+* Vérifier qu'après la saisie d'un numéro d'item il n'y a pas d'affichage du texte "entrée invalide" avant l'affichage du menu (si c'est le cas relire le paragraphe sur l'utilisation du scanner).
+
+**FAIRE VALIDER PAR UN ENSEIGNANT**
