@@ -51,7 +51,7 @@ L'utilisateur tape <kbd>+</kbd> puis <kbd>Entrée</kbd>. Le système affiche alo
 
 ```
 Que voulez-vous ajouter à la liste de courses ?
-````
+```
 
 L'utilisateur saisit "Lait" puis appuie sur <kbd>Entrée</kbd>. Le système affiche :
 
