@@ -24,7 +24,7 @@ public class HelloWorld{
 }
 ```
 
-Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (Remarque : pensez à choisir une qualité HD 1080p dans les paramètres ![Paramètres](/img/engrenage.png)).
+Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (Remarque : pensez à choisir une qualité HD dans les paramètres ![Paramètres](/img/engrenage.png)).
 
 {% assign youtube_id = 'KPUSAug3pzA' %}
 {% include video.html %}
