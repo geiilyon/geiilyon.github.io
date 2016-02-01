@@ -301,3 +301,5 @@ public class PaquetCookies {
 
     {% assign youtube_id = 'ToMNhUUrumc' %}
     {% include video.html %}
+
+[Suite...]({{site.baseurl}}/enonces/tp2)
