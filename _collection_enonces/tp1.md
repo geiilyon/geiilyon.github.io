@@ -16,13 +16,13 @@ Toutes les classes seront pour l'instant créées dans le package par défaut (*
 
 ## L'incontournable Hello World !
 
-```java
+~~~java
 public class HelloWorld{
     public static void main(String[] args){
         System.out.println("Hello world !");
     }
 }
-```
+~~~
 
 Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (Remarque : pensez à choisir une qualité HD dans les paramètres ![Paramètres](/img/engrenage.png)).
 
@@ -58,12 +58,12 @@ Il existe de nombreux *templates* pour compléter automatiquement des blocs de c
 
 On désire créer un programme affichant sur la console le texte suivant :
 
-```bash
+~~~bash
 Portez ce vieux whisky au juge blond qui fume
 The quick brown fox jumps over the lazy dog
 La phrase française comporte ? caractères
 La phrase anglaise comporte ? caractères
-````
+~~~
 
 où les `?` auront été remplacés par le nombre de caractères.
 
@@ -73,9 +73,9 @@ où les `?` auront été remplacés par le nombre de caractères.
 
 Exemple :
 
-```java
+~~~java
 String phraseFr = "Portez ce vieux whisky au juge blond qui fume";
-````
+~~~
 
 * Construire l’affichage souhaité en appelant `System.out.println` pour chacune des 4 lignes à afficher.
 
@@ -93,9 +93,9 @@ String phraseFr = "Portez ce vieux whisky au juge blond qui fume";
 
 Pour pallier ce problème, la classe System de java permet de récupérer la chaîne associée au retour à la ligne :
 
-```java
+~~~java
 String lineSep = System.getProperty("line.separator");
-```
+~~~
 
 * Tester votre programme avec un affichage sur la console (`System.out.println`)
 
@@ -103,20 +103,19 @@ String lineSep = System.getProperty("line.separator");
 
 ## Exercice 3 - Anagrammes
 
-* Créer une nouvelle classe `Anagrams` qui contiendra une méthode (pas de `main`) :
+* Créer une nouvelle classe `Anagrams` qui contiendra une méthode (pas de `main`) qui renvoie `true`si les deux mots sont des anagrammes :
 
-    ```java
+  ~~~java
     public static boolean isAnagram(String firstWord, String secondWord)
-    ```
+  ~~~
 
-    qui renvoie `true`si les deux mots sont des anagrammes.
 
-    Utiliser les méthodes de la classe `String` ([javadoc de la classe String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html)) pour tenir compte de la présence de majuscules (qui doivent être ignorées) et pour convertir une chaîne en un tableau de caractères (`char`).
+* Utiliser les méthodes de la classe `String` ([javadoc de la classe String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html)) pour tenir compte de la présence de majuscules (qui doivent être ignorées) et pour convertir une chaîne en un tableau de caractères (`char`).
     Pour la comparaison des lettres des deux mots, elle peut se faire en 3 lignes de code en utilisant 2 méthodes de la classe `Arrays` ([javadoc de la classe Arrays](http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)). La classe `Arrays` contient des méthodes statiques destinées à manipuler les tableaux (tri, comparaison, remplissage, ...). Ces méthodes s'appellent directement sur la classe. Exemple de remplissage d'un tableau avec des 0 :
 
-    ```java
+  ~~~java
     Arrays.fill(tableau,0);
-    ```
+  ~~~
 
 * Créer une nouvelle classe `AnagramsTests` qui contiendra une méthode `main` permettant de valider le bon fonctionnement de la méthode `isAnagram`.
 
@@ -130,8 +129,8 @@ String lineSep = System.getProperty("line.separator");
 
     * Vidéo de la manipulation à effectuer :
 
-        {% assign youtube_id = 'Esf6rkbPocA' %}
-        {% include video.html %}
+{% assign youtube_id = 'Esf6rkbPocA' %}
+{% include video.html %}
 
 
 
@@ -159,7 +158,7 @@ Le principe de JUnit est le suivant :
 
 * Créer une nouvelle classe `PassageParValeur` qui contiendra le code suivant :
 
-```java
+~~~java
 public class PassageParValeur {
 
 	public static void main(String[] args) {
@@ -178,7 +177,7 @@ public class PassageParValeur {
 
 }
 
-```
+~~~
 
 * Placer un point d'arrêt en face de la méthode mangerDesCookies (double cliquer dans la colonne située à gauche des numéros de lignes  et lancer le débugger en cliquant sur l'icône avec un insecte (*bug*) située à côté du bouton *Run* (voir [exemple d'utilisation du  debugger](/eclipse/)).
 
@@ -186,9 +185,7 @@ public class PassageParValeur {
 
 * Créer maintenant deux nouvelles classes `PassageParReference` et `PaquetCookies`
 
-```java
-
-
+~~~java
 public class PassageParReference {
 
 	public static void main(String[] args) {
@@ -206,10 +203,9 @@ public class PassageParReference {
 
 }
 
-```
+~~~
 
-```java
-
+~~~java
 public class PaquetCookies {
 
 	int nbCookies;
@@ -220,7 +216,7 @@ public class PaquetCookies {
 
 }
 
-```
+~~~
 
 * A l'aide du debugger, analyser le comportement de ce programme et interpréter le résultat.
 
@@ -234,7 +230,7 @@ public class PaquetCookies {
 
     Ce diagramme correspond au squelette de code source suivant. On peut noter que le constructeur sans argument est généré automatiquement par le compilateur java lorsqu'il ne trouve aucun constructeur.
 
-    ```java
+  ~~~java
 
     public class Porte {
 
@@ -255,11 +251,11 @@ public class PaquetCookies {
 
     }
 
-    ```
+  ~~~
 
 * Compléter le code source des méthodes de la classe `Porte` qui sera responsable de l'affichage des messages sur la console en fonction des actions qui lui sont demandées et de son état. Créer une classe de tests `PorteTests`permettant de produire l'affichage suivant sur la console en ne créant qu'une seule porte et sans accéder directement à la variable d'instance estOuverte depuis la classe PorteTest :
 
-    ```
+~~~
     Tentative de franchissement : Aïe !
     Tentative de fermeture : Fermer une porte déjà fermée hmmm...faut-il que je cloue des planches ?
     Tentative d'ouverture : Ouverture réussie
@@ -267,7 +263,7 @@ public class PaquetCookies {
     Tentative de franchissement : Quelqu'un franchit la porte.
     Tentative de fermeture : Fermeture réussie
     Tentative de franchissement : Aïe !
-    ```
+~~~
 
 ---
 
@@ -275,9 +271,9 @@ public class PaquetCookies {
 
 * Modifier la classe `Porte` pour lui ajouter une variable `static` (variable de classe) :
 
-    ```java
+  ~~~java
     public static double hauteur;
-    ```
+  ~~~
 
 * Ajouter du code à votre classe `PorteTests` permettant de mettre en évidence que chaque instance de `Porte` possède une couleur mais que lorsque l'on modifie la hauteur d'une porte, toutes les autres changent également.
 
@@ -292,14 +288,14 @@ public class PaquetCookies {
 
 * Créer une classe `Conversion` qui contiendra des méthodes statiques :
 
-    ```java
+  ~~~java
     public static double toRpm(double radPerSec)
     public static double toRadPerSec(double rpm)
-    ```
+  ~~~
 
 * Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante :
 
-    {% assign youtube_id = 'ToMNhUUrumc' %}
-    {% include video.html %}
+{% assign youtube_id = 'ToMNhUUrumc' %}
+{% include video.html %}
 
 [Suite...]({{site.baseurl}}/enonces/tp2)

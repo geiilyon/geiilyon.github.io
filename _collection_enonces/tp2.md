@@ -11,17 +11,17 @@ Dans cette partie, nous allons mettre en oeuvre la liste de courses qui a été 
 
 Afin de structurer un peu les choses, nous allons regrouper les classes de cette petite application dans un package. Les packages servent à constituer des groupes de classes (qui se traduisent par des répertoires différents). Lorsque l'on veut utiliser des classes situées dans un autre package on utilise la directive `import`. Exemple :
 
-```java
+~~~java
 import javax.swing.JOptionPane;
-```
+~~~
 
 La ligne précédente nous indique que l'on importe la classe `JOptionPane` située dans le package `javax.swing`.
 
 Pour créer un package, il faut cliquer sur l'icône ![Icone package](/img/package_obj.png). Nous allons créer ici un package **shopping**. Les noms de packages doivent être en minuscules. Pour éviter que plusieurs utilisateurs utilisent le même nom de package, la recommandation est de débuter le nom du package par l'inverse du nom de domaine de l'entreprise (Exemple : `fr.univ_lyon1.iut.geii.shopping`). Si le package est sélectionné lors de la création d'une classe, celle-ci sera automatiquement ajoutée dans ce package. Sinon il est possible de choisir le package dans la boîte de dialogue de création de la classe. Quand une classe fait partie d'un package, son fichier source commence par une déclaration de package :
 
-```java
+~~~java
 package shopping;
-```
+~~~
 
 Il est toujours possible a posteriori de faire glisser une classe vers un package dans eclipse. Les déclarations de package et les imports sont alors automatiquement mis à jour.
 
@@ -42,29 +42,29 @@ Il est toujours possible a posteriori de faire glisser une classe vers un packag
 
 Le programme affiche le contenu de la liste et un menu.
 
-```
+~~~
 --------------------------------------------------------------------------------------------
 La liste ne contient aucun élément
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
-```
+~~~
 L'utilisateur tape <kbd>+</kbd> puis <kbd>Entrée</kbd>. Le système affiche alors :
 
-```
+~~~
 Que voulez-vous ajouter à la liste de courses ?
-```
+~~~
 
 L'utilisateur saisit "Lait" puis appuie sur <kbd>Entrée</kbd>. Le système affiche :
 
-```
+~~~
 --------------------------------------------------------------------------------------------
 1 Lait [ ]
 
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
-```
+~~~
 
 Une nouvelle séquence de saisies (<kbd>+</kbd>, <kbd>Entrée</kbd>, "Beurre", <kbd>Entrée</kbd>, <kbd>+</kbd>, <kbd>Entrée</kbd>, "Eau", <kbd>Entrée</kbd>, <kbd>x3</kbd>, <kbd>Entrée</kbd>, ...) provoquerait l'affichage ci-dessous :
 
-```
+~~~
 Que voulez-vous ajouter à la liste de courses ?
 Beurre
 --------------------------------------------------------------------------------------------
@@ -126,15 +126,15 @@ Saisir le numéro de l'item que vous voulez supprimer (0 si aucun)
 + : Ajouter un item 	 - : enlever un item 	 x : (Dé)cocher un item 	 q : quitter
 q
 Fermeture de l'application
-```
+~~~
 
 * On pourra utiliser indifféremment des minuscules et majuscules (x ou X, q ou Q)
 * Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in`. Cet objet est de type `InputStream` et les méthodes disponibles ne sont pas très commodes (lecture brute d'octets). On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
     * On crée un scanner sur l'entrée standard de la façon suivante :
 
-    ```java
-    Scanner sc = new Scanner(System.in);
-    ```
+      ~~~java
+      Scanner sc = new Scanner(System.in);
+      ~~~
 
     * `sc.nextInt()` retourne l'entier saisi. Si les caractères saisis ne peuvent pas être convertis en un entier cela provoque une exception. On peut tester si le prochain élément saisi est un int avant d'appeler cette méthode en utilisant `sc.hasNextInt()`.
 
@@ -157,8 +157,7 @@ Fermeture de l'application
 
 * Le squelette de la classe est le suivant, remplacer les `...` pour obtenir le comportement décrit. Pour chaque méthode faire un organigramme et le faire valider par l'enseignant.
 
-```java
-
+~~~java
 import java.util.Scanner;
 
 public class ShoppingListApp {
@@ -230,7 +229,7 @@ public class ShoppingListApp {
 	}
 
 }
-```
+~~~
 Remarque : en Java, à partir de la version 7, on peut faire un `switch` sur une chaîne de caractères.
 
 Penser à valider les points suivants :

@@ -6,13 +6,10 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://geiilyon.github.io" # the base hostname & protocol for your site
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
 
 collections:
   collection_enonces:
     output: true
     permalink: /enonces/:name/
-
-redcarpet:
-  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
