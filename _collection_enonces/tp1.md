@@ -103,7 +103,7 @@ String lineSep = System.getProperty("line.separator");
 
 ## Exercice 3 - Anagrammes
 
-* Créer une nouvelle classe `Anagrams` qui contiendra une méthode :
+* Créer une nouvelle classe `Anagrams` qui contiendra une méthode (pas de `main`) :
 
     ```java
     public static boolean isAnagram(String firstWord, String secondWord)
