@@ -27,7 +27,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
 
     - Le code correspondant est :
 
-        ```java
+        ~~~java
         package heritage;
 
         public class Vehicule {
@@ -47,29 +47,29 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
             }
 
         }
-        ```
+        ~~~
 
 
 * La sous-classe `Velo` hérite de `Vehicule`. On dit qu'elle *étend* la classe `Vehicule` et on utilise le mot clé Java `extends`. Un Velo **EST UN** Vehicule. La sous-classe spécialise sa super-classe. On la déclare de la manière suivante :
 
-    ```java
+    ~~~java
     public class Velo extends Vehicule
-    ```
+    ~~~
 
     - la méthode `setVitesse` est un peu trop permissive pour le vélo, on peut donc la redéfinir (*override*). Pour reféfinir une méthode on réécrit une définition portant exactement la même signature que la méthode de la super-classe (même nom, même nombre d'arguments et mêmes types d'argument).
 
-        ```java
+        ~~~java
         @Override
         public void setVitesse(double vitesse) {
             ...
         }    
-        ```
+        ~~~
 
     - L'annotation `@Override` n'est pas obligatoire mais elle permet de dire au compilateur que l'on souhaite redéfinir une méthode. Il va alors vérifier qu'il existe bien dans la hiérarchie (super-classe, super-super-classe, ...) une méthode ayant exactement la même signature. Si on a fait une faute de frappe, le compilateur pourra donc la détecter. Il est même possible d'utiliser Eclipse pour générer la déclaration des méthodes redéfinies (Menu *Source* puis *Override/Implement Methods...*)
 
     - Dans le corps de la méthode redéfinie on peut également faire un appel à la version de la super-classe, en utilisant le mot clé `super`.
 
-        ```java
+        ~~~java
             @Override
             public void setVitesse(double vitesse) {
                 if (vitesse >= 60) {
@@ -87,7 +87,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
 		      super.faireDuBruit();
 		      System.out.println("Dring dring !");
 	}
-        ```
+        ~~~
 
 
 * Créer ces 2 classes (`Vehicule` et `Velo`) puis une troisième classe pour faire des tests (`VehiculesTests`). Dans cette classe il faudra ajouter une méthode `main` pour créer un Vehicule et un Velo. Vérifier le comportement du programme lorsqu'on appelle chacune des méthodes.
@@ -98,7 +98,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
 
 * Compléter la hiérarchie d'héritage avec les classes suivantes en remplaçant les `...` par le code approprié
 
-    ```java
+    ~~~java
     package heritage;
 
     public class Voiture extends Vehicule {
@@ -120,9 +120,9 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
         }
 
     }
-    ```
+    ~~~
 
-    ```java
+    ~~~java
     package heritage;
 
     public class Train extends Vehicule {
@@ -134,9 +134,9 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
         }
 
     }
-    ```
+    ~~~
 
-    ```java
+    ~~~java
     package heritage;
 
     public class VoitureAutomatique extends Voiture {
@@ -158,7 +158,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
             System.out.println("Et en plus je roule en vitesse : " + rapportDeVitesse);
         }
     }
-    ```
+    ~~~
 
 * Cette dernière classe ajoute une variable d'instance `rapportDeVitesse` et le getter qui va avec.
 
@@ -170,13 +170,13 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
 
 Le polymorphisme consiste à écrire du code qui ne dépend pas du type concret des objets. Cela revient à utiliser des variables ou des paramètres de méthodes de type `Vehicule` qui recevront indifféremment des instances de n'importe laquelle des classes de la hiérarchie. Exemple :
 
-```java
+~~~java
 private static void triturerVehicule(Vehicule vehicule){
     vehicule.faireDuBruit();
     vehicule.setVitesse(vehicule.getVitesse() + 30);
     vehicule.faireDuBruit();
 }
-```
+~~~
 
 Le type d'une variable définit les méthodes que l'on peut appeler ainsi que les champs accessibles. On ne peut donc pas accéder aux spécificités de la sous-classe mais on peut la traiter comme une instance de la super-classe.
 
@@ -216,7 +216,7 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
 * La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes (les versions de la super-classe se contenteront pour l'instant de retourner 0). Le code qui décrit la logique de l'algorithme n'est pas dupliqué, mais certaines étapes peuvent être spécialisée par les sous-classes.
 
-    ```java
+    ~~~java
         public void reagirAUneNote(double note) {
             System.out.print(prenom + " " + nom + " : J'ai eu " + note +"/20. ");
             if (note >= getSeuilCool()) {
@@ -229,7 +229,7 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
                 System.out.println("la cata !");
             }
         }
-    ```
+    ~~~
 
     Pour un bon étudiant, on pourra régler les seuils 12, 14 et 16. Pour un mauvais étudiant on prendra 8, 10 et 12.
 
@@ -239,18 +239,18 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
     - Pour un bon étudiant la méthode se contentera d'afficher le message suivant sur la console :
 
-        ```
+        ~~~
             Tilalilalou : je sors mes fiches de synthèse
             Tiens j'ai déjà fini et je n'ai pas eu besoin de les regarder !
-        ```
+        ~~~
 
     - Pour un mauvais étudiant, la méthode commencera par prendre 2 feuilles doubles au bon étudiant référencé par la variable d'instance `etudiantATaxer` puis affichera le message suivant :
 
-        ```
+        ~~~
             Est-ce qu'on a droit aux documents ?
             Si j'écris tout petit, il arrivera pas à me relire et me mettra les points dans le doute.
             Je vais gratter 5 minutes de plus avant de rendre ma copie.
             La loi d'Ohm c'est le carré de l'hypothénuse ? Ah non, je suis bête ça c'est Thales !
-        ```
+        ~~~
 
 * Compléter les classes et tester.
