@@ -26,7 +26,7 @@ Eclipse utilise le concept de *perspective* : dans la vidéo ci-dessus, le lance
 
 * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>O</kbd> : organise les imports (ajoute tous les imports de packages nécessaires)
 
-* <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> : ouvre rapide d'une classe ou une interface
+* <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd> : ouverture rapide d'une classe ou une interface
 
 # Astuces
 
