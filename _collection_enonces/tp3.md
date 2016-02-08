@@ -122,7 +122,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
     }
   ~~~
 
-    ~~~java
+  ~~~java
     package heritage;
 
     public class Train extends Vehicule {
@@ -134,9 +134,9 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
         }
 
     }
-    ~~~
+  ~~~
 
-    ~~~java
+  ~~~java
     package heritage;
 
     public class VoitureAutomatique extends Voiture {
@@ -158,7 +158,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
             System.out.println("Et en plus je roule en vitesse : " + rapportDeVitesse);
         }
     }
-    ~~~
+  ~~~
 
 * Cette dernière classe ajoute une variable d'instance `rapportDeVitesse` et le getter qui va avec.
 
@@ -216,7 +216,7 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
 * La méthode `reagirAUneNote` est définie dans la classe `Etudiant` mais elle appelle des méthodes `protected` qui sont redéfinies dans les sous-classes (les versions de la super-classe se contenteront pour l'instant de retourner 0). Le code qui décrit la logique de l'algorithme n'est pas dupliqué, mais certaines étapes peuvent être spécialisée par les sous-classes.
 
-    ~~~java
+  ~~~java
         public void reagirAUneNote(double note) {
             System.out.print(prenom + " " + nom + " : J'ai eu " + note +"/20. ");
             if (note >= getSeuilCool()) {
@@ -229,7 +229,7 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
                 System.out.println("la cata !");
             }
         }
-    ~~~
+  ~~~
 
     Pour un bon étudiant, on pourra régler les seuils 12, 14 et 16. Pour un mauvais étudiant on prendra 8, 10 et 12.
 
@@ -239,18 +239,18 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
     - Pour un bon étudiant la méthode se contentera d'afficher le message suivant sur la console :
 
-        ~~~
+      ~~~
             Tilalilalou : je sors mes fiches de synthèse
             Tiens j'ai déjà fini et je n'ai pas eu besoin de les regarder !
-        ~~~
+      ~~~
 
     - Pour un mauvais étudiant, la méthode commencera par prendre 2 feuilles doubles au bon étudiant référencé par la variable d'instance `etudiantATaxer` puis affichera le message suivant :
 
-        ~~~
+      ~~~
             Est-ce qu'on a droit aux documents ?
             Si j'écris tout petit, il arrivera pas à me relire et me mettra les points dans le doute.
             Je vais gratter 5 minutes de plus avant de rendre ma copie.
             La loi d'Ohm c'est le carré de l'hypothénuse ? Ah non, je suis bête ça c'est Thales !
-        ~~~
+      ~~~
 
 * Compléter les classes et tester.
