@@ -27,48 +27,49 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
 
     - Le code correspondant est :
 
-        ~~~java
-        package heritage;
 
-        public class Vehicule {
+  ~~~java
+  package heritage;
 
-            private double vitesse = 0.0;
+  public class Vehicule {
 
-            public double getVitesse() {
-                return vitesse;
-            }
+      private double vitesse = 0.0;
 
-            public void setVitesse(double vitesse) {
-                this.vitesse = vitesse;
-            }
+      public double getVitesse() {
+          return vitesse;
+      }
 
-            public void faireDuBruit() {
-                System.out.println("Je roule à " + vitesse + " km/h");
-            }
-        }
-        ~~~
+      public void setVitesse(double vitesse) {
+          this.vitesse = vitesse;
+      }
+
+      public void faireDuBruit() {
+          System.out.println("Je roule à " + vitesse + " km/h");
+      }
+  }
+  ~~~
 
 
 * La sous-classe `Velo` hérite de `Vehicule`. On dit qu'elle *étend* la classe `Vehicule` et on utilise le mot clé Java `extends`. Un Velo **EST UN** Vehicule. La sous-classe spécialise sa super-classe. On la déclare de la manière suivante :
 
-    ~~~java
-    public class Velo extends Vehicule
-    ~~~
+  ~~~java
+  public class Velo extends Vehicule
+  ~~~
 
     - la méthode `setVitesse` est un peu trop permissive pour le vélo, on peut donc la redéfinir (*override*). Pour reféfinir une méthode on réécrit une définition portant exactement la même signature que la méthode de la super-classe (même nom, même nombre d'arguments et mêmes types d'argument).
 
-        ~~~java
+      ~~~java
         @Override
         public void setVitesse(double vitesse) {
-            ...
+          ...
         }    
-        ~~~
+      ~~~
 
     - L'annotation `@Override` n'est pas obligatoire mais elle permet de dire au compilateur que l'on souhaite redéfinir une méthode. Il va alors vérifier qu'il existe bien dans la hiérarchie (super-classe, super-super-classe, ...) une méthode ayant exactement la même signature. Si on a fait une faute de frappe, le compilateur pourra donc la détecter. Il est même possible d'utiliser Eclipse pour générer la déclaration des méthodes redéfinies (Menu *Source* puis *Override/Implement Methods...*)
 
     - Dans le corps de la méthode redéfinie on peut également faire un appel à la version de la super-classe, en utilisant le mot clé `super`.
 
-        ~~~java
+      ~~~java
             @Override
             public void setVitesse(double vitesse) {
                 if (vitesse >= 60) {
@@ -82,11 +83,11 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
             }
 
             @Override
-	       public void faireDuBruit() {
-		      super.faireDuBruit();
-		      System.out.println("Dring dring !");
-	}
-        ~~~
+	        public void faireDuBruit() {
+		        super.faireDuBruit();
+		        System.out.println("Dring dring !");
+	        }
+      ~~~
 
 
 * Créer ces 2 classes (`Vehicule` et `Velo`) puis une troisième classe pour faire des tests (`VehiculesTests`). Dans cette classe il faudra ajouter une méthode `main` pour créer un Vehicule et un Velo. Vérifier le comportement du programme lorsqu'on appelle chacune des méthodes.
@@ -97,7 +98,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
 
 * Compléter la hiérarchie d'héritage avec les classes suivantes en remplaçant les `...` par le code approprié
 
-    ~~~java
+  ~~~java
     package heritage;
 
     public class Voiture extends Vehicule {
@@ -119,7 +120,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
         }
 
     }
-    ~~~
+  ~~~
 
     ~~~java
     package heritage;
