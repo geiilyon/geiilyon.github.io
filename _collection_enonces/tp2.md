@@ -165,14 +165,14 @@ public class ShoppingListApp {
 	private Scanner sc = new Scanner(System.in);
 	private ShoppingList list...;
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		ShoppingListApp app = new ShoppingListApp();
 		app.launch();
 	}
 
 	private void launch() {
 		// Boucle d'interaction
-        boolean keepGoing = true;
+		boolean keepGoing = true;
 		while (keepGoing) {
 			displayListContent();
 			displayMenu();
