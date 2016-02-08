@@ -243,3 +243,5 @@ Penser à valider les points suivants :
 * Vérifier qu'après la saisie d'un numéro d'item il n'y a pas d'affichage du texte "entrée invalide" avant l'affichage du menu (si c'est le cas relire le paragraphe sur l'utilisation du scanner).
 
 **FAIRE VALIDER PAR UN ENSEIGNANT**
+
+[Suite...]({{site.baseurl}}/enonces/tp3)
