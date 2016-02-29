@@ -56,7 +56,7 @@ Pour illustrer les principaux éléments de syntaxe Java liés à l'héritage no
   public class Velo extends Vehicule
   ~~~
 
-    - la méthode `setVitesse` est un peu trop permissive pour le vélo, on peut donc la redéfinir (*override*). Pour reféfinir une méthode on réécrit une définition portant exactement la même signature que la méthode de la super-classe (même nom, même nombre d'arguments et mêmes types d'argument).
+    - la méthode `setVitesse` est un peu trop permissive pour le vélo, on peut donc la redéfinir (*override*). Pour redéfinir une méthode on réécrit une définition portant exactement la même signature que la méthode de la super-classe (même nom, même nombre d'arguments et mêmes types d'argument).
 
       ~~~java
         @Override
