@@ -106,4 +106,6 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
 
   ~~~
 
+<!---
 [Suite...]({{site.baseurl}}/enonces/tp6)
+-->

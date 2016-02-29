@@ -68,6 +68,5 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
 
     **Faire valider par un enseignant.**
 
-<!---
+
 [Suite...]({{site.baseurl}}/enonces/tp5)
--->
