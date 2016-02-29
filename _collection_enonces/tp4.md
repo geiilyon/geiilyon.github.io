@@ -1,7 +1,7 @@
 ---
 title: Héritage - classes abstraites et interfaces
 layout: page
-excerpt: Pour aller plus loin avec l'héritage
+excerpt: Pour aller plus loin avec l'héritage (mots clés abstract et interface). Guess the number.
 ---
 
 # Héritage - suite
@@ -67,3 +67,7 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
 * Tester `GuessTheNumber` avec cette nouvelle classe `DialogUserInterface`.
 
     **Faire valider par un enseignant.**
+
+<!---
+[Suite...]({{site.baseurl}}/enonces/tp5)
+-->

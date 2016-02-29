@@ -1,7 +1,7 @@
 ---
 title: Héritage et polymorphisme
 layout: page
-excerpt: Concepts et utilisation.
+excerpt: Concepts - héritage de variables d'instances et de méthodes, redéfinition.
 ---
 
 # Héritage - introduction
