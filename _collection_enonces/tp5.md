@@ -51,7 +51,7 @@ La javadoc de la méthode nous indique qu'il faut retourner **un entier négatif
 
 ### Tri sur nom puis prénom
 
-* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>`. Cela consiste à éditer la déclaration de la classe et à écrire la méthode `compareTo` qui effectuera une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>`.
+* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>`. Cela consiste à éditer la déclaration de la classe et à écrire la méthode `compareTo` qui effectuera une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>` (`"toto".compareTo("abc")`).
 
 * Créer une classe de tests unitaires (JUnit Test Case) `TestsTriEtudiants` pour valider le bon fonctionnement de l'interface `Comparable<Etudiant>`. Utiliser la méthode `assertTrue` pour tester que les valeurs retournées par l'appel de `compareTo` sont bien positives ou négatives.
 
@@ -106,6 +106,5 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
 
   ~~~
 
-<!---
+
 [Suite...]({{site.baseurl}}/enonces/tp6)
--->
