@@ -8,9 +8,9 @@ excerpt: Utilisation des interfaces pour enrichir les fonctionnalités et suppri
 
 ## Mise en oeuvre : Impression de la liste de courses au format texte ou html
 
-* Modifier l'application de liste de courses de manière à ce que les items soient triés par ordre alphabétique (sans tenir compte de la casse) et en faisant figurer en début de liste les items non cochés.
+* Modifier l'application de liste de courses de manière à ce que les items soient triés en faisant figurer en début de liste tous les items non cochés classés par ordre alphabétique (sans tenir compte de la casse) puis tous les cochés (également triés par ordre alphabétique)..
 
-* Ajouter un élément de menu permettant d'exporter la liste de courses dans un fichier. Lors du choix de cette option, l'utilisateur aura alors le choix du format de fichier : texte ou html.
+* Ajouter un élément de menu qui permettra d'exporter la liste de courses dans un fichier (se contenter d'ajouter l'élément pour l'instant, la structure à mettre en place sera décrite plus bas). Lors du choix de cette option, l'utilisateur aura alors le choix du format de fichier : texte ou html.
 
 * Créer une classe abstraite ListPrinter qui définit les méthodes suivantes :
 
