@@ -23,7 +23,7 @@ excerpt: Utilisation des interfaces pour enrichir les fonctionnalités et suppri
 
         abstract protected String printHeader();
 
-        abstract protected String printItemDescription(ShoppingListItem item);
+        abstract protected String printItemDescription(ShoppingListItem item, int itemNumber);
 
         abstract protected String printFooter(ShoppingList list);
     }
