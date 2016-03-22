@@ -8,7 +8,11 @@ excerpt: Tri de liste par implémentation des interfaces de comparaison.
 
 Les classes de collections telles que les listes (ex : `ArrayList`) peuvent être triées en utilisant les méthodes de la classe `Collections`. Cette dernière classe est l'équivalent de la classe `Arrays` qui était dédiée aux tableaux. Elle permet de manipuler les différents types de collections tels que `List`, `Set` (ensemble d'éléments uniques) et `Map`(tableaux associatifs : clé -> Valeur).
 
-La classe `Collections` définit deux méthodes qui permettent de trier des listes. Nous allons nous intéresser à la première :
+La classe `Collections` définit deux méthodes qui permettent de trier des listes. 
+
+![CollectionsSort](/img/CollectionsSort.png)
+
+Nous allons nous intéresser à la première, qui possède la signature suivante :
 
 ~~~java
 public static <T extends Comparable<? super T>> void sort(List<T> list);
@@ -48,10 +52,26 @@ public interface Comparable<T> {
 
 La javadoc de la méthode nous indique qu'il faut retourner **un entier négatif (respectivement positif) si l'objet sur lequel est appelée la méthode est inférieur (respectivement supérieur) à l'objet passé en paramètre. Si les objets sont égaux, la méthode compareTo doit retourner 0.**
 
+## Prise en main - tri d'une liste de chaîne
 
-### Tri sur nom puis prénom
+* Créer une classe `TestCompare` contenant une méthode `main` et afficher les résultats renvoyés par la méthode compareTo de la classe `String` en testant différentes combinaisons de chaînes de caractères (Exemple : `"toto".compareTo("abc")`)
 
-* Modifier la classe `Etudiant` pour implémenter l'interface `Comparable<Etudiant>`. Cela consiste à éditer la déclaration de la classe et à écrire la méthode `compareTo` qui effectuera une comparaison sur le nom puis sur le prénom (pour départager les homonymes). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>` (`"toto".compareTo("abc")`).
+* Créer une liste de chaînes en utilisant la méthode `asList` de la classe `Arrays` :
+
+~~~java
+List<String> list = Arrays.asList("Mr. Burns", "Flanders", "Krusty", "Smithers", "Homer", "Bart", "Marge", "Lisa",
+                "Maggie", "Moe");
+~~~
+
+* Utiliser la méthode `Collections.sort` pour trier la liste par ordre alphabétique. Afficher la liste avant et après le tri.
+
+## Tri sur nom puis prénom
+
+![ComparableEtudiant](/img/ComparableEtudiant.png)
+
+* Dans la classe `Etudiant` :
+    * Editer la déclaration de la classe afin de préciser que la classe implémente l'interface `Comparable<Etudiant>`
+    * Implémenter la méthode `compareTo` qui effectuera une comparaison sur le nom puis sur le prénom (pour départager les étudiants ayant le même nom de famille). Pour ce faire, il faudra comparer des chaînes de caractères en utilisant le fait que la classe `String` implémente l'interface `Comparable<String>` ou en utilisant la méthode compareToIgnoreCase si on ne veut pas tenir compte de la casse.
 
 * Créer une classe de tests unitaires (JUnit Test Case) `TestsTriEtudiants` pour valider le bon fonctionnement de l'interface `Comparable<Etudiant>`. Utiliser la méthode `assertTrue` pour tester que les valeurs retournées par l'appel de `compareTo` sont bien positives ou négatives.
 
@@ -67,7 +87,7 @@ List<Etudiant> etudiants = new ArrayList<Etudiant>();
 Ainsi le reste du code ne dépend **que** des méthodes définies dans l'interface `List<E>` et il est possible par la suite de remplacer la classe concrète `ArrayList` par une autre implémentation de l'interface `List<E>` (par exemple `LinkedList`).
 
 
-### Tri sur prénom puis nom
+## Tri sur prénom puis nom
 
 Si maintenant on souhaite trier notre liste d'étudiants en utilisant un autre critère, on arrive aux limites de l'interface `Comparable`. En effet, celle-ci ne permet pas d'utiliser différents critères de comparaison. La méthode `sort` de la classe `Collections` est surchargée. On peut lui passer un deuxième argument, en plus de la liste, qui est une référence vers un objet capable de comparer deux éléments de la liste :
 
