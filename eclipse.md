@@ -20,6 +20,8 @@ Eclipse utilise le concept de *perspective* : dans la vidéo ci-dessus, le lance
 
 * <kbd>Ctrl</kbd>+<kbd>D</kbd> : supprime la ligne entière
 
+* <kbd>Alt</kbd>+<kbd>&uparrow;</kbd> ou <kbd>Alt</kbd>+<kbd>&downarrow;</kbd> : déplace la ligne entière
+
 * <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> : renommage intelligent (Refactor->Rename), permet de renommer une variable, une méthode, une classe en prenant soin de modifier tous les endroits du code où le nom apparaît (renomme même le fichier .java en cas de changement de nom de la classe).
 
 * <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>F</kbd> : mise en forme du code source (corrige l'indentation, les sauts de lignes, l'emplacement des accolades, les lignes trop longues, ...)
@@ -47,4 +49,3 @@ Eclipse utilise le concept de *perspective* : dans la vidéo ci-dessus, le lance
     ![Always save resources dialog](/img/AlwaysSaveResources.png)
 
 * Pour ajouter des fichiers sources à un projet Java existant, les faire glisser depuis l'explorateur de fichiers directement sur la fenêtre package explorer d'Eclipse et sélectionner l'option permettant de les copier dans le répertoire du projet.
-
