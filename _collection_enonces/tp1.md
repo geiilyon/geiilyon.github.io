@@ -110,8 +110,8 @@ String lineSep = System.getProperty("line.separator");
   ~~~
 
 
-* Utiliser les méthodes de la classe `String` ([javadoc de la classe String](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html)) pour tenir compte de la présence de majuscules (qui doivent être ignorées) et pour convertir une chaîne en un tableau de caractères (`char`).
-    Pour la comparaison des lettres des deux mots, elle peut se faire en 3 lignes de code en utilisant 2 méthodes de la classe `Arrays` ([javadoc de la classe Arrays](http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)). La classe `Arrays` contient des méthodes statiques destinées à manipuler les tableaux (tri, comparaison, remplissage, ...). Ces méthodes s'appellent directement sur la classe. Exemple de remplissage d'un tableau avec des 0 :
+* Utiliser les méthodes de la classe `String` ([javadoc de la classe String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)) pour tenir compte de la présence de majuscules (qui doivent être ignorées) et pour convertir une chaîne en un tableau de caractères (`char`).
+    Pour la comparaison des lettres des deux mots, elle peut se faire en 3 lignes de code en utilisant 2 méthodes de la classe `Arrays` ([javadoc de la classe Arrays](https://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html)). La classe `Arrays` contient des méthodes statiques destinées à manipuler les tableaux (tri, comparaison, remplissage, ...). Ces méthodes s'appellent directement sur la classe. Exemple de remplissage d'un tableau avec des 0 :
 
   ~~~java
     Arrays.fill(tableau,0);
@@ -282,7 +282,7 @@ public class PaquetCookies {
     * les mêmes entrées produisent les mêmes sorties
     * pas de dépendance à un état de l'objet ou du programme
     * pas de modification de l'état de l'objet ou du programme
-    * c'est le cas des fonctions mathématiques de la classe `Math` (abs, cos, floor, cf. [javadoc de la classe Math](http://docs.oracle.com/javase/7/docs/api/java/lang/Math.html))
+    * c'est le cas des fonctions mathématiques de la classe `Math` (abs, cos, floor, cf. [javadoc de la classe Math](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html))
 
 ---
 

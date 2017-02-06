@@ -129,7 +129,7 @@ Fermeture de l'application
 ~~~
 
 * On pourra utiliser indifféremment des minuscules et majuscules (x ou X, q ou Q)
-* Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in`. Cet objet est de type `InputStream` et les méthodes disponibles ne sont pas très commodes (lecture brute d'octets). On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
+* Pour récupérer des données saisies par l'utilisateur, on utilise l'entrée standard `System.in`. Cet objet est de type `InputStream` et les méthodes disponibles ne sont pas très commodes (lecture brute d'octets). On utilise donc la classe `Scanner` qui va *décorer* l'entrée standard en ajoutant des méthodes plus pratiques ([javadoc](https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html)).
     * On crée un scanner sur l'entrée standard de la façon suivante :
 
       ~~~java
@@ -147,7 +147,7 @@ Fermeture de l'application
         ![](/img/scanner.png)
 
 
-* Pour formatter les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formattage semblable au printf ([description des formatteurs](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](http://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
+* Pour formatter les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formattage semblable au printf ([description des formatteurs](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
 
 * La comparaison de chaînes de caractères doit se faire avec la méthode `equals` plutôt qu'avec l'opérateur `==`. En effet ce dernier compare les références (en quelques sorte les adresses en mémoire) alors que la méthode `equals` compare le contenu des chaînes de caractères
 

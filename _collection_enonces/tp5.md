@@ -30,7 +30,7 @@ Cette méthode permet de trier un objet de type `List<T>`. Ceci soulève 2 quest
 
 * Comment la méthode `sort` peut-elle comparer deux étudiants ? La notion de supériorité/infériorité/égalité des étudiants ne peut pas être devinée automatiquement.
 
-Pour répondre à la première question, une `ArrayList<T>` est une `List<T>`. Pour le savoir il faut aller sur la [javadoc de la classe ArrayList](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html). L'information est présente dans l'en-tête de la description de la classe (*All implemented interfaces*) et dans la déclaration de la classe (juste en-dessous de la ligne horizontale) dont le contenu est :
+Pour répondre à la première question, une `ArrayList<T>` est une `List<T>`. Pour le savoir il faut aller sur la [javadoc de la classe ArrayList](https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html). L'information est présente dans l'en-tête de la description de la classe (*All implemented interfaces*) et dans la déclaration de la classe (juste en-dessous de la ligne horizontale) dont le contenu est :
 
 ~~~java
 public class ArrayList<E>
@@ -42,7 +42,7 @@ La classe `ArrayList<E>` hérite de `AbstractList<E>` (classe qui regroupe les a
 
 La deuxième question concernait la possibilité de pouvoir comparer 2 objets de type `Etudiant`. C'est le sens de la partie obscure de la déclaration qui est là pour que le compilateur Java vérifie bien que les éléments de la liste implémentent l'interface Comparable. Il y a même une contrainte supplémentaire sur la possibilité de comparer des objets qui héritent de la classe `T` mais cela sort du cadre de ce cours. En résumé, pour que l'on puisse comparer deux étudiants, il faut que le classe `Etudiant` implémente l'interface `Comparable<Etudiant>`.
 
-L'interface `Comparable<T>` est **déjà définie dans la bibliothèque Java** de la manière suivante (elle fait partie du package java.lang qui est importé automatiquement, cf. [javadoc](http://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html)) :
+L'interface `Comparable<T>` est **déjà définie dans la bibliothèque Java** de la manière suivante (elle fait partie du package java.lang qui est importé automatiquement, cf. [javadoc](https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html)) :
 
 ~~~java
 public interface Comparable<T> {
@@ -97,7 +97,7 @@ public static <T> void sort(List<T> list, Comparator<? super T> c)
 
 Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose capable de comparer des instances de la classe T ou de ses sous-classes). Si on veut trier notre liste d'étudiants par *prénom* d'abord, puis par *nom*, il va falloir créer ce comparateur.
 
-* Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` ([javadoc](http://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html)) et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation de ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
+* Créer une classe `FirstThenLastNameComparator` qui implémentera l'interface `Comparator<Etudiant>` ([javadoc](https://docs.oracle.com/javase/7/docs/api/java/util/Comparator.html)) et ajouter une méthode de test dans la classe `TestsTriEtudiants` pour valider le bon fonctionnement. Il est possible de créer des variables d'instances dans la classe de test pour réutiliser des variables dans différentes méthodes de test. L'initialisation de ces variables partagées peut-être effectuée dans une méthode `setUp` marquée par l'annotation `@Before`, qui sera appelée avant d'exécuter chaque méthode de test. Exemple :
 
   ~~~java
     public class TestsTriEtudiants {

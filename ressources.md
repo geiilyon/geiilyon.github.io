@@ -7,11 +7,11 @@ permalink: /ressources/
 
 # La documentation officielle (Oracle)
 
-* La [javadoc](http://docs.oracle.com/javase/7/docs/api/)
+* La [javadoc](https://docs.oracle.com/javase/7/docs/api/)
 
     C'est la source officielle pour se documenter sur les classes fournies avec le JRE. Les différents packages, classes, méthodes sont décrits en détail.
    
-* Les [Java tutorials](http://docs.oracle.com/javase/tutorial/)
+* Les [Java tutorials](https://docs.oracle.com/javase/tutorial/)
 
     Tutoriels officiels écrits par Oracle pour décrire les bases du langages et la mise en oeuvre d'un certain nombre de classes.
 
