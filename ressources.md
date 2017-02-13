@@ -35,5 +35,5 @@ permalink: /ressources/
 
 * Les principaux IDE pour développer en Java sont [Eclipse](https://eclipse.org/downloads/), [Netbeans](https://netbeans.org) et [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
-    Il faut télécharger la version pour Java SE (Standard Edition). Pour ce module, nous utiliserons Eclipse.
+    Il faut télécharger la version pour Java SE (Standard Edition) ou Java Developers. Pour ce module, nous utiliserons Eclipse.
 
