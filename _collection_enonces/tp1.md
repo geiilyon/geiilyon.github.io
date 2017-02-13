@@ -293,9 +293,9 @@ public class PaquetCookies {
     public static double toRadPerSec(double rpm) //Conversion de tours par minute en radians par secondes
   ~~~
 
-  RPM : Rotation Per Minute
+    RPM : Rotation Per Minute
 
-* Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante :
+* Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de ces deux méthodes en vous inspirant de la vidéo suivante (pour les valeurs à injecter dans les tests, vous pouvez faire effectuer la conversion par Google) :
 
 {% assign youtube_id = 'ToMNhUUrumc' %}
 {% include video.html %}
