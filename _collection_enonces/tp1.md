@@ -286,12 +286,14 @@ public class PaquetCookies {
 
 ---
 
-* Créer une classe `Conversion` qui contiendra des méthodes statiques :
+* Créer une classe `Conversion` qui contiendra deux méthodes statiques (à compléter) :
 
   ~~~java
-    public static double toRpm(double radPerSec)
-    public static double toRadPerSec(double rpm)
+    public static double toRpm(double radPerSec) //Conversion de radians par secondes en tours par minute
+    public static double toRadPerSec(double rpm) //Conversion de tours par minute en radians par secondes
   ~~~
+
+  RPM : Rotation Per Minute
 
 * Créer une classe de tests unitaires JUnit pour valider le bon fonctionnement de votre classe en vous inspirant de la vidéo suivante :
 
