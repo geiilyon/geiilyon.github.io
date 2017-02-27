@@ -147,7 +147,7 @@ Fermeture de l'application
         ![](/img/scanner.png)
 
 
-* Pour formatter les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formattage semblable au printf ([description des formatteurs](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
+* Pour formater les lignes `1 Lait [ ]` on pourra utiliser la méthode statique `format` de la classe `String`qui accepte une chaîne de formatage semblable au printf ([description des formateurs](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax) et [javadoc de la méthode](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))).
 
 * La comparaison de chaînes de caractères doit se faire avec la méthode `equals` plutôt qu'avec l'opérateur `==`. En effet ce dernier compare les références (en quelques sorte les adresses en mémoire) alors que la méthode `equals` compare le contenu des chaînes de caractères
 
