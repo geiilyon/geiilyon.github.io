@@ -239,6 +239,7 @@ Penser à valider les points suivants :
     * Saisie d'un indice au delà de la fin de la liste
     * Saisie d'un 0 (on doit retourner au menu sans modifier le contenu de la liste)
     * Saisie d'un nombre négatif
+    * Saisie d'une chaîne vide dans la description d'un item
 
 * Vérifier qu'après la saisie d'un numéro d'item il n'y a pas d'affichage du texte "entrée invalide" avant l'affichage du menu (si c'est le cas relire le paragraphe sur l'utilisation du scanner).
 
