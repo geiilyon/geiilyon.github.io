@@ -60,8 +60,6 @@ De très nombreuses classes de la bibliothèque Java s'appuient sur les interfac
 
 * Créer une classe `ConsoleGame` permettant de jouer au jeu `GuessTheNumber` avec une interface en mode console (en utilisant la classe `ConsoleUserInterface`).
 
-    **Faire valider par un enseignant.**
-
 * Créer maintenant une nouvelle classe `DialogUserInterface` qui implémente l'interface `UserInterface` en s'appuyant sur la classe `JOptionPane`
 
 * Tester `GuessTheNumber` avec cette nouvelle classe `DialogUserInterface`.
