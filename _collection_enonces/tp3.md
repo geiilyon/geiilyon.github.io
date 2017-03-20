@@ -185,7 +185,7 @@ Le type d'une variable définit les méthodes que l'on peut appeler ainsi que le
     - Vérifier qu'il n'est possible d'appeler que les méthodes disponibles sur la classe `Vehicule` (impossible d'utiliser `getRapportVitesse()` même si l'objet effectivement référencé est de type `VoitureAutomatique`
     - Vérifier que l'appel de `faireDuBruit()` dépend bien du type concret de l'objet référencé et non pas du type de la variable
 
-* Ajouter la méthode `triturerVehicule` à la classe `VehiculesTests`. Créer une liste de véhicules de type `ArrayList<Vehicule>` et la passer à une fonction prenant en paramètre une liste de véhicules qui appellera `triturerVehicule` sur chacun des éléments de la liste.
+* Ajouter la méthode `triturerVehicule` à la classe `VehiculesTests`. Créer une liste de véhicules de type `ArrayList<Vehicule>` et la passer à une méthode prenant en paramètre une liste de véhicules qui appellera `triturerVehicule` sur chacun des éléments de la liste.
 
 ---
 
