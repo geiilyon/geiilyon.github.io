@@ -29,11 +29,13 @@ excerpt: Utilisation des interfaces pour enrichir les fonctionnalités et suppri
     }
   ~~~
 
+* Les méthodes n'effectuent aucun affichage. Elles produisent une chaîne de caractères formatée qui pourra ensuite être écrite dans un fichier.
+
 * La méthode `printList` implémente l'algorithme commun :
 
-    * impression d'une ligne d'en-tête (`printHeader`)
-    * Boucle sur l'ensemble de la liste et affichage de la description de chacun des items par appel de (`printItemDescription`)
-    * Affichage d'un pied de page (`printFooter`)
+    * création d'une ligne d'en-tête (`printHeader`)
+    * Boucle sur l'ensemble de la liste et création de la description de chacun des items par appel de (`printItemDescription`)
+    * Création d'un pied de page (`printFooter`)
 
 * Créer deux sous-classes de `ListPrinter` : `TextListPrinter` et `HtmlListPrinter` et redéfinir les méthodes abstraites afin de produire des chaînes de caractères conformes aux modèles suivants :
 
