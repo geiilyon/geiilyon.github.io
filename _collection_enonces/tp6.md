@@ -82,9 +82,22 @@ excerpt: Utilisation des interfaces pour enrichir les fonctionnalités et suppri
         * `throw` : pour lancer une exception
         * `throws` : pour indiquer qu'une méthode est susceptible de lancer des exceptions (cette clause est suivie de la liste des classes d'exceptions qui peuvent être lancées)
 
-        * `try` : pour démarrer un bloc de code qui s'exécutera intégralement si aucune exception n'est levée
+        * `try` : pour démarrer un bloc de code qui s'exécutera intégralement si aucune exception n'est levée. Depuis Java 7, on peut mettre entre parenthèses la liste des ressources qui doivent être refermées à la fin du traitement (qu'il y ait une erreur ou non)
         * `catch` : pour intercepter un ou plusieurs types d'exceptions (les exceptions sont des instances de classes qui identifient la nature de l'exception. Il est possible d'avoir plusieurs blocs `catch` pour associer un traitement qui dépend de la nature de l'erreur)
-        * `finally` : pour avoir un bloc qui s'exécute quoiqu'il arrive (exception ou non). Ce bloc de code permet de libérer des ressources, fermer des fichiers/connexions réseau/...
+        * `finally` : pour avoir un bloc qui s'exécute quoiqu'il arrive (exception ou non). Ce bloc de code permet de faire le ménage (fermer des ressources qui ne pourraient pas être fermée automatiquement par le try)
+        * Exemple :
+
+        ~~~java
+            /*"try with resource" : BufferedWriter implémente AutoCloseable.
+            En déclarant la variable dans cette zone, elle sera automatiquement
+            fermée à la fin (même si une erreur se produit).*/
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(f));) {
+                writer.write(fileContent);
+            } catch (IOException e) {
+                System.out.println("Erreur d'écriture : " + e.getLocalizedMessage());
+                //e.getLocalizedMessage() affiche le message d'erreur dans la langue de l'utilisateur
+            }
+        ~~~
 
     * Dans le cas présent, les méthodes à invoquer sont susceptibles de lancer l'exception `IOException`
 
