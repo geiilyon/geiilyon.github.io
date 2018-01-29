@@ -7,10 +7,10 @@ permalink: /cours/
 
 Ces documents sont sur SPIRAL et nécessitent une authentification
 
-* [Chapitre 1 - Introduction à Java](http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=5329116)
+* [Chapitre 1 - Introduction à Java](https://clarolineconnect.univ-lyon1.fr/resource/open/1639198)
 
-* [Chapitre 2 - Objets et classes](http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=5329117)
+* [Chapitre 2 - Objets et classes]( https://clarolineconnect.univ-lyon1.fr/resource/open/1639199)
 
-* [Chapitre 3 - Encapsulation](http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=5329113)
+* [Chapitre 3 - Encapsulation]( https://clarolineconnect.univ-lyon1.fr/resource/open/1639200)
 
-* [Chapitre 4 - Héritage et polymorphisme](http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=5329115)
+* [Chapitre 4 - Héritage et polymorphisme]( https://clarolineconnect.univ-lyon1.fr/resource/open/1639201)
