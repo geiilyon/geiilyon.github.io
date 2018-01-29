@@ -121,7 +121,7 @@ String lineSep = System.getProperty("line.separator");
 
 * Validation par des tests unitaires.
 
-    * Télécharger le [fichier de tests unitaires](http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&data=4025308)
+    * Télécharger le [fichier de tests unitaires](/files/AnagramsUnitTests.java)
 
     * Depuis l'explorateur de fichier du système d'exploitation, glisser-déposer le fichier .java sur (default package) dans la vue *Package Explorer* d'Eclipse
 
