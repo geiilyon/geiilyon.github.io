@@ -35,6 +35,7 @@ Il est toujours possible a posteriori de faire glisser une classe vers un packag
 
 * Ecrire une classe `ShoppingListTest`contenant une méthode `main`dans laquelle vous validerez la possibilité de créer plusieurs listes et d'y ajouter/enlever des items, de les cocher/décocher. Vous pourrez utiliser le debugger pour valider le bon fonctionnement du programme.
 
+**FAIRE VALIDER PAR UN ENSEIGNANT**
 
 ## Deuxième partie : application en mode console
 
