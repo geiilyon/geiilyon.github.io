@@ -6,9 +6,8 @@ excerpt: Prise en main d'Eclipse. Création de projets, classes, expérimentatio
 
 # Prise en main d'Eclipse
 
-Lors du lancement, Eclipse demande de choisir/créer un *workspace*. Ce dossier permettra de stocker plusieurs *projets*. Pour ce module nous utiliserons toujours le même workspace. Nommez le **workspace eclipse** et enregistrez le dans votre dossier Mes Documents.
-
-![Dialogue Eclipse workspace](/img/EclipseWorkspaceDialogue.png)
+Lors du lancement, Eclipse demande de choisir/créer un *workspace*. Ce dossier permettra de stocker plusieurs *projets*.
+Pour ce module nous utiliserons toujours le même workspace à créer dans le dossier **W:\Java\WorkspaceJava**.
 
 Toutes les classes seront pour l'instant créées dans le package par défaut (*default package*).
 
