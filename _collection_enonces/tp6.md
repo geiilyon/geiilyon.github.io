@@ -116,6 +116,6 @@ Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment ident
 
 * Effectuer cette modification. Tester et valider le bon fonctionnement.
 
-* Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_ShoppingList_v1.zip. Déposer cette archive sous SPIRAL dans la zone de dépôt ShoppingList v1 du module MC-POO.
+* Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_ShoppingList_v1.zip. Déposer cette archive sous Claroline Connect dans la zone de dépôt ShoppingList v1 du module MC-POO.
 
 [Suite...]({{site.baseurl}}/enonces/tp7)
