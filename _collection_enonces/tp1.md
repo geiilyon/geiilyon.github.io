@@ -252,7 +252,7 @@ public class PaquetCookies {
 
   ~~~
 
-* Compléter le code source des méthodes de la classe `Porte` qui sera responsable de l'affichage des messages sur la console en fonction des actions qui lui sont demandées et de son état. Créer une classe de tests `PorteTests`permettant de produire l'affichage suivant sur la console en ne créant qu'une seule porte et sans accéder directement à la variable d'instance estOuverte depuis la classe PorteTest :
+* Compléter le code source des méthodes de la classe `Porte` qui sera responsable de l'affichage des messages sur la console en fonction des actions qui lui sont demandées et de son état. Créer une classe `PorteTests` avec une méthode `main` permettant de produire l'affichage suivant sur la console en ne créant qu'une seule porte et sans accéder directement à la variable d'instance estOuverte depuis la classe PorteTest :
 
 ~~~
     Tentative de franchissement : Aïe !
