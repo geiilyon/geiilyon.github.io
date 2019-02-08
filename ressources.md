@@ -13,7 +13,7 @@ permalink: /ressources/
    
 * Les [Java tutorials](https://docs.oracle.com/javase/tutorial/)
 
-    Tutoriels officiels écrits par Oracle pour décrire les bases du langages et la mise en oeuvre d'un certain nombre de classes.
+    Tutoriels officiels écrits par Oracle pour décrire les bases du langages et la mise en oeuvre d'un certain nombre de classes.Standard
 
 # Les ressources francophones
 
@@ -35,5 +35,5 @@ permalink: /ressources/
 
 * Les principaux IDE pour développer en Java sont [Eclipse](https://www.eclipse.org/downloads/packages/), [Netbeans](https://netbeans.org) et [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
-    Il faut télécharger la version pour Java SE (Standard Edition) ou Java Developers. Pour ce module, nous utiliserons Eclipse.
+Pour ce module nous utilisons la version Eclipse IDE for Java Developers.
 
