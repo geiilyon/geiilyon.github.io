@@ -203,6 +203,8 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
 * `public`: accessible depuis n'importe quelle classe
 
+**FAIRE VALIDER PAR UN ENSEIGNANT**
+
 ---
 
 # Exercice : étudiants
