@@ -257,4 +257,6 @@ En résumé, les modificateurs de visibilité sont (du plus sévère au plus lax
 
 * Compléter les classes et tester.
 
+**FAIRE VALIDER PAR UN ENSEIGNANT.**
+
 [Suite...]({{site.baseurl}}/enonces/tp4)
