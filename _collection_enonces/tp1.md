@@ -82,13 +82,13 @@ String phraseFr = "Portez ce vieux whisky au juge blond qui fume";
 
 * Créer une nouvelle classe `ExperimentationChaines2` qui devra afficher le même résultat mais en concaténant les 4 chaînes dans **une seule chaîne** qui contiendra le résultat et sera passée à une fonction pour affichage (console ou fenêtre de dialogue).
 
-    Le retour à la ligne est codé différemment selon les systèmes d’exploitation :
+Le retour à la ligne est codé différemment selon les systèmes, il utilise les caractères CR (Carriage Return) de valeur '\r' (0x0D) et LF (Line Feed) de valeur '\n' (0x0A) :
 
-    * 0x0A (Unix, Linux, Mac OS X, ...)
+    * LF (0x0A) : Unix, Linux, Mac OS X, ...
 
-    * 0x0D (Commodore, ...)
+    * CR (0x0D) : Commodore, ...
 
-    * 0x0D 0x0A (Windows, ...)
+    * CRLF (0x0D 0x0A) : Windows, Commandes AT, ...
 
 Pour pallier ce problème, la classe System de java permet de récupérer la chaîne associée au retour à la ligne :
 
