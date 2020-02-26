@@ -8,7 +8,7 @@ excerpt: Pour aller plus loin avec l'héritage (mots clés abstract et interface
 
 ## Classes abstraites
 
-Dans l'exemple de la classe `Etudiant` étudié dans la partie précédente, les méthodes `getSeuilCool()`, `getSeuilLoose()` et `getSeuilPasPire()` avaient besoin d'être définies dans la classe Etudiant seulement dans le but d'être redéfinies dans les sous-classes. Dans ce cas là, pour ne pas être obligé de fournir une implémentation, on peut déclarer ces méthodes comme étant abstraites (`abstract`) :
+Dans l'exemple de la classe `Etudiant` étudié dans la partie précédente, les méthodes `getSeuilCool()`, `getSeuilLoose()`,  `getSeuilPasPire()` et `passerUnPartiel()` avaient besoin d'être définies dans la classe Etudiant seulement dans le but d'être redéfinies dans les sous-classes. Dans ce cas là, pour ne pas être obligé de fournir une implémentation, on peut déclarer ces méthodes comme étant abstraites (`abstract`) :
 
 ~~~java
     abstract protected double getSeuilLoose();
