@@ -125,6 +125,7 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
     }
 
   ~~~
-
+  
+**Faire valider par un enseignant.**
 
 [Suite...]({{site.baseurl}}/enonces/tp6)
