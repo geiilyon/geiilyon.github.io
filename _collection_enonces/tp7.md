@@ -38,5 +38,5 @@ Le diagramme d'état décrivant le fonctionnement de la cafetière est le suivan
 
     **Faire valider par un enseignant.**
 
-* Créer une archive (zip) contenant les fichiers sources de votre application dont le nom utilisera le format : G40x_NomDeFamille_Sensespresso.zip. Déposer cette archive sous SPIRAL dans la zone de dépôt Sensespresso v1 du module MC-POO.
+* Bien faire un dernier Commit & Push.
 
