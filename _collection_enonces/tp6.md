@@ -116,6 +116,8 @@ Les méthodes `toggleCheckMarkDialog` et `removeItemDialog` sont quasiment ident
 
 * Effectuer cette modification. Tester et valider le bon fonctionnement.
 
+**Faire valider par un enseignant.**
+
 * Faire un Commit & Push !
 
 [Suite...]({{site.baseurl}}/enonces/tp7)
