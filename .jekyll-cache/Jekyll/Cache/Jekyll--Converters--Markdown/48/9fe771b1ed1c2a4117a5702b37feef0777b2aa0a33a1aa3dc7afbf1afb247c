@@ -1,0 +1,54 @@
+I"�<h1 id="interfaces---suite">Interfaces - suite</h1>
+
+<h2 id="mise-en-oeuvre--design-pattern-etat---la-cafetière-sensespresso-le-retour">Mise en oeuvre : <em>Design Pattern</em> Etat - la cafetière Sensespresso (le retour)</h2>
+
+<p>L’approche orientée objet de la programmation d’une machine d’état consiste à définir une super-classe abstraite possédant une méthode pour chaque évènement auquel le système doit réagir. Cette classe abstraite (ici, <code class="highlighter-rouge">CoffeeMachineState</code>) peut définir une implémentation par défaut de ces méthodes qui généralement ne fait rien. Cela permet aux sous-classes de ne redéfinir que les méthodes correspondant aux évènements qu’elles souhaitent gérer. Chaque évènement est en effet traité en écrivant une sous-classe spécifique.</p>
+
+<p>La classe principale (ici, <code class="highlighter-rouge">CoffeeMachine</code>) possède une variable d’instance référençant l’état courant (cette variable est de type <code class="highlighter-rouge">CoffeeMachineState</code>). Grâce au polymorphisme l’objet référencé est l’une des sous-classe de la classe abstraite <code class="highlighter-rouge">CoffeeMachineState</code>. Les transitions sont gérées en remplaçant cette référence par une référence vers le nouvel état actif.</p>
+
+<ul>
+  <li>
+    <p>Créer un nouveau projet nommé Sensepresso. Télécharger le <a href="/files/Sensespresso.zip">code de la cafetière</a>, extraire l’archive, sélectionner les dossiers et les <strong>glisser/déposer</strong> sur le dossier <em>src</em> du projet Eclipse.</p>
+  </li>
+  <li>
+    <p>Télécharger les bibliothèques <a href="/files/SteelSeries.jar">SteelSeries.jar</a> et <a href="/files/trident.jar">trident.jar</a> et les copier dans votre projet (avec un glisser/deposer sur le projet). Faire ensuite un clic droit sur chacune d’elle et sélectionner <em>Build Path</em> puis <em>Add To Build Path</em></p>
+  </li>
+</ul>
+
+<p>Le diagramme d’état décrivant le fonctionnement de la cafetière est le suivant :</p>
+
+<p><img src="/img/Sensespresso.png" alt="Cafetiere" /></p>
+
+<ul>
+  <li>
+    <p>Suggestion de nommage pour les classes de gestion des différents états :</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">CoffeeMachineHeatingState</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">CoffeeMachineMissingWaterState</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">CoffeeMachineOffState</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">CoffeeMachinePrepareState</code></p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">CoffeeMachineReadyState</code></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Compléter la méthode <code class="highlighter-rouge">transitionToState</code> de la classe <code class="highlighter-rouge">CoffeeMachineState</code>, puis créer les 5 sous-classes de <code class="highlighter-rouge">CoffeeMachineState</code> permettant d’assurer le bon fonctionnement de la cafetière selon le diagramme ci-dessous. En fonction du nombre de tasses, la transition entre l’état <code class="highlighter-rouge">CoffeeMachinePrepareState</code> et l’état <code class="highlighter-rouge">CoffeeMachineHeatingState</code> se fera à l’aide d’une temporisation de 6 ou 12 secondes selon le nombre de tasses choisies. La temporisation sera gérée à l’aide de la classe <code class="highlighter-rouge">Timer</code> du package <code class="highlighter-rouge">javax.swing</code>.</p>
+
+    <p><strong>Faire valider par un enseignant.</strong></p>
+  </li>
+  <li>
+    <p>Bien faire un dernier Commit &amp; Push.</p>
+  </li>
+</ul>
+
+:ET

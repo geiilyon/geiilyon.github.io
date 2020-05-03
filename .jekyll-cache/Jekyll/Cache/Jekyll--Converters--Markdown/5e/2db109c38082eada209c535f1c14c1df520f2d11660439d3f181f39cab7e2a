@@ -1,0 +1,295 @@
+I"Sc<h1 id="héritage---introduction">Héritage - introduction</h1>
+
+<p>Une rapide introduction à ces 2 notions se trouve dans le dernier chapitre du cours (<a href="http://spiralconnect.univ-lyon1.fr/spiral-files/download?mode=inline&amp;data=5329115">fichier PDF</a>).</p>
+
+<p>Dans la programmation orientée objet, on constitue des hiérarchies d’héritage dans lesquelles les sous-classes héritent des champs et des méthodes de leur super-classe (classe mère).</p>
+
+<p>Pour illustrer les principaux éléments de syntaxe Java liés à l’héritage nous allons nous appuyer sur la hiérarchie suivante :</p>
+
+<p><img src="/img/Vehicules.png" alt="Diagramme de classes Vehicules" /></p>
+
+<ul>
+  <li>
+    <p>La super-classe de toutes les classes est ici la classe <code class="highlighter-rouge">Vehicule</code>, elle possède :</p>
+
+    <ul>
+      <li>
+        <p>une variable d’instance privée <code class="highlighter-rouge">double vitesse</code> qui stocke la vitesse du véhicule.</p>
+      </li>
+      <li>
+        <p>un getter <code class="highlighter-rouge">double getVitesse()</code>et un setter <code class="highlighter-rouge">void setVitesse(double vitesse)</code> pour permettre l’accès à la variable <em>encapsulée</em></p>
+      </li>
+      <li>
+        <p>une méthode <code class="highlighter-rouge">void faireDuBruit()</code></p>
+      </li>
+      <li>
+        <p>un constructeur par défaut (ajouté automatiquement par le compilateur Java)</p>
+      </li>
+      <li>
+        <p>Le code correspondant est :</p>
+      </li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="nn">heritage</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">vitesse</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getVitesse</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">vitesse</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">double</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">vitesse</span> <span class="o">=</span> <span class="n">vitesse</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">faireDuBruit</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Je roule à "</span> <span class="o">+</span> <span class="n">vitesse</span> <span class="o">+</span> <span class="s">" km/h"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>La sous-classe <code class="highlighter-rouge">Velo</code> hérite de <code class="highlighter-rouge">Vehicule</code>. On dit qu’elle <em>étend</em> la classe <code class="highlighter-rouge">Vehicule</code> et on utilise le mot clé Java <code class="highlighter-rouge">extends</code>. Un Velo <strong>EST UN</strong> Vehicule. La sous-classe spécialise sa super-classe. On la déclare de la manière suivante :</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Velo</span> <span class="kd">extends</span> <span class="nc">Vehicule</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>la méthode <code class="highlighter-rouge">setVitesse</code> est un peu trop permissive pour le vélo, on peut donc la redéfinir (<em>override</em>). Pour redéfinir une méthode on réécrit une définition portant exactement la même signature que la méthode de la super-classe (même nom, même nombre d’arguments et mêmes types d’argument).</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Override</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">double</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">...</span>
+  <span class="o">}</span>    
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>L’annotation <code class="highlighter-rouge">@Override</code> n’est pas obligatoire mais elle permet de dire au compilateur que l’on souhaite redéfinir une méthode. Il va alors vérifier qu’il existe bien dans la hiérarchie (super-classe, super-super-classe, …) une méthode ayant exactement la même signature. Si on a fait une faute de frappe, le compilateur pourra donc la détecter. Il est même possible d’utiliser Eclipse pour générer la déclaration des méthodes redéfinies (Menu <em>Source</em> puis <em>Override/Implement Methods…</em>)</p>
+      </li>
+      <li>
+        <p>Dans le corps de la méthode redéfinie on peut également faire un appel à la version de la super-classe, en utilisant le mot clé <code class="highlighter-rouge">super</code>.</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">double</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">vitesse</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="o">)</span> <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Doucement fada ! Je suis en vélo !"</span><span class="o">);</span>
+              <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">60</span><span class="o">;</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">vitesse</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"De la marche arrière sur un vélo ?"</span><span class="o">);</span>
+              <span class="n">vitesse</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+          <span class="o">}</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">setVitesse</span><span class="o">(</span><span class="n">vitesse</span><span class="o">);</span>
+      <span class="o">}</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">faireDuBruit</span><span class="o">()</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">faireDuBruit</span><span class="o">();</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Dring dring !"</span><span class="o">);</span>
+      <span class="o">}</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Créer ces 2 classes (<code class="highlighter-rouge">Vehicule</code> et <code class="highlighter-rouge">Velo</code>) puis une troisième classe pour faire des tests (<code class="highlighter-rouge">VehiculesTests</code>). Dans cette classe il faudra ajouter une méthode <code class="highlighter-rouge">main</code> pour créer un Vehicule et un Velo. Vérifier le comportement du programme lorsqu’on appelle chacune des méthodes.</p>
+  </li>
+  <li>
+    <p>Vérifier qu’il est bien possible d’appeler la méthode <code class="highlighter-rouge">getVitesse</code> sur l’instance de la sous-classe <code class="highlighter-rouge">Velo</code>, bien qu’elle n’ait pas fait l’objet d’une redéfinition. Ceci vise à mettre en évidence le fait que les sous-classes héritent des méthodes définies dans leur super-classe.</p>
+  </li>
+  <li>
+    <p>Vérifier en créant deux objets de type <code class="highlighter-rouge">Velo</code> distincts qu’ils peuvent bien avoir chacun une vitesse différente afin de mettre en évidence le fait que les sous-classes héritent des variables d’instance de leur super-classe.</p>
+  </li>
+  <li>
+    <p>Compléter la hiérarchie d’héritage avec les classes suivantes en remplaçant les <code class="highlighter-rouge">...</code> par le code approprié</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">package</span> <span class="nn">heritage</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Voiture</span> <span class="kd">extends</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">double</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+
+          <span class="k">if</span> <span class="o">(</span><span class="n">vitesse</span> <span class="o">&gt;</span> <span class="mi">130</span><span class="o">)</span> <span class="o">{</span>
+              <span class="o">...</span>
+          <span class="o">}</span>
+
+          <span class="o">...</span>
+      <span class="o">}</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">faireDuBruit</span><span class="o">()</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">faireDuBruit</span><span class="o">();</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Vroom vroom"</span><span class="o">);</span>
+      <span class="o">}</span>
+
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">package</span> <span class="nn">heritage</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Train</span> <span class="kd">extends</span> <span class="nc">Vehicule</span> <span class="o">{</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">faireDuBruit</span><span class="o">()</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">faireDuBruit</span><span class="o">();</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tchou tchou"</span><span class="o">);</span>
+      <span class="o">}</span>
+
+  <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kn">package</span> <span class="nn">heritage</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">VoitureAutomatique</span> <span class="kd">extends</span> <span class="nc">Voiture</span> <span class="o">{</span>
+      <span class="kd">private</span> <span class="kt">int</span> <span class="n">rapportDeVitesse</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+
+      <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRapportDeVitesse</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">rapportDeVitesse</span><span class="o">;</span>
+      <span class="o">}</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVitesse</span><span class="o">(</span><span class="kt">double</span> <span class="n">vitesse</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">rapportDeVitesse</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="mi">5</span><span class="o">,</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="n">vitesse</span> <span class="o">/</span> <span class="mi">20</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">setVitesse</span><span class="o">(</span><span class="n">vitesse</span><span class="o">);</span>
+      <span class="o">}</span>
+
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">faireDuBruit</span><span class="o">()</span> <span class="o">{</span>
+          <span class="kd">super</span><span class="o">.</span><span class="na">faireDuBruit</span><span class="o">();</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Et en plus je roule en vitesse : "</span> <span class="o">+</span> <span class="n">rapportDeVitesse</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Cette dernière classe ajoute une variable d’instance <code class="highlighter-rouge">rapportDeVitesse</code> et le getter qui va avec.</p>
+  </li>
+  <li>
+    <p>Dans la classe <code class="highlighter-rouge">VehiculesTests</code> créer des instances de chacune de ces classes et vérifier que vous pouvez invoquer les différentes méthodes et que le comportement correspond bien au type de la variable.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="polymorphisme">Polymorphisme</h1>
+
+<p>Le polymorphisme consiste à écrire du code qui ne dépend pas du type concret des objets. Cela revient à utiliser des variables ou des paramètres de méthodes de type <code class="highlighter-rouge">Vehicule</code> qui recevront indifféremment des instances de n’importe laquelle des classes de la hiérarchie. Exemple :</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">triturerVehicule</span><span class="o">(</span><span class="nc">Vehicule</span> <span class="n">vehicule</span><span class="o">){</span>
+    <span class="n">vehicule</span><span class="o">.</span><span class="na">faireDuBruit</span><span class="o">();</span>
+    <span class="n">vehicule</span><span class="o">.</span><span class="na">setVitesse</span><span class="o">(</span><span class="n">vehicule</span><span class="o">.</span><span class="na">getVitesse</span><span class="o">()</span> <span class="o">+</span> <span class="mi">30</span><span class="o">);</span>
+    <span class="n">vehicule</span><span class="o">.</span><span class="na">faireDuBruit</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Le type d’une variable définit les méthodes que l’on peut appeler ainsi que les champs accessibles. On ne peut donc pas accéder aux spécificités de la sous-classe mais on peut la traiter comme une instance de la super-classe.</p>
+
+<ul>
+  <li>
+    <p>Modifier le code de la classe <code class="highlighter-rouge">VehiculesTests</code> en créant un variable de type <code class="highlighter-rouge">Vehicule</code> qui référencera successivement un vélo, une voiture, une voiture automatique,…</p>
+
+    <ul>
+      <li>Vérifier qu’il n’est possible d’appeler que les méthodes disponibles sur la classe <code class="highlighter-rouge">Vehicule</code> (impossible d’utiliser <code class="highlighter-rouge">getRapportVitesse()</code> même si l’objet effectivement référencé est de type <code class="highlighter-rouge">VoitureAutomatique</code></li>
+      <li>Vérifier que l’appel de <code class="highlighter-rouge">faireDuBruit()</code> dépend bien du type concret de l’objet référencé et non pas du type de la variable</li>
+    </ul>
+  </li>
+  <li>
+    <p>Ajouter la méthode <code class="highlighter-rouge">triturerVehicule</code> à la classe <code class="highlighter-rouge">VehiculesTests</code>. Créer une liste de véhicules de type <code class="highlighter-rouge">ArrayList&lt;Vehicule&gt;</code> et la passer à une méthode prenant en paramètre une liste de véhicules qui appellera <code class="highlighter-rouge">triturerVehicule</code> sur chacun des éléments de la liste.</p>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="héritage-et-visibilité">Héritage et visibilité</h1>
+
+<p>Bien que présents dans les instances, les champs privés d’une super-classe ne sont pas accessibles directement depuis le code source des sous-classes. Dans la classe <code class="highlighter-rouge">Voiture</code> de l’exemple précédent, on ne peut pas utiliser directement la variable <code class="highlighter-rouge">vitesse</code>, il est par contre possible d’utiliser les <em>setters</em> et <em>getters</em> qui sont <em>public</em>. Il existe un mot clé supplémentaire si on veut rendre le champ visible aux sous-classes, il s’agit de <code class="highlighter-rouge">protected</code>.</p>
+
+<p>En résumé, les modificateurs de visibilité sont (du plus sévère au plus laxiste) :</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">private</code> : accessible seulement depuis la classe dans laquelle la définition est écrite</p>
+  </li>
+  <li>
+    <p>‘<em>default</em>’ : l’absence de mot clé donne une visibilité à toutes les classes appartenant au même package</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">protected</code> : accessible depuis les classes du même package et depuis toutes les sous-classes</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">public</code>: accessible depuis n’importe quelle classe</p>
+  </li>
+</ul>
+
+<p><strong>FAIRE VALIDER PAR UN ENSEIGNANT</strong></p>
+
+<hr />
+
+<h1 id="exercice--étudiants">Exercice : étudiants</h1>
+
+<ul>
+  <li>
+    <p>Créer une classe <code class="highlighter-rouge">Etudiant</code> et deux sous-classes <code class="highlighter-rouge">BonEtudiant</code>et <code class="highlighter-rouge">MauvaisEtudiant</code>conformément au diagramme ci-dessous</p>
+
+    <p><img src="/img/Etudiants.png" alt="Etudiants" />
+  <img src="/img/EclipseUmlLegend.png" alt="Legende Eclispe UML" /></p>
+  </li>
+  <li>
+    <p>Remarque importante : la classe Etudiant n’a pas de constructeur par défaut (sans argument). Or, lors de leur instanciation, les sous-classes doivent appeler le constructeur de leur super-classe. Le compilateur Java ne rajoute ces appels que pour les constructeurs sans argument. Dans le cas contraire, il faut créer des constructeurs explicitement et faire en sorte qu’ils délèguent le travail au super-constructeur approprié.</p>
+  </li>
+  <li>
+    <p>La méthode <code class="highlighter-rouge">reagirAUneNote</code> est définie dans la classe <code class="highlighter-rouge">Etudiant</code> mais elle appelle des méthodes <code class="highlighter-rouge">protected</code> qui sont redéfinies dans les sous-classes (les versions de la super-classe se contenteront pour l’instant de retourner 0). Le code qui décrit la logique de l’algorithme n’est pas dupliqué, mais certaines étapes peuvent être spécialisée par les sous-classes.</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reagirAUneNote</span><span class="o">(</span><span class="kt">double</span> <span class="n">note</span><span class="o">)</span> <span class="o">{</span>
+          <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">prenom</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s">" : J'ai eu "</span> <span class="o">+</span> <span class="n">note</span> <span class="o">+</span><span class="s">"/20. "</span><span class="o">);</span>
+          <span class="k">if</span> <span class="o">(</span><span class="n">note</span> <span class="o">&gt;=</span> <span class="n">getSeuilCool</span><span class="o">())</span> <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"trop cool !"</span><span class="o">);</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">note</span> <span class="o">&gt;=</span> <span class="n">getSeuilPasPire</span><span class="o">())</span> <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"pas pire."</span><span class="o">);</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">note</span> <span class="o">&gt;=</span> <span class="n">getSeuilLoose</span><span class="o">())</span> <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"la loose !"</span><span class="o">);</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+              <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"la cata !"</span><span class="o">);</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+</code></pre></div>    </div>
+
+    <p>Pour un bon étudiant, on pourra régler les seuils 12, 14 et 16. Pour un mauvais étudiant on prendra 8, 10 et 12.</p>
+  </li>
+  <li>
+    <p>Créer une classe <code class="highlighter-rouge">EtudiantsTests</code> pour valider le bon fonctionnement de vos classes et tester les réactions de vos étudiants à différentes notes (il est possible de faire une boucle for).</p>
+  </li>
+  <li>
+    <p>On s’intéresse maintenant à la méthode <code class="highlighter-rouge">passerUnPartiel</code>.</p>
+
+    <ul>
+      <li>
+        <p>Pour un bon étudiant la méthode se contentera d’afficher le message suivant sur la console :</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      Tilalilalou : je sors mes fiches de synthèse
+      Tiens j'ai déjà fini et je n'ai pas eu besoin de les regarder !
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Pour un mauvais étudiant, la méthode commencera par prendre 2 feuilles doubles au bon étudiant référencé par la variable d’instance <code class="highlighter-rouge">etudiantATaxer</code> puis affichera le message suivant :</p>
+
+        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      Est-ce qu'on a droit aux documents ?
+      Si j'écris tout petit, il arrivera pas à me relire et me mettra les points dans le doute.
+      Je vais gratter 5 minutes de plus avant de rendre ma copie.
+      La loi d'Ohm c'est le carré de l'hypothénuse ? Ah non, je suis bête ça c'est Thales !
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Compléter les classes et tester.</p>
+  </li>
+</ul>
+
+<p><strong>FAIRE VALIDER PAR UN ENSEIGNANT.</strong></p>
+
+<p><a href="/enonces/tp4">Suite…</a></p>
+:ET
