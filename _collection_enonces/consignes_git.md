@@ -5,7 +5,7 @@ excerpt: Configuration initiale du projet (eclipse, gitlab)
 permalink: /config_git/
 ---
 
-# Configuration d'Eclipse et GIT pour le module de positions
+# Configuration d'Eclipse et GIT pour le module de POO
 
 * Lancer eclipse-java
 
