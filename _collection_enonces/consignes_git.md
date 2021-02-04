@@ -85,12 +85,12 @@ permalink: /config_git/
 
 Remarques :
 
-* Ne pas modifier le dépôt depuis l'interface web : pas de suppression, renommage, modification du code. Tout doit se faire depuis eclipse sous peine de désynchroniser les deux dépôts (local et distant) et de devoir procéder à une resynchronisation avec une résolution des éventuels conflits !
+* **Ne pas modifier le dépôt depuis l'interface web : pas de suppression, renommage, modification du code. Tout doit se faire depuis eclipse sous peine de désynchroniser les deux dépôts (local et distant) et de devoir procéder à une resynchronisation avec une résolution des éventuels conflits !**
 
 * Il est possible d'ouvrir dans eclipse une perspective Git (dans le même esprit que la perspective de Debug qui sera vue dans le premier TP). Cette perspective présente un groupe de fenêtres dédiées à la gestion de Git. Cela permet de diminuer la taille de la fenêtre du bas dans la perspective de développement (Java) pour laisser plus de place au code.
 
 * Effectuer un commit et un push à chaque exercice terminé en indiquant clairement dans le message de commit le nom de l'exercice qui a été complété.
 
-* Le menu Team, propose un menu qui permet de faire un Push si la dernière modification a été faite en cliquant sur Commit plutôt que sur Commit and Push.
+* Le menu Team propose un menu qui permet de faire un Push si la dernière modification a été faite en cliquant sur Commit plutôt que sur Commit and Push.
 
 [Suite...]({{site.baseurl}}/enonces/tp1)
