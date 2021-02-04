@@ -36,4 +36,3 @@ permalink: /ressources/
 * Les principaux IDE pour développer en Java sont [Eclipse](https://www.eclipse.org/downloads/packages/), [Netbeans](https://netbeans.org) et [IntelliJ Idea](https://www.jetbrains.com/idea/)
 
 Pour ce module nous utilisons la version Eclipse IDE for Java Developers.
-

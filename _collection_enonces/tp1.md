@@ -4,18 +4,10 @@ layout: page
 excerpt: Prise en main d'Eclipse. Création de projets, classes, expérimentations sur les objets.
 ---
 
-# Prise en main d'Eclipse
-
-Lors du lancement, Eclipse demande de choisir/créer un *workspace*. Ce dossier permettra de stocker plusieurs *projets*.
-Pour ce module nous utiliserons toujours le même workspace nommé **WorkspaceJava** à créer dans le dossier **W:\Java**.
-
-Tous les fichiers seront créés dans un seul et unique projet nommé **TP_POO**.
-
-Toutes les classes seront pour l'instant créées dans le package par défaut (*default package*).
-
----
-
+# Prise en main d'éclipse
 ## L'incontournable Hello World !
+
+Vous avez normalement créé une première classe nommée HelloWorld qui contient le code suivant. 
 
 ~~~java
 public class HelloWorld{
@@ -25,12 +17,7 @@ public class HelloWorld{
 }
 ~~~
 
-Suivez les instructions présentes dans la vidéo suivante pour agencer les fenêtres et créer et exécuter votre premier projet Eclipse (Remarque : pensez à choisir une qualité HD dans les paramètres ![Paramètres](/img/engrenage.png)).
-
-{% assign youtube_id = 'KPUSAug3pzA' %}
-{% include video.html %}
-
-Configurez Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuez la manipulation décrite dans la vidéo suivante.
+Configurer Eclipse pour qu'il utilise l'encodage UTF-8 pour les fichiers sources (et tous les fichiers textes). Cet encodage est aujourd'hui le standard pour échanger des fichiers entre plusieurs systèmes (Linux, Windows, Mac). Pour ce faire, effectuer la manipulation décrite dans la vidéo suivante.
 
 {% assign youtube_id = '9D9ZXfThZE8' %}
 {% include video.html %}
