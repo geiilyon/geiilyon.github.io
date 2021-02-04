@@ -11,7 +11,7 @@ permalink: /config_git/
 
 * Créer un workspace dans le dossier W : `W:\workspaceJava`
 
-![Workspace](/img/A-Workspace.png)
+![Workspace](/img/A_Workspace.png)
 
 * Dans eclipse, créer un nouveau projet nommé POO_IUT qui contiendra une première classe (HelloWorld) en suivant les indications de la vidéo ci-dessous
 
