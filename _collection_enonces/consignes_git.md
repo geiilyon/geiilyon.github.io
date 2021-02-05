@@ -18,7 +18,7 @@ permalink: /config_git/
 {% assign youtube_id = 'r5Y5tPb9w4Y' %}
 {% include video.html %}
 
-* Effectuer un clic droit sur le projet (dans la fenêtre Package Explorer) et choisir Team, puis Share Project...
+* Effectuer un clic droit sur le projet (POO_IUT dans la fenêtre Package Explorer - pas sur le fichier java) et choisir Team, puis Share Project...
 
 ![Team_share](/img/git_config/C-Team_share.png)
 
