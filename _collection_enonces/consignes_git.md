@@ -59,7 +59,7 @@ permalink: /config_git/
 
 ![Copy_URL](/img/git_config/M-Copy_URL.png)
 
-* Coller cette URL dans le champ URI du panneau Destination Git Repository d'eclipse et compléter les champs User et Password. Il est possible de cocher la case Store in Secure Store pour ne pas avoir à retaper le mot de passe à chaque fois. Puis cliquer sur Next (si eclipse propose d'ajouter des questions de sécurité pour récupérer le mot de passe, cliquer sur Cancel)
+* Coller cette URL dans le champ URI du panneau Destination Git Repository d'eclipse et compléter les champs User et Password (avec vos identifiants CAS). Il est possible de cocher la case Store in Secure Store pour ne pas avoir à retaper le mot de passe à chaque fois. Puis cliquer sur Next (si eclipse propose d'ajouter des questions de sécurité pour récupérer le mot de passe, cliquer sur Cancel)
 
 ![ConfigRemote](/img/git_config/N-ConfigRemote.png)
 
