@@ -53,7 +53,7 @@ La phrase française comporte ? caractères
 La phrase anglaise comporte ? caractères
 ~~~
 
-où les `?` auront été remplacés par le nombre de caractères.
+où les `?` auront été remplacés par le nombre de caractères (récupéré automatiquement en appelant une méthode de la classe String).
 
 * Créer une classe `ExperimentationChaines` qui contiendra une méthode main.
 
