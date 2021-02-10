@@ -140,6 +140,8 @@ Le principe de JUnit est le suivant :
 
     * Il existe une variante qui utilise la syntaxe `assertThat` qui donne des tests plus lisibles mais qui est plus délicate à mettre en oeuvre.
 
+**FAIRE VALIDER PAR UN ENSEIGNANT**
+
 ---  
 
 # Passage par valeur / références
@@ -287,5 +289,7 @@ public class PaquetCookies {
 
 {% assign youtube_id = 'ToMNhUUrumc' %}
 {% include video.html %}
+
+**FAIRE VALIDER PAR UN ENSEIGNANT**
 
 [Suite...]({{site.baseurl}}/enonces/tp2)
