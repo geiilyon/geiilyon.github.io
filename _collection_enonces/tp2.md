@@ -39,7 +39,7 @@ Il est toujours possible a posteriori de faire glisser une classe vers un packag
 
 ## Deuxième partie : application en mode console
 
-* Créer une classe `ShoppingListApp` qui permettra de gérer une liste de courses en ligne de commande. L'extrait suivant donne un exemple de déroulement du programme.
+* Dans cette partie, on va créer une classe `ShoppingListApp`, dont le squelette du code source est donné ci-dessous. Cette classe permettra de gérer une liste de courses en ligne de commande. Il faut bien lire toutes les consignes ci-dessous avant de démarrer le codage de cette classe. L'extrait suivant donne un exemple de déroulement du programme.
 
 Le programme affiche le contenu de la liste et un menu.
 
