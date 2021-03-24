@@ -12,7 +12,7 @@ L'approche orientée objet de la programmation d'une machine d'état consiste à
 
 La classe principale (ici, `CoffeeMachine`) possède une variable d'instance référençant l'état courant (cette variable est de type `CoffeeMachineState`). Grâce au polymorphisme l'objet référencé est l'une des sous-classe de la classe abstraite `CoffeeMachineState`. Les transitions sont gérées en remplaçant cette référence par une référence vers le nouvel état actif.
 
-* Télécharger le [code de la cafetière](/files/Sensespresso.zip), extraire l'archive, sélectionner les dossiers et les **glisser/déposer** sur le dossier *src* du projet Eclipse.
+* Télécharger le [code de la cafetière](/files/sensepresso.zip), extraire l'archive, sélectionner les dossiers et les **glisser/déposer** sur le dossier *src* du projet Eclipse.
 
 * Télécharger les bibliothèques [SteelSeries.jar](/files/SteelSeries.jar) et [trident.jar](/files/trident.jar) et les copier dans votre projet (avec un glisser/deposer sur le projet). Faire ensuite un clic droit sur chacune d'elle et sélectionner *Build Path* puis *Add To Build Path*
 
