@@ -110,10 +110,10 @@ Cette méthode attend un objet de type `Comparator<? super T>` (quelque chose ca
 
         @Before
         public void setUp() {
-            abrahamLincoln = new BonEtudiant("Abraham", "Lincoln");
-            jamesBond = new BonEtudiant("James", "Bond");
-            johnBond = new MauvaisEtudiant("John", "Bond");
-            johnDoe = new MauvaisEtudiant("John", "Doe");
+            abrahamLincoln = new BonEtudiant("Lincoln", "Abraham");
+            jamesBond = new BonEtudiant("Bond", "James");
+            johnBond = new MauvaisEtudiant("Bond", "John");
+            johnDoe = new MauvaisEtudiant("Doe", "John");
             etudiants = new ArrayList<>();
             etudiants.add(abrahamLincoln);
             etudiants.add(johnBond);
